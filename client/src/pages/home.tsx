@@ -36,11 +36,6 @@ export default function Home() {
 
   return (
     <div className="min-h-screen bg-background text-foreground overflow-hidden selection:bg-[#D8B366] selection:text-black">
-      {/* === FLOATING LIGHT ORBS === */}
-      <div className="orb-gold-1" />
-      <div className="orb-gold-2" />
-      <div className="orb-gold-3" />
-
       {/* ===== HERO SECTION - PREMIUM & INTERACTIVE ===== */}
       <section className="relative min-h-screen flex items-center pt-16 pb-20 overflow-hidden">
         {/* Background with overlay */}
