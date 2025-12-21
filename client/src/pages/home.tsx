@@ -1,5 +1,5 @@
 import { motion } from "framer-motion";
-import { ArrowRight, Sparkles, Check, ChevronDown } from "lucide-react";
+import { ArrowRight, Sparkles, Check, ChevronDown, MapPin, Calendar, Clock, AlertTriangle } from "lucide-react";
 import luxuryBg from "@assets/generated_images/luxury_warm-lit_interior_environment_background.png";
 import heroImg from "@assets/generated_images/professional_woman_portrait_cropped_for_hero_section.png";
 import { useState } from "react";
@@ -23,100 +23,152 @@ export default function Home() {
     }
   };
 
+  const scrollToSection = (id: string) => {
+    const element = document.getElementById(id);
+    if (element) {
+      element.scrollIntoView({ behavior: 'smooth' });
+    }
+  };
+
   return (
-    <div className="min-h-screen bg-background text-foreground overflow-hidden selection:bg-[#D8B366] selection:text-black">
-      {/* ===== HERO SECTION ===== */}
-      <section className="relative min-h-screen flex items-center py-20 overflow-hidden">
+    <div className="min-h-screen bg-[#070607] text-white overflow-hidden selection:bg-[#D8B366] selection:text-black font-sans">
+      
+      {/* 1) NAVBAR (Sticky) */}
+      <nav className="fixed top-0 left-0 right-0 z-50 h-[72px] bg-[#070607]/55 backdrop-blur-md border-b border-[#D8B366]/20 flex items-center transition-all duration-300">
+        <div className="container mx-auto px-6 flex items-center justify-between">
+          <div className="text-[#D8B366] font-display font-bold text-xl tracking-tight">
+            Processo & IA
+          </div>
+          
+          <div className="hidden md:flex items-center gap-8">
+            {[
+              { label: "Início", id: "hero" },
+              { label: "O Evento", id: "context" },
+              { label: "Lançamento", id: "launch" },
+              { label: "Benefício", id: "benefit" },
+              { label: "Investimento", id: "pricing" },
+              { label: "Local", id: "info" },
+              { label: "FAQ", id: "faq" }
+            ].map((link) => (
+              <button 
+                key={link.id}
+                onClick={() => scrollToSection(link.id)}
+                className="text-sm font-medium text-white/70 hover:text-white transition-colors"
+              >
+                {link.label}
+              </button>
+            ))}
+          </div>
+
+          <button className="hidden md:flex btn-primary h-10 px-6 text-sm">
+            Garantir minha vaga
+          </button>
+        </div>
+      </nav>
+
+      {/* 2) HERO (Cinematic, 2 Columns) */}
+      <section id="hero" className="relative min-h-screen flex items-center pt-24 pb-20 overflow-hidden">
         {/* Background */}
         <div className="absolute inset-0 z-0">
-          <img 
-            src={luxuryBg} 
-            alt="Luxury background" 
-            className="w-full h-full object-cover"
-          />
-          <div className="absolute inset-0 bg-gradient-to-r from-[#0a0809] via-[#0a0809]/70 to-transparent" />
-          <div className="absolute inset-0 bg-gradient-to-b from-[#0a0809]/40 via-transparent to-[#0a0809]/60" />
+          <div className="absolute inset-0 bg-[#070607]" />
+          <div className="absolute inset-0 bg-[radial-gradient(ellipse_at_top,_var(--tw-gradient-stops))] from-[#D8B366]/10 via-[#070607] to-[#070607]" />
         </div>
 
         <div className="container mx-auto px-6 relative z-10">
-          <div className="grid md:grid-cols-2 gap-12 items-center">
-            {/* LEFT COLUMN - Content */}
+          <div className="grid md:grid-cols-2 gap-16 items-center">
+            {/* Left Column */}
             <motion.div 
               initial="hidden"
               animate="visible"
               variants={staggerContainer}
               className="space-y-8 max-w-xl"
             >
-              {/* Main Headline */}
               <motion.div variants={fadeInUp}>
-                <h1 className="text-6xl md:text-7xl font-sans font-black text-white leading-[1.1]">
-                  Venda não é sorte.<br />É processo.
-                </h1>
+                <span className="inline-flex px-3 py-1.5 rounded-full border border-[#D8B366]/25 bg-[#D8B366]/10 text-[#F6E6C6] text-[11px] font-bold tracking-[0.08em] uppercase">
+                  ENCONTRO PRESENCIAL E EXCLUSIVO
+                </span>
               </motion.div>
 
-              {/* Subheading with gold accent */}
-              <motion.div variants={fadeInUp}>
-                <p className="text-2xl md:text-3xl font-serif italic font-normal text-[#D8B366] leading-relaxed">
-                  Agora, com inteligência<br />artificial a seu favor.
+              <motion.div variants={fadeInUp} className="space-y-2">
+                <h1 className="text-5xl md:text-[56px] font-display font-bold text-white leading-[1.05] tracking-tight">
+                  Venda não é sorte.<br />É processo.
+                </h1>
+                <p className="text-2xl md:text-[32px] font-serif italic font-normal text-[#D8B366] leading-[1.15]">
+                  Agora, com inteligência artificial a seu favor.
                 </p>
               </motion.div>
 
-              {/* Description */}
-              <motion.p variants={fadeInUp} className="text-base text-white/75 leading-relaxed font-light max-w-2xl">
+              <motion.p variants={fadeInUp} className="text-base md:text-lg text-white/80 leading-relaxed font-light max-w-lg">
                 Um encontro presencial e exclusivo para Corretores de Seguro de Vida e Distribuidores de Produtos Financeiros que querem controle, previsibilidade e resultado real em vendas.
               </motion.p>
 
-              {/* CTA Buttons */}
-              <motion.div variants={fadeInUp} className="flex flex-col sm:flex-row gap-4 pt-4">
-                <button className="btn-primary text-base font-bold px-8 py-3">
-                  Garanta sua vaga <ArrowRight className="w-4 h-4 ml-2" />
-                </button>
-                <button className="px-8 py-3 rounded-full border-2 border-white/30 text-white font-semibold hover:border-white/60 hover:bg-white/5 transition-all duration-300">
-                  Ver o que vai acontecer
-                </button>
+              <motion.div variants={fadeInUp} className="flex flex-wrap gap-4 text-sm text-white/90 font-light">
+                <div className="flex items-center gap-2 bg-white/5 px-3 py-1.5 rounded-md border border-white/10">
+                  <MapPin className="w-4 h-4 text-[#D8B366]" /> Orlando
+                </div>
+                <div className="flex items-center gap-2 bg-white/5 px-3 py-1.5 rounded-md border border-white/10">
+                  <Calendar className="w-4 h-4 text-[#D8B366]" /> 13 de janeiro
+                </div>
+                <div className="flex items-center gap-2 bg-white/5 px-3 py-1.5 rounded-md border border-white/10">
+                  <Clock className="w-4 h-4 text-[#D8B366]" /> 12:30 PM às 5:30 PM
+                </div>
               </motion.div>
 
-              {/* Bottom info text */}
-              <motion.p variants={fadeInUp} className="text-sm text-white/60 font-light">
-                Vagas limitadas • Presencial • Condição especial de lançamento
-              </motion.p>
+              <motion.div variants={fadeInUp} className="space-y-4 pt-2">
+                <div className="flex flex-col sm:flex-row gap-4">
+                  <button className="btn-primary text-base font-bold px-8">
+                    Garanta sua vaga
+                  </button>
+                  <button className="btn-secondary text-base font-bold px-8">
+                    Ver o que vai acontecer
+                  </button>
+                </div>
+                <p className="text-xs text-white/50 uppercase tracking-wider font-medium">
+                  Vagas limitadas • Presencial • Condição especial de lançamento
+                </p>
+              </motion.div>
             </motion.div>
 
-            {/* RIGHT COLUMN - Hero Image */}
+            {/* Right Column - Premium Hero Visual */}
             <motion.div
-              initial="hidden"
-              animate="visible"
-              variants={fadeInUp}
-              className="hidden md:flex items-center justify-end"
+              initial={{ opacity: 0, x: 20 }}
+              animate={{ opacity: 1, x: 0 }}
+              transition={{ duration: 1, delay: 0.2 }}
+              className="relative hidden md:flex justify-end"
             >
-              <div className="relative w-80 h-auto">
-                {/* Glow background */}
-                <div className="absolute -inset-8 bg-gradient-to-br from-[#D8B366]/25 via-[#D8B366]/10 to-transparent rounded-3xl blur-3xl -z-10" />
+              <div className="relative w-full max-w-md aspect-[3/4] rounded-[24px] overflow-hidden border border-[#D8B366]/30 shadow-[0_10px_30px_rgba(0,0,0,0.5)] bg-[#0C0B0D] group">
+                <img 
+                  src={heroImg} 
+                  alt="Evento Processo & IA" 
+                  className="w-full h-full object-cover opacity-80 group-hover:scale-105 transition-transform duration-700"
+                />
+                <div className="absolute inset-0 bg-gradient-to-t from-[#0a0809] via-transparent to-transparent" />
                 
-                {/* Image container */}
-                <div className="relative z-10 overflow-hidden rounded-2xl border border-[#D8B366]/30 shadow-2xl">
-                  <img 
-                    src={heroImg} 
-                    alt="Expert" 
-                    className="w-full h-auto object-cover"
-                  />
-                  <div className="absolute inset-0 bg-gradient-to-t from-[#0a0809]/40 via-transparent to-transparent" />
+                {/* Floating Info Card */}
+                <div className="absolute bottom-6 left-6 right-6 p-5 rounded-xl bg-[#0a0809]/80 backdrop-blur-md border border-[#D8B366]/20 shadow-lg">
+                  <div className="flex justify-between items-end">
+                    <div>
+                      <p className="text-xs text-[#D8B366] uppercase tracking-wider mb-1">Investimento</p>
+                      <p className="text-2xl font-display font-bold text-white">US$ 49,90</p>
+                    </div>
+                    <div className="text-right">
+                      <p className="text-xs text-white/60 mb-1">Local</p>
+                      <p className="text-sm font-medium text-white">Orlando Public Library</p>
+                    </div>
+                  </div>
                 </div>
-
-                {/* Floating accent particles */}
-                <div className="absolute top-10 -right-10 w-20 h-20 bg-[#D8B366]/20 rounded-full blur-2xl" />
-                <div className="absolute bottom-20 left-0 w-32 h-32 bg-[#D8B366]/10 rounded-full blur-3xl" />
               </div>
+              
+              {/* Decorative Elements */}
+              <div className="absolute -z-10 top-10 right-10 w-64 h-64 bg-[#D8B366]/10 rounded-full blur-[80px]" />
+              <div className="absolute -z-10 bottom-10 left-10 w-40 h-40 bg-[#D8B366]/5 rounded-full blur-[60px]" />
             </motion.div>
           </div>
         </div>
-
-        {/* Bottom gradient line */}
-        <div className="absolute bottom-0 left-0 right-0 h-px bg-gradient-to-r from-transparent via-[#D8B366]/40 to-transparent z-10" />
       </section>
 
-      {/* ===== CONTEXT SECTION ===== */}
-      <section className="py-20 md:py-28 relative border-t border-white/5">
+      {/* 3) DOR / CONTEXTO */}
+      <section id="context" className="py-24 relative border-t border-[#D8B366]/10 bg-[#0C0B0D]">
         <div className="container mx-auto px-6 max-w-4xl">
           <motion.div
             initial="hidden"
@@ -124,391 +176,333 @@ export default function Home() {
             viewport={{ once: true, margin: "-100px" }}
             variants={staggerContainer}
           >
-            <motion.h2 variants={fadeInUp} className="text-4xl md:text-5xl font-sans font-bold text-white mb-12">
+            <motion.h2 variants={fadeInUp} className="text-3xl md:text-[38px] font-display font-bold text-white mb-8">
               Você pode até vender bem.
             </motion.h2>
 
-            <motion.div variants={fadeInUp} className="space-y-8">
-              <p className="text-lg text-white/75 leading-relaxed font-light max-w-2xl">
-                Mas se não tiver <span className="text-[#D8B366] font-bold">processo, organização e inteligência</span>, você sempre vai depender do improviso.
+            <motion.div variants={fadeInUp} className="p-8 md:p-10 rounded-[18px] bg-[#131116] border border-[#D8B366]/20 shadow-[0_10px_30px_rgba(0,0,0,0.35)] relative overflow-hidden group">
+              <div className="absolute top-0 left-0 w-1 h-full bg-[#D8B366]" />
+              
+              <p className="text-xl md:text-2xl text-white/90 font-light mb-8 leading-relaxed">
+                Mas se não tiver <span className="text-[#D8B366] font-semibold">processo, organização e inteligência</span>, você sempre vai depender do improviso.
               </p>
 
-              <div className="glass-card-gold glass-card-hover p-10 md:p-12 rounded-2xl border border-[#D8B366]/30 space-y-6">
-                <p className="text-white font-semibold text-lg">E improviso não escala.</p>
-                <div className="space-y-4">
+              <div className="space-y-4 mb-8">
+                {[
+                  "E improviso não escala.",
+                  "Improviso cansa.",
+                  "Improviso custa dinheiro."
+                ].map((item, i) => (
+                  <div key={i} className="flex items-center gap-3">
+                    <div className="w-1.5 h-1.5 rounded-full bg-[#E45B5B]" />
+                    <span className="text-white/80 text-lg font-light">{item}</span>
+                  </div>
+                ))}
+              </div>
+
+              <p className="text-lg text-white font-medium border-t border-[#D8B366]/10 pt-6">
+                Este evento foi criado para quem quer <span className="font-serif italic text-[#D8B366]">governar seus resultados</span>, não torcer por eles.
+              </p>
+            </motion.div>
+          </motion.div>
+        </div>
+      </section>
+
+      {/* 4) O QUE VAI ACONTECER */}
+      <section className="py-24 relative bg-[#070607]">
+        <div className="container mx-auto px-6">
+          <div className="max-w-5xl mx-auto">
+            <div className="mb-12">
+              <span className="text-[#D8B366] text-xs font-bold tracking-widest uppercase mb-3 block">O que vai acontecer nesse evento</span>
+              <h2 className="text-3xl md:text-[38px] font-display font-bold text-white leading-tight max-w-2xl">
+                Este não é um evento motivacional. <br />
+                <span className="text-white/60">É um encontro estratégico, onde você vai:</span>
+              </h2>
+            </div>
+
+            <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
+              {[
+                { title: "Previsibilidade", desc: "Entender como processo de vendas gera previsibilidade" },
+                { title: "Conversão e ticket", desc: "Aprender como planejamento aumenta conversão e ticket médio" },
+                { title: "Tempo e foco", desc: "Ver como organização libera tempo e foco" },
+                { title: "Tecnologia e IA", desc: "Conhecer como tecnologia, CRM e IA podem trabalhar a seu favor" },
+                { title: "Gestão do resultado", desc: "Mudar o jogo: de vendedor reativo para gestor do próprio resultado", full: true }
+              ].map((item, i) => (
+                <motion.div 
+                  key={i}
+                  initial={{ opacity: 0, y: 20 }}
+                  whileInView={{ opacity: 1, y: 0 }}
+                  viewport={{ once: true }}
+                  transition={{ delay: i * 0.1 }}
+                  className={`p-6 rounded-[18px] bg-[#131116] border border-[#D8B366]/15 hover:border-[#D8B366]/30 hover:bg-[#131116]/80 transition-all duration-300 group ${item.full ? 'md:col-span-2 lg:col-span-1 bg-gradient-to-br from-[#131116] to-[#D8B366]/5' : ''}`}
+                >
+                  <div className="w-10 h-10 rounded-full bg-[#D8B366]/10 border border-[#D8B366]/20 flex items-center justify-center mb-4 group-hover:scale-110 transition-transform">
+                    <Sparkles className="w-5 h-5 text-[#D8B366]" />
+                  </div>
+                  <h3 className="text-lg font-bold text-white mb-2">{item.title}</h3>
+                  <p className="text-white/60 text-sm leading-relaxed">{item.desc}</p>
+                </motion.div>
+              ))}
+            </div>
+          </div>
+        </div>
+      </section>
+
+      {/* 5) BLOCO ESPECIAL - LANÇAMENTO */}
+      <section id="launch" className="py-24 relative border-y border-[#D8B366]/10 bg-[#0C0B0D]">
+        <div className="absolute inset-0 bg-[radial-gradient(circle_at_center,_var(--tw-gradient-stops))] from-[#D8B366]/5 via-transparent to-transparent" />
+        
+        <div className="container mx-auto px-6 max-w-4xl relative z-10">
+          <div className="p-10 md:p-14 rounded-[24px] border border-[#D8B366]/30 bg-gradient-to-b from-[#131116] to-[#070607] shadow-[0_0_60px_rgba(216,179,102,0.05)] text-center md:text-left">
+            <div className="flex flex-col md:flex-row gap-10 items-center">
+              <div className="flex-1 space-y-6">
+                <div className="inline-block px-3 py-1 rounded-full bg-[#D8B366] text-[#070607] text-xs font-bold uppercase tracking-wider">
+                  Exclusivo
+                </div>
+                
+                <h2 className="text-3xl md:text-4xl font-display font-bold text-white leading-tight">
+                  Lançamento exclusivo de um <span className="text-[#D8B366]">sistema de IA para corretores</span>
+                </h2>
+                
+                <p className="text-white/80 font-light leading-relaxed">
+                  Durante o evento, será apresentado em primeira mão um sistema de inteligência artificial desenvolvido exclusivamente para corretores de seguro de vida e distribuidores de produtos financeiros.
+                </p>
+
+                <ul className="space-y-3 text-left">
                   {[
-                    { title: "Improviso cansa.", desc: "Você gasta energia em operacional caótico." },
-                    { title: "Improviso custa dinheiro.", desc: "Oportunidades perdidas, ciclos longos, sem previsibilidade." }
+                    "Organizar o processo de vendas",
+                    "Dar clareza sobre funil e oportunidades",
+                    "Apoiar decisões com dados",
+                    "Tirar o corretor do operacional caótico"
                   ].map((item, i) => (
-                    <div key={i} className="flex items-start gap-4">
-                      <span className="text-2xl text-[#D8B366] flex-shrink-0">→</span>
-                      <div>
-                        <p className="font-bold text-white">{item.title}</p>
-                        <p className="text-sm mt-1 text-white/70">{item.desc}</p>
-                      </div>
-                    </div>
+                    <li key={i} className="flex items-center gap-3">
+                      <Check className="w-5 h-5 text-[#D8B366]" />
+                      <span className="text-white/70 text-sm">{item}</span>
+                    </li>
                   ))}
+                </ul>
+
+                <div className="flex items-start gap-3 p-4 rounded-lg bg-[#E45B5B]/10 border border-[#E45B5B]/20 text-left">
+                  <AlertTriangle className="w-5 h-5 text-[#E45B5B] flex-shrink-0 mt-0.5" />
+                  <p className="text-sm text-[#E45B5B]/90 font-medium">
+                    Esse lançamento é exclusivo para corretores e distribuidores de produtos financeiros
+                  </p>
                 </div>
               </div>
 
-              <p className="text-lg text-white/75 leading-relaxed font-light">
-                Este evento foi criado para quem quer <span className="font-serif italic text-[#D8B366] font-semibold">governar seus resultados</span>, não torcer por eles.
-              </p>
-            </motion.div>
-          </motion.div>
+              <div className="w-full md:w-1/3 aspect-square rounded-2xl bg-[#070607] border border-[#D8B366]/20 flex items-center justify-center relative overflow-hidden group">
+                <div className="absolute inset-0 bg-[radial-gradient(circle_at_center,_var(--tw-gradient-stops))] from-[#D8B366]/20 to-transparent opacity-50 group-hover:opacity-100 transition-opacity duration-500" />
+                <Sparkles className="w-16 h-16 text-[#D8B366] relative z-10" />
+              </div>
+            </div>
+          </div>
         </div>
       </section>
 
-      {/* ===== WHAT HAPPENS SECTION ===== */}
-      <section className="py-20 md:py-28 relative border-y border-white/5">
-        <div className="container mx-auto px-6">
-          <motion.div
-            initial="hidden"
-            whileInView="visible"
-            viewport={{ once: true, margin: "-100px" }}
-            variants={staggerContainer}
-            className="max-w-5xl mx-auto"
-          >
-            <motion.div variants={fadeInUp} className="mb-8 inline-flex items-center gap-2">
-              <span className="text-sm font-bold tracking-widest uppercase text-[#D8B366]">O que vai acontecer</span>
-            </motion.div>
+      {/* 6) BENEFÍCIO EXCLUSIVO */}
+      <section id="benefit" className="py-24 relative">
+        <div className="container mx-auto px-6 max-w-3xl text-center space-y-8">
+          <span className="text-[#D8B366] text-xs font-bold tracking-widest uppercase">Vantagem Presencial</span>
+          
+          <h2 className="text-3xl md:text-4xl font-display font-bold text-white">
+            Quem participa presencialmente ganha tudo.
+          </h2>
 
-            <motion.h2 variants={fadeInUp} className="text-4xl md:text-5xl font-sans font-bold text-white mb-8">
-              Um encontro estratégico, não motivacional.
-            </motion.h2>
+          <div className="space-y-6 text-lg text-white/80 font-light leading-relaxed">
+            <p>
+              Os participantes presenciais do evento terão <strong className="text-white font-semibold">acesso antecipado ao sistema de IA</strong>, além de um benefício especial de lançamento, reservado apenas para quem estiver no encontro em Orlando.
+            </p>
+            <p>
+              Essa condição <span className="underline decoration-[#E45B5B] decoration-2 underline-offset-4">não será disponibilizada online</span> nem após o evento.
+            </p>
+          </div>
 
-            <motion.p variants={fadeInUp} className="text-lg text-white/70 mb-12 max-w-2xl font-light">
-              Descubra como transformar vendas aleatórias em vendas previsíveis através de um sistema comprovado.
-            </motion.p>
+          <p className="text-2xl font-serif italic text-[#D8B366] font-semibold pt-4">
+            Quem entende o jogo, garante a vantagem antes dos outros.
+          </p>
+        </div>
+      </section>
 
-            <div className="grid md:grid-cols-2 gap-6 mb-12">
-              {[
-                {
-                  icon: "📊",
-                  title: "Processo de vendas",
-                  desc: "Transforma vendas aleatórias em vendas previsíveis e mensuráveis."
-                },
-                {
-                  icon: "📈",
-                  title: "Planejamento estratégico",
-                  desc: "Aumenta conversão e ticket médio com técnicas comprovadas."
-                },
-                {
-                  icon: "⏱️",
-                  title: "Organização libera tempo",
-                  desc: "Saia do operacional caótico e concentre força nas oportunidades."
-                },
-                {
-                  icon: "🤖",
-                  title: "IA e Tecnologia",
-                  desc: "Ferramentas práticas para organizar funil, dados e decisões."
-                }
-              ].map((item, i) => (
-                <motion.div
-                  key={i}
-                  variants={fadeInUp}
-                  className="glass-card-gold glass-card-hover p-8 rounded-xl border border-[#D8B366]/30"
+      {/* 7) PREÇO */}
+      <section id="pricing" className="py-24 relative bg-[#0C0B0D]">
+        <div className="container mx-auto px-6 max-w-4xl">
+          <div className="grid md:grid-cols-2 rounded-[24px] overflow-hidden border border-[#D8B366]/20 shadow-2xl">
+            {/* Left Panel - Dark */}
+            <div className="p-10 md:p-12 bg-[#131116] flex flex-col justify-center space-y-6">
+              <h3 className="text-2xl font-display font-bold text-white">Investimento</h3>
+              <div className="space-y-4 text-white/70 font-light text-sm leading-relaxed">
+                <p>O valor real deste evento não é US$ 49,90.</p>
+                <p>Pelo conteúdo, pela exclusividade e pelo lançamento do sistema de IA, ele poderia facilmente custar algumas centenas de dólares.</p>
+                <p>Mas optamos por um valor simbólico, porque queremos os corretores certos na sala.</p>
+              </div>
+            </div>
+
+            {/* Right Panel - Gold Highlight */}
+            <div className="p-10 md:p-12 bg-gradient-to-b from-[#D8B366]/20 to-[#D8B366]/5 flex flex-col justify-center items-center text-center space-y-6 relative">
+              <div className="space-y-2">
+                <p className="text-4xl md:text-5xl font-display font-bold text-[#F6E6C6]">US$ 49,90</p>
+                <p className="text-sm font-medium text-[#D8B366] uppercase tracking-wider">Valor especial de lançamento</p>
+              </div>
+              
+              <div className="space-y-2 text-sm text-white/80">
+                <p>Presencial • Vagas limitadas</p>
+              </div>
+
+              <button className="btn-primary w-full max-w-[200px] text-sm font-bold">
+                Garantir minha vaga
+              </button>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      {/* 8) INFO FINAIS */}
+      <section id="info" className="py-24 relative border-b border-[#D8B366]/10">
+        <div className="container mx-auto px-6 max-w-5xl">
+          <div className="grid md:grid-cols-2 gap-8">
+            {/* Location */}
+            <div className="p-8 rounded-[18px] bg-[#131116] border border-white/5 flex gap-5 items-start">
+              <div className="w-12 h-12 rounded-full bg-[#D8B366]/10 flex items-center justify-center flex-shrink-0 text-[#D8B366]">
+                <MapPin className="w-6 h-6" />
+              </div>
+              <div className="space-y-2">
+                <h3 className="text-lg font-bold text-white">Local do Evento</h3>
+                <div className="text-white/70 text-sm space-y-1 font-light">
+                  <p className="font-medium text-white">Orlando Public Library</p>
+                  <p>101 E. Central Blvd.</p>
+                  <p>Orlando, FL 32801</p>
+                  <p>Albertson Room</p>
+                </div>
+              </div>
+            </div>
+
+            {/* Date/Time */}
+            <div className="p-8 rounded-[18px] bg-[#131116] border border-white/5 flex gap-5 items-start">
+              <div className="w-12 h-12 rounded-full bg-[#D8B366]/10 flex items-center justify-center flex-shrink-0 text-[#D8B366]">
+                <Calendar className="w-6 h-6" />
+              </div>
+              <div className="space-y-2">
+                <h3 className="text-lg font-bold text-white">Data e Horário</h3>
+                <div className="text-white/70 text-sm space-y-1 font-light">
+                  <p className="font-medium text-white">13 de janeiro</p>
+                  <p>12:30 PM a 5:30 PM</p>
+                  <p className="text-white/50 text-xs pt-2">(Chegada recomendada a partir das 12:00 PM para credenciamento)</p>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      {/* 9) FAQ */}
+      <section id="faq" className="py-24 relative bg-[#070607]">
+        <div className="container mx-auto px-6 max-w-3xl">
+          <h2 className="text-3xl font-display font-bold text-white mb-10 text-center">Perguntas Frequentes</h2>
+          
+          <div className="space-y-3">
+            {[
+              { q: "Para quem é o evento?", a: "Para Corretores de Seguro de Vida e Distribuidores de Produtos Financeiros que buscam profissionalizar sua gestão e vendas." },
+              { q: "É somente presencial?", a: "Sim, o evento é 100% presencial em Orlando para garantir o networking e a experiência exclusiva." },
+              { q: "O que está incluso?", a: "Acesso ao evento, material de apoio e acesso antecipado ao sistema de IA." },
+              { q: "Como funciona o acesso ao benefício de lançamento?", a: "O benefício será revelado e liberado exclusivamente para os participantes presentes no dia." },
+              { q: "Posso transferir minha vaga?", a: "Sim, entre em contato com o suporte até 48h antes do evento." },
+              { q: "Como será o pagamento?", a: "Pagamento online seguro via cartão de crédito." }
+            ].map((item, i) => (
+              <div key={i} className="rounded-xl bg-[#131116] border border-white/5 overflow-hidden">
+                <button
+                  onClick={() => setExpandedFaq(expandedFaq === i ? null : i)}
+                  className="w-full flex items-center justify-between p-5 text-left hover:bg-white/5 transition-colors"
                 >
-                  <div className="text-4xl mb-4">{item.icon}</div>
-                  <h3 className="text-white font-bold text-lg mb-3">{item.title}</h3>
-                  <p className="text-white/70 text-sm leading-relaxed">{item.desc}</p>
-                </motion.div>
-              ))}
-            </div>
+                  <span className="text-white/90 font-medium text-sm">{item.q}</span>
+                  <ChevronDown className={`w-4 h-4 text-[#D8B366] transition-transform duration-300 ${expandedFaq === i ? 'rotate-180' : ''}`} />
+                </button>
+                {expandedFaq === i && (
+                  <div className="p-5 pt-0 border-t border-white/5 mt-0">
+                    <p className="text-white/60 text-sm font-light leading-relaxed pt-4">{item.a}</p>
+                  </div>
+                )}
+              </div>
+            ))}
+          </div>
+        </div>
+      </section>
 
-            <motion.div variants={fadeInUp} className="p-10 rounded-2xl bg-gradient-to-r from-[#D8B366]/15 via-[#D8B366]/5 to-transparent border border-[#D8B366]/25">
-              <p className="text-white text-lg font-light">
-                <span className="text-[#D8B366] font-semibold">Resultado:</span> Você passa de <span className="text-white font-semibold">vendedor reativo</span> para <span className="font-serif italic text-[#D8B366] font-bold">gestor do próprio resultado.</span>
+      {/* 10) CTA FINAL */}
+      <section className="py-32 relative overflow-hidden">
+        {/* Cinematic Gradient Background */}
+        <div className="absolute inset-0 bg-gradient-to-t from-[#D8B366]/20 via-[#070607] to-[#070607]" />
+        
+        <div className="container mx-auto px-6 relative z-10 text-center max-w-4xl">
+          <h2 className="text-4xl md:text-5xl font-display font-bold text-white mb-6 leading-tight">
+            Garanta sua vaga e esteja no lançamento
+          </h2>
+          <p className="text-xl md:text-2xl font-serif italic text-[#D8B366] mb-12">
+            Quem governa o processo, governa o resultado.
+          </p>
+          
+          <button className="btn-primary h-14 px-10 text-lg shadow-[0_0_50px_rgba(216,179,102,0.3)]">
+            Garantir minha vaga agora
+          </button>
+        </div>
+      </section>
+
+      {/* 11) CHECKOUT COPY (Pre-checkout Panel) */}
+      <section className="py-24 relative bg-[#0C0B0D] border-t border-[#D8B366]/10">
+        <div className="container mx-auto px-6 max-w-2xl">
+          <div className="rounded-[24px] bg-[#131116] border border-[#D8B366]/20 p-8 md:p-10 shadow-2xl">
+            <h3 className="text-xl font-bold text-white mb-6 border-b border-white/10 pb-4">
+              Você está a um passo de garantir sua vaga
+            </h3>
+            
+            <div className="space-y-4 text-sm text-white/80 font-light mb-8">
+              <p className="leading-relaxed">
+                Você está se inscrevendo em um evento presencial exclusivo, com foco em processo de vendas, organização e tecnologia aplicada, além do lançamento de um sistema de IA voltado para corretores.
               </p>
-            </motion.div>
-          </motion.div>
-        </div>
-      </section>
-
-      {/* ===== AI LAUNCH SECTION ===== */}
-      <section className="py-20 md:py-28 relative border-b border-white/5">
-        <div className="container mx-auto px-6">
-          <motion.div
-            initial="hidden"
-            whileInView="visible"
-            viewport={{ once: true, margin: "-100px" }}
-            variants={staggerContainer}
-            className="max-w-4xl mx-auto"
-          >
-            <motion.div variants={fadeInUp} className="mb-8">
-              <div className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-[#D8B366]/12 border border-[#D8B366]/40 backdrop-blur-sm">
-                <span className="text-lg">🤖</span>
-                <span className="text-xs font-bold tracking-widest uppercase text-[#D8B366]">Lançamento Exclusivo</span>
+              
+              <div className="space-y-2 pt-2">
+                <div className="flex items-center gap-2">
+                  <MapPin className="w-4 h-4 text-[#D8B366]" /> <span>Evento presencial | Orlando</span>
+                </div>
+                <div className="flex items-center gap-2">
+                  <Calendar className="w-4 h-4 text-[#D8B366]" /> <span>13 de janeiro | 12h às 17h</span>
+                </div>
+                <div className="flex items-center gap-2">
+                  <Sparkles className="w-4 h-4 text-[#D8B366]" /> <span>Benefício exclusivo para participantes presenciais</span>
+                </div>
               </div>
-            </motion.div>
-
-            <motion.h2 variants={fadeInUp} className="text-4xl md:text-5xl font-sans font-bold text-white mb-8">
-              Sistema de IA para <span className="text-[#D8B366]">corretores de vida</span>
-            </motion.h2>
-
-            <motion.p variants={fadeInUp} className="text-lg text-white/75 mb-12 leading-relaxed font-light max-w-2xl">
-              Será apresentado em <span className="text-white font-semibold">primeira mão</span> um sistema de inteligência artificial desenvolvido exclusivamente para corretores e distribuidores.
-            </motion.p>
-
-            <motion.div variants={fadeInUp} className="glass-card-gold glass-card-hover p-12 rounded-2xl space-y-8 border border-[#D8B366]/30">
-              <p className="text-white font-bold text-lg">Criado para:</p>
-              <div className="space-y-4">
-                {[
-                  "Organizar o processo de vendas com precisão",
-                  "Dar visibilidade real sobre funil e oportunidades",
-                  "Apoiar decisões com dados concretos",
-                  "Tirar o corretor do operacional caótico"
-                ].map((item, i) => (
-                  <div key={i} className="flex items-start gap-4">
-                    <Check className="w-5 h-5 text-[#D8B366] flex-shrink-0 mt-1" />
-                    <span className="text-white/85 font-light">{item}</span>
-                  </div>
-                ))}
+              
+              <div className="bg-[#D8B366]/10 rounded-lg p-4 border border-[#D8B366]/20 mt-6">
+                <p className="text-[#D8B366] font-bold text-lg mb-1">Investimento: US$ 49,90</p>
+                <p className="text-white/60 text-xs uppercase tracking-wide">Valor especial de lançamento</p>
               </div>
-            </motion.div>
-
-            <motion.div variants={fadeInUp} className="mt-10 p-8 rounded-xl border-2 border-[#E45B5B]/40 bg-[#E45B5B]/8">
-              <p className="text-white/90 text-base font-light">
-                <span className="text-[#E45B5B] font-bold">⚠️ Atenção:</span> Esse lançamento é <span className="font-semibold text-white">exclusivo para corretores e distribuidores</span> de produtos financeiros.
-              </p>
-            </motion.div>
-          </motion.div>
-        </div>
-      </section>
-
-      {/* ===== EXCLUSIVE BENEFIT ===== */}
-      <section className="py-20 md:py-28 relative border-b border-white/5">
-        <div className="container mx-auto px-6">
-          <motion.div
-            initial="hidden"
-            whileInView="visible"
-            viewport={{ once: true, margin: "-100px" }}
-            variants={staggerContainer}
-            className="max-w-4xl mx-auto"
-          >
-            <motion.div variants={fadeInUp} className="mb-8">
-              <div className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-[#D8B366]/12 border border-[#D8B366]/40 backdrop-blur-sm">
-                <span className="text-lg">🎁</span>
-                <span className="text-xs font-bold tracking-widest uppercase text-[#D8B366]">Vantagem Presencial</span>
+              
+              <div className="flex items-start gap-2 text-[#E45B5B] text-xs pt-2">
+                <AlertTriangle className="w-4 h-4 flex-shrink-0" />
+                <span>As vagas são limitadas e a condição especial não será repetida.</span>
               </div>
-            </motion.div>
-
-            <motion.h2 variants={fadeInUp} className="text-4xl md:text-5xl font-sans font-bold text-white mb-12">
-              Quem participa presencialmente ganha tudo.
-            </motion.h2>
-
-            <motion.div variants={fadeInUp} className="glass-card glass-card-hover p-12 rounded-2xl space-y-8 border border-white/20">
-              <p className="text-white/90 text-lg font-light">Os participantes presenciais terão:</p>
-              <div className="space-y-6">
-                {[
-                  { title: "Acesso antecipado", desc: "ao sistema de IA" },
-                  { title: "Benefício especial de lançamento", desc: "reservado apenas para Orlando" }
-                ].map((item, i) => (
-                  <div key={i} className="flex items-start gap-6">
-                    <span className="text-[#D8B366] font-bold text-2xl">→</span>
-                    <div>
-                      <p className="text-white font-bold text-lg">{item.title}</p>
-                      <p className="text-white/70 mt-1">{item.desc}</p>
-                    </div>
-                  </div>
-                ))}
-              </div>
-              <p className="text-white/60 text-sm pt-6 border-t border-white/10">
-                ⚠️ Essa condição não será disponibilizada online nem após o evento.
-              </p>
-            </motion.div>
-
-            <motion.p variants={fadeInUp} className="text-center text-white text-2xl md:text-3xl font-light mt-16">
-              Quem entende o jogo,
-              <br />
-              <span className="font-serif italic text-[#D8B366] font-bold">garante a vantagem antes dos outros.</span>
-            </motion.p>
-          </motion.div>
-        </div>
-      </section>
-
-      {/* ===== PRICING ===== */}
-      <section className="py-20 md:py-28 relative border-b border-white/5">
-        <div className="container mx-auto px-6">
-          <motion.div
-            initial="hidden"
-            whileInView="visible"
-            viewport={{ once: true, margin: "-100px" }}
-            variants={staggerContainer}
-            className="max-w-5xl mx-auto"
-          >
-            <motion.h2 variants={fadeInUp} className="text-4xl md:text-5xl font-sans font-bold text-white mb-12">
-              Especifique opções - <span className="text-[#D8B366]">confira os valores</span>
-            </motion.h2>
-
-            <div className="grid md:grid-cols-2 gap-8">
-              {[
-                {
-                  title: "US$ 49,90",
-                  subtitle: "Valor especial de lançamento",
-                  features: [
-                    "Acesso ao evento presencial",
-                    "Material exclusivo do evento",
-                    "Networking com especialistas"
-                  ]
-                },
-                {
-                  title: "US$ 49,90",
-                  subtitle: "Valor especial de lançamento",
-                  features: [
-                    "Tudo do plano anterior +",
-                    "Acesso antecipado ao sistema de IA",
-                    "Benefício especial de lançamento"
-                  ],
-                  highlight: true
-                }
-              ].map((plan, i) => (
-                <motion.div
-                  key={i}
-                  variants={fadeInUp}
-                  className={`glass-card-gold glass-card-hover p-12 rounded-2xl border ${plan.highlight ? 'border-[#D8B366]/60 bg-[#D8B366]/10' : 'border-[#D8B366]/30'}`}
-                >
-                  <div className="text-5xl font-bold text-white mb-2">{plan.title}</div>
-                  <p className="text-white/60 text-sm mb-8">{plan.subtitle}</p>
-                  <div className="space-y-3 mb-10">
-                    {plan.features.map((feature, j) => (
-                      <div key={j} className="flex items-start gap-3">
-                        <Check className="w-5 h-5 text-[#D8B366] flex-shrink-0 mt-0.5" />
-                        <span className="text-white/85 font-light">{feature}</span>
-                      </div>
-                    ))}
-                  </div>
-                  <button className={`w-full py-3 rounded-full font-bold transition-all duration-300 ${plan.highlight ? 'btn-primary' : 'border-2 border-white/30 text-white hover:border-white/60 hover:bg-white/5'}`}>
-                    Garanta sua vaga <ArrowRight className="inline ml-2 w-4 h-4" />
-                  </button>
-                </motion.div>
-              ))}
             </div>
-          </motion.div>
+
+            <button className="w-full btn-primary h-12 text-sm font-bold">
+              Continuar para o pagamento
+            </button>
+          </div>
         </div>
       </section>
 
-      {/* ===== EVENT INFO ===== */}
-      <section className="py-20 md:py-28 relative border-b border-white/5">
-        <div className="container mx-auto px-6">
-          <motion.div
-            initial="hidden"
-            whileInView="visible"
-            viewport={{ once: true, margin: "-100px" }}
-            variants={staggerContainer}
-            className="max-w-4xl mx-auto"
-          >
-            <motion.h2 variants={fadeInUp} className="text-4xl md:text-5xl font-sans font-bold text-white mb-12">
-              📍 Informações do Evento
-            </motion.h2>
-
-            <div className="grid md:grid-cols-2 gap-8">
-              {[
-                {
-                  title: "Local",
-                  items: [
-                    "Orlando Public Library",
-                    "101 E. Central Blvd.",
-                    "Orlando, FL 32801",
-                    "Albertson Room"
-                  ]
-                },
-                {
-                  title: "Data e Horário",
-                  items: [
-                    "📅 13 de janeiro",
-                    "🕐 12:30 PM a 5:30 PM",
-                    "🚪 Chegada às 12:00 PM"
-                  ]
-                }
-              ].map((group, i) => (
-                <motion.div key={i} variants={fadeInUp} className="glass-card-gold glass-card-hover p-10 rounded-xl border border-[#D8B366]/30">
-                  <h3 className="text-white font-bold mb-8 text-lg">{group.title}</h3>
-                  <div className="space-y-3 text-white/75">
-                    {group.items.map((item, j) => (
-                      <p key={j} className="text-base leading-relaxed font-light">{item}</p>
-                    ))}
-                  </div>
-                </motion.div>
-              ))}
-            </div>
-          </motion.div>
-        </div>
-      </section>
-
-      {/* ===== FAQ SECTION ===== */}
-      <section className="py-20 md:py-28 relative border-b border-white/5">
-        <div className="container mx-auto px-6">
-          <motion.div
-            initial="hidden"
-            whileInView="visible"
-            viewport={{ once: true, margin: "-100px" }}
-            variants={staggerContainer}
-            className="max-w-3xl mx-auto"
-          >
-            <motion.h2 variants={fadeInUp} className="text-4xl md:text-5xl font-sans font-bold text-white mb-12">
-              Perguntas frequentes
-            </motion.h2>
-
-            <div className="space-y-4">
-              {[
-                { q: "Como faço para confirmar minha presença?", a: "Após a compra, você receberá um email com instruções de confirmação e acesso aos materiais do evento." },
-                { q: "Posso assistir online?", a: "Este evento é presencial apenas. Não haverá transmissão online ou gravação disponível após o evento." },
-                { q: "Qual é a política de reembolso?", a: "Oferecemos reembolso total em até 7 dias antes do evento. Após esse período, o ingresso não é reembolsável." },
-                { q: "Vou receber material do evento?", a: "Sim, participantes presenciais recebem material exclusivo e acesso antecipado ao sistema de IA." }
-              ].map((item, i) => (
-                <motion.div key={i} variants={fadeInUp}>
-                  <button
-                    onClick={() => setExpandedFaq(expandedFaq === i ? null : i)}
-                    className="w-full flex items-center justify-between p-6 bg-white/5 border border-white/10 rounded-lg hover:bg-white/8 transition-all duration-300 text-left"
-                  >
-                    <span className="text-white font-semibold">{item.q}</span>
-                    <ChevronDown className={`w-5 h-5 text-[#D8B366] transition-transform duration-300 ${expandedFaq === i ? 'rotate-180' : ''}`} />
-                  </button>
-                  {expandedFaq === i && (
-                    <div className="p-6 bg-white/3 border border-white/10 border-t-0 rounded-b-lg">
-                      <p className="text-white/75 font-light">{item.a}</p>
-                    </div>
-                  )}
-                </motion.div>
-              ))}
-            </div>
-          </motion.div>
-        </div>
-      </section>
-
-      {/* ===== FINAL CTA ===== */}
-      <section className="py-20 md:py-28 relative border-b border-white/5">
-        <div className="container mx-auto px-6">
-          <motion.div
-            initial="hidden"
-            whileInView="visible"
-            viewport={{ once: true, margin: "-100px" }}
-            variants={staggerContainer}
-            className="max-w-3xl mx-auto text-center"
-          >
-            <motion.h2 variants={fadeInUp} className="text-5xl md:text-6xl font-sans font-bold text-white mb-8 leading-tight">
-              Quem governa o <span className="font-serif italic text-[#D8B366]">processo,</span>
-              <br />
-              governa o <span className="font-serif italic text-[#D8B366]">resultado.</span>
-            </motion.h2>
-
-            <motion.p variants={fadeInUp} className="text-white/70 text-xl mb-12 font-light leading-relaxed">
-              Não perca a oportunidade de estar no lançamento exclusivo do sistema de IA para corretores de vida.
-            </motion.p>
-
-            <motion.button variants={fadeInUp} className="btn-primary text-lg font-bold mx-auto">
-              Garanta sua vaga em Orlando <ArrowRight className="inline ml-3 w-5 h-5" />
-            </motion.button>
-          </motion.div>
-        </div>
-      </section>
-
-      {/* ===== FOOTER ===== */}
-      <footer className="py-16 border-t border-white/5">
-        <div className="container mx-auto px-6 text-center">
-          <p className="text-white/50 text-sm font-light">
-            © 2025. Evento exclusivo para Corretores de Seguro de Vida e Distribuidores de Produtos Financeiros.
+      {/* 12) FOOTER */}
+      <footer className="py-12 border-t border-white/5 bg-[#070607]">
+        <div className="container mx-auto px-6 text-center space-y-6">
+          <div className="text-[#D8B366] font-display font-bold text-lg">Processo & IA</div>
+          <p className="text-white/40 text-sm font-light">Venda não é sorte. É processo.</p>
+          
+          <div className="flex justify-center gap-8 text-xs text-white/50">
+            <a href="#" className="hover:text-white transition-colors">Política de Privacidade</a>
+            <a href="#" className="hover:text-white transition-colors">Termos de Uso</a>
+            <a href="#" className="hover:text-white transition-colors">Contato</a>
+          </div>
+          
+          <p className="text-white/30 text-[10px] uppercase tracking-widest">
+            Evento presencial • Informações sujeitas a alterações • Vagas limitadas
           </p>
         </div>
       </footer>

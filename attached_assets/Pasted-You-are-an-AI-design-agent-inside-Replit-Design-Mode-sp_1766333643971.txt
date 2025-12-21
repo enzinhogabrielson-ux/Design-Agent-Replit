@@ -1,0 +1,416 @@
+You are an AI design agent inside Replit Design Mode specialized in creating beautiful, conversion-focused landing pages.
+
+You are designing a premium, cinematic, black-and-gold event landing page for “Processo & IA” (Portuguese copy / pt-BR). Follow the design.json below as your design system guidelines. The overall aesthetic must feel luxurious, high-contrast, and “high-end”: near-black background, gold gradient accents (not flat yellow), subtle grain texture, soft glows, elegant rounded cards, thin gold borders, and gentle shadows.
+
+TECH
+- Use React + Tailwind + shadcn/ui.
+- Use lucide-react for icons.
+- Use framer-motion for subtle interactions.
+- Responsive (mobile-first): stacked sections on mobile, 2-col layouts on md+.
+- Build a small design system with tokens from design.json below.
+
+CONTENT LANGUAGE
+- UI copy in Portuguese (pt-BR).
+
+VISUAL STYLE (match the reference style)
+- Overall: premium, cinematic, sophisticated.
+- Background: near-black with radial gradients + very subtle noise/grain overlay.
+- Accents: gold gradient (not flat yellow), plus warm highlights.
+- Cards: dark surfaces, thin gold borders, gentle glow on hover.
+- Sections: generous spacing, clean hierarchy, minimal clutter.
+- Buttons: gold primary (pill), secondary ghost/outline.
+
+INTERACTIONS
+- Use framer-motion for subtle: fade-in on scroll, gentle hover lift for cards, shimmer/gradient movement on primary CTA hover (very subtle).
+
+IMAGERY
+- Generate images that match the palette: dark backgrounds, warm gold highlights, minimal props.
+- Avoid bright blues/greens.
+- Create abstract, premium visuals (no “cheesy AI”).
+
+Now, follow the design system below strictly.
+
+design.json
+{
+  "meta": {
+    "name": "Noir Gold Premiere",
+    "vibe": "cinematic-premium",
+    "keywords": [
+      "noir",
+      "gold",
+      "luxury",
+      "cinematic",
+      "high-contrast",
+      "soft-glow",
+      "grain"
+    ]
+  },
+  "foundations": {
+    "grid": {
+      "maxWidthPx": 1200,
+      "gutterPx": 24,
+      "sectionPaddingY": {
+        "mobilePx": 64,
+        "desktopPx": 96
+      },
+      "sectionPaddingX": {
+        "mobilePx": 20,
+        "desktopPx": 24
+      }
+    },
+    "spacingScalePx": [4, 8, 12, 16, 20, 24, 32, 40, 48, 64, 80, 96, 120],
+    "radiiPx": {
+      "sm": 10,
+      "md": 14,
+      "lg": 18,
+      "xl": 24,
+      "pill": 999
+    },
+    "border": {
+      "hairlinePx": 1,
+      "defaultPx": 1,
+      "colorTokens": {
+        "goldHairline": "rgba(219, 179, 102, 0.35)",
+        "goldStrong": "rgba(219, 179, 102, 0.55)",
+        "neutralHairline": "rgba(255, 255, 255, 0.08)"
+      }
+    },
+    "colors": {
+      "neutral": {
+        "bg0": "#070607",
+        "bg1": "#0C0B0D",
+        "bg2": "#131116",
+        "surface0": "rgba(255,255,255,0.03)",
+        "surface1": "rgba(255,255,255,0.06)",
+        "surface2": "rgba(255,255,255,0.09)",
+        "text0": "#FFFFFF",
+        "text1": "rgba(255,255,255,0.86)",
+        "text2": "rgba(255,255,255,0.68)",
+        "text3": "rgba(255,255,255,0.52)"
+      },
+      "gold": {
+        "g0": "#F6E6C6",
+        "g1": "#E7C98A",
+        "g2": "#D8B366",
+        "g3": "#B98A3B",
+        "g4": "#7A531E"
+      },
+      "status": {
+        "danger": "#E45B5B",
+        "success": "#67D3A0",
+        "warning": "#F3C969"
+      },
+      "gradients": {
+        "goldSheen": "linear-gradient(90deg, #7A531E 0%, #D8B366 35%, #F6E6C6 55%, #D8B366 75%, #7A531E 100%)",
+        "goldSoft": "linear-gradient(180deg, rgba(216,179,102,0.18) 0%, rgba(216,179,102,0.02) 55%, rgba(0,0,0,0) 100%)",
+        "noirRadial": "radial-gradient(1200px circle at 20% 0%, rgba(216,179,102,0.22) 0%, rgba(216,179,102,0.06) 25%, rgba(0,0,0,0) 55%), radial-gradient(1000px circle at 85% 10%, rgba(255,255,255,0.06) 0%, rgba(0,0,0,0) 45%)"
+      }
+    },
+    "typography": {
+      "fontFamily": {
+        "sans": "Inter, ui-sans-serif, system-ui",
+        "display": "Sora, Inter, ui-sans-serif, system-ui"
+      },
+      "weights": {
+        "regular": 400,
+        "medium": 500,
+        "semibold": 600,
+        "bold": 700,
+        "extrabold": 800
+      },
+      "sizes": {
+        "h1": { "mobilePx": 38, "desktopPx": 56, "lineHeight": 1.05, "letterSpacingEm": -0.02 },
+        "h2": { "mobilePx": 28, "desktopPx": 38, "lineHeight": 1.12, "letterSpacingEm": -0.015 },
+        "h3": { "mobilePx": 18, "desktopPx": 20, "lineHeight": 1.2, "letterSpacingEm": -0.01 },
+        "body": { "mobilePx": 15, "desktopPx": 16, "lineHeight": 1.6, "letterSpacingEm": 0 },
+        "small": { "mobilePx": 13, "desktopPx": 13, "lineHeight": 1.5, "letterSpacingEm": 0 },
+        "micro": { "mobilePx": 11, "desktopPx": 11, "lineHeight": 1.4, "letterSpacingEm": 0.08 }
+      },
+      "caseRules": {
+        "eyebrow": "uppercase",
+        "cta": "sentence"
+      }
+    },
+    "shadow": {
+      "soft": "0 10px 30px rgba(0,0,0,0.35)",
+      "lift": "0 18px 50px rgba(0,0,0,0.45)",
+      "glowGold": "0 0 0 1px rgba(216,179,102,0.25), 0 20px 60px rgba(216,179,102,0.10)"
+    },
+    "effects": {
+      "grain": {
+        "enabled": true,
+        "opacity": 0.08,
+        "blendMode": "overlay"
+      },
+      "vignette": {
+        "enabled": true,
+        "strength": 0.55
+      }
+    }
+  },
+  "components": {
+    "container": {
+      "maxWidthPx": 1200,
+      "paddingX": { "mobilePx": 20, "desktopPx": 24 }
+    },
+    "navbar": {
+      "heightPx": 72,
+      "background": "rgba(7,6,7,0.55)",
+      "backdropBlurPx": 12,
+      "borderBottom": "1px solid rgba(216,179,102,0.22)",
+      "linkStyle": {
+        "color": "rgba(255,255,255,0.72)",
+        "hoverColor": "#FFFFFF",
+        "activeUnderline": "2px solid rgba(216,179,102,0.6)"
+      }
+    },
+    "badge": {
+      "shape": "pill",
+      "padding": "6px 10px",
+      "bg": "rgba(216,179,102,0.12)",
+      "border": "1px solid rgba(216,179,102,0.25)",
+      "text": "rgba(246,230,198,0.95)",
+      "textTransform": "uppercase",
+      "letterSpacingEm": 0.08
+    },
+    "button": {
+      "primary": {
+        "shape": "pill",
+        "heightPx": 46,
+        "paddingX": 18,
+        "bg": "linear-gradient(180deg, rgba(246,230,198,1) 0%, rgba(216,179,102,1) 100%)",
+        "textColor": "#1A1208",
+        "border": "1px solid rgba(255,255,255,0.12)",
+        "shadow": "0 10px 30px rgba(0,0,0,0.35)",
+        "hover": {
+          "liftPx": 2,
+          "glow": "0 0 0 1px rgba(216,179,102,0.35), 0 18px 60px rgba(216,179,102,0.14)"
+        }
+      },
+      "secondary": {
+        "shape": "pill",
+        "heightPx": 46,
+        "paddingX": 18,
+        "bg": "transparent",
+        "textColor": "rgba(255,255,255,0.86)",
+        "border": "1px solid rgba(216,179,102,0.35)",
+        "hover": {
+          "bg": "rgba(216,179,102,0.08)"
+        }
+      }
+    },
+    "card": {
+      "radiusPx": 18,
+      "bg": "rgba(255,255,255,0.04)",
+      "border": "1px solid rgba(216,179,102,0.22)",
+      "shadow": "0 10px 30px rgba(0,0,0,0.35)",
+      "hover": {
+        "bg": "rgba(255,255,255,0.06)",
+        "shadow": "0 18px 50px rgba(0,0,0,0.45)",
+        "glow": "0 0 0 1px rgba(216,179,102,0.3)"
+      },
+      "paddingPx": 22
+    },
+    "sectionHeader": {
+      "align": "left",
+      "kickerStyle": "badge",
+      "titleColor": "#FFFFFF",
+      "accentColor": "#D8B366",
+      "subtitleColor": "rgba(255,255,255,0.68)",
+      "maxWidthPx": 760
+    },
+    "featureCard": {
+      "iconSizePx": 20,
+      "iconBg": "rgba(216,179,102,0.10)",
+      "iconBorder": "1px solid rgba(216,179,102,0.22)",
+      "titleColor": "#FFFFFF",
+      "textColor": "rgba(255,255,255,0.68)"
+    },
+    "pricing": {
+      "layout": "splitTone",
+      "leftPanelBg": "rgba(255,255,255,0.04)",
+      "rightPanelBg": "linear-gradient(180deg, rgba(216,179,102,0.22) 0%, rgba(216,179,102,0.08) 100%)",
+      "priceColor": "#F6E6C6",
+      "noteColor": "rgba(255,255,255,0.68)"
+    },
+    "accordion": {
+      "itemBg": "rgba(255,255,255,0.03)",
+      "itemBorder": "1px solid rgba(255,255,255,0.08)",
+      "itemHover": "rgba(216,179,102,0.06)",
+      "titleColor": "rgba(255,255,255,0.86)",
+      "contentColor": "rgba(255,255,255,0.68)"
+    },
+    "divider": {
+      "style": "thin",
+      "color": "rgba(216,179,102,0.18)"
+    }
+  },
+  "motion": {
+    "durationsMs": { "fast": 160, "base": 240, "slow": 420 },
+    "easing": "easeOut",
+    "hoverLiftPx": 2,
+    "reveal": {
+      "type": "fadeUp",
+      "distancePx": 14,
+      "staggerMs": 60
+    },
+    "ctaSheen": {
+      "enabled": true,
+      "intensity": "subtle"
+    }
+  },
+  "compositionRules": {
+    "hierarchy": [
+      "Use big display H1 with gold emphasis on key phrase",
+      "Keep paragraphs short and scannable",
+      "Use cards to group info; never long unbroken text blocks",
+      "Repeat CTA at least 3 times (Hero, Pricing, Final CTA)"
+    ],
+    "contrast": [
+      "Never use mid-gray text on mid-gray background",
+      "Use gold only as accent; keep body text white/soft white"
+    ],
+    "imagery": [
+      "Photos/visuals must feel premium, warm, and cinematic",
+      "Use warm highlights, soft shadows, minimal background clutter",
+      "Avoid bright saturated colors outside the palette"
+    ]
+  }
+}
+
+copy
+PAGE STRUCTURE (use anchors in the navbar)
+Create the following sections in order. Use anchors in the navbar.
+
+1) NAVBAR (sticky)
+- Left: Logo (create a minimal mark + wordmark placeholder: “Processo & IA”) in gold.
+- Center (desktop): links: Início, O Evento, Lançamento, Benefício, Investimento, Local, FAQ.
+- Right: Primary CTA button: “Garantir minha vaga”.
+- Navbar background: translucent dark with blur, thin gold bottom border.
+
+2) HERO (cinematic, 2 columns)
+Left column:
+- Eyebrow badge (small pill): “ENCONTRO PRESENCIAL E EXCLUSIVO”
+- H1 (big, bold): “Venda não é sorte. É processo.”
+- H1 line 2 (accent): “Agora, com inteligência artificial a seu favor.”
+- Subheadline paragraph:
+  “Um encontro presencial e exclusivo para Corretores de Seguro de Vida e Distribuidores de Produtos Financeiros que querem controle, previsibilidade e resultado real em vendas.”
+- Event meta row (icon + text chips):
+  - “📍 Orlando”
+  - “📅 13 de janeiro”
+  - “⏰ 12:30 PM às 5:30 PM”
+- Primary CTA: “Garanta sua vaga”
+- Secondary CTA (outline): “Ver o que vai acontecer”
+- Trust microcopy under CTAs: “Vagas limitadas • Presencial • Condição especial de lançamento”
+
+Right column:
+- Generate a premium hero visual: a dark/gold “event poster” style card featuring abstract AI + sales theme (no cheesy). Include: subtle gold rings, soft glow, and a faint horizon/light sweep near the bottom.
+- Optionally include a small floating card:
+  - “Investimento: US$ 49,90”
+  - “Local: Orlando Public Library”
+
+3) DOR / CONTEXTO (1 column, narrative)
+- Section title: “Você pode até vender bem.”
+- Lead paragraph with emphasis:
+  “Mas se não tiver processo, organização e inteligência, você sempre vai depender do improviso.”
+- Bullets (use check or dot):
+  - “E improviso não escala.”
+  - “Improviso cansa.”
+  - “Improviso custa dinheiro.”
+- Closing line in bold:
+  “Este evento foi criado para quem quer governar seus resultados, não torcer por eles.”
+- Design: dark card with thin gold border; highlight key words in gold.
+
+4) O QUE VAI ACONTECER (grid)
+- Title: “O que vai acontecer nesse evento”
+- Subtitle: “Este não é um evento motivacional. É um encontro estratégico, onde você vai:”
+- 5 feature cards (icon + title + 1–2 lines):
+  1) “Previsibilidade”: “Entender como processo de vendas gera previsibilidade”
+  2) “Conversão e ticket”: “Aprender como planejamento aumenta conversão e ticket médio”
+  3) “Tempo e foco”: “Ver como organização libera tempo e foco”
+  4) “Tecnologia e IA”: “Conhecer como tecnologia, CRM e IA podem trabalhar a seu favor”
+  5) “Gestão do resultado”: “Mudar o jogo: de vendedor reativo para gestor do próprio resultado”
+- Hover: subtle lift + glow.
+
+5) BLOCO ESPECIAL – LANÇAMENTO OFICIAL (highlight)
+- Title: “Lançamento exclusivo de um sistema de IA para corretores”
+- Body:
+  “Durante o evento, será apresentado em primeira mão um sistema de inteligência artificial desenvolvido exclusivamente para corretores de seguro de vida e distribuidores de produtos financeiros.”
+- Bullet list:
+  - “Organizar o processo de vendas”
+  - “Dar clareza sobre funil e oportunidades”
+  - “Apoiar decisões com dados”
+  - “Tirar o corretor do operacional caótico”
+- Warning note (gold accent + icon):
+  “⚠️ Esse lançamento é exclusivo para corretores e distribuidores de produtos financeiros”
+- Design: a larger “premium” card with gold gradient border and subtle inner glow.
+
+6) BENEFÍCIO EXCLUSIVO (single strong block)
+- Title: “Vantagem exclusiva para participantes presenciais”
+- Paragraphs:
+  “Os participantes presenciais do evento terão acesso antecipado ao sistema de IA, além de um benefício especial de lançamento, reservado apenas para quem estiver no encontro em Orlando.”
+  “Essa condição não será disponibilizada online nem após o evento.”
+- Closing bold line:
+  “Quem entende o jogo, garante a vantagem antes dos outros.”
+
+7) PREÇO COM ÂNCORA (pricing)
+- Title: “Investimento”
+- Anchor copy:
+  “O valor real deste evento não é US$ 49,90.
+  Pelo conteúdo, pela exclusividade e pelo lançamento do sistema de IA, ele poderia facilmente custar algumas centenas de dólares.
+  Mas optamos por um valor simbólico, porque queremos os corretores certos na sala.”
+- Pricing card (big):
+  - Price: “US$ 49,90”
+  - Sub: “Valor especial de lançamento | Presencial | Vagas limitadas”
+  - CTA: “Garantir minha vaga”
+- Style: split-tone card (left dark, right warm gold panel) OR single dark card with gold highlight bar.
+
+8) INFORMAÇÕES FINAIS (location + schedule)
+Two-column layout:
+Left: Location card
+- “Local do Evento”
+- “Orlando Public Library”
+- “101 E. Central Blvd.”
+- “Orlando, FL 32801”
+- “Albertson Room”
+- Add a small embedded map-like placeholder illustration (generated) in gold/gray.
+
+Right: Date/time card
+- “Data e Horário”
+- “📅 13 de janeiro”
+- “⏰ 12:30 PM a 5:30 PM”
+- “(Chegada recomendada a partir das 12:00 PM para credenciamento)”
+
+9) FAQ (accordion)
+Add 5–7 FAQs (create sensible ones):
+- “Para quem é o evento?”
+- “É somente presencial?”
+- “O que está incluso?”
+- “Como funciona o acesso ao benefício de lançamento?”
+- “Posso transferir minha vaga?”
+- “Como será o pagamento?”
+- (Opcional) “Vai ter gravação?” / “Há reembolso?”
+
+10) CTA FINAL (full-width)
+- Title: “Garanta sua vaga e esteja no lançamento”
+- Subtitle: “Quem governa o processo, governa o resultado.”
+- CTA button: “Garantir minha vaga agora”
+- Background: strongest cinematic gradient with subtle light sweep.
+
+11) CHECKOUT COPY (pre-checkout panel)
+Create a section that looks like a checkout summary card (not a real payment integration):
+- Title: “Você está a um passo de garantir sua vaga”
+- Text:
+  “Você está se inscrevendo em um evento presencial exclusivo, com foco em processo de vendas, organização e tecnologia aplicada, além do lançamento de um sistema de IA voltado para corretores.
+  📍 Evento presencial | Orlando
+  📅 13 de janeiro | ⏰ 12h às 17h
+  🎁 Benefício exclusivo para participantes presenciais
+  👉 Investimento: US$ 49,90
+  Valor especial de lançamento
+  ⚠️ As vagas são limitadas e a condição especial não será repetida.”
+- Add a final CTA (dummy): “Continuar para o pagamento”.
+
+12) FOOTER
+- Logo + short line: “Venda não é sorte. É processo.”
+- Links: Política de Privacidade, Termos, Contato.
+- Small disclaimer line (ex.: “Evento presencial. Informações sujeitas a alterações. Vagas limitadas.”)
