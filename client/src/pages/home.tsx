@@ -36,7 +36,7 @@ export default function Home() {
       
       {/* 1) NAVBAR (Sticky) */}
       <nav className="fixed top-0 left-0 right-0 z-50 h-[72px] bg-[#070607]/55 backdrop-blur-md border-b border-[#D8B366]/20 flex items-center transition-all duration-300">
-        <div className="container mx-auto px-6 flex items-center justify-between">
+        <div className="container mx-auto max-w-6xl px-6 flex items-center justify-between">
           <div className="flex items-center gap-8">
             <a href="#" className="group">
               <img 
@@ -72,7 +72,7 @@ export default function Home() {
         {/* Gradient for text contrast - left to right */}
         <div className="absolute inset-y-0 left-0 w-1/2 bg-gradient-to-r from-[#0a0809] via-[#0a0809]/60 to-transparent z-0" />
         
-        <div className="container mx-auto px-6 relative z-10">
+        <div className="container mx-auto max-w-6xl px-6 relative z-10">
           <div className="max-w-2xl">
             {/* Content */}
             <motion.div 
@@ -132,7 +132,7 @@ export default function Home() {
 
       {/* TRANSITION SECTION */}
       <section className="relative py-20 bg-gradient-to-b from-[#070607] to-[#0C0B0D] overflow-hidden">
-        <div className="container mx-auto px-6 flex flex-col items-center justify-center space-y-8">
+        <div className="container mx-auto max-w-6xl px-6 flex flex-col items-center justify-center space-y-8">
           {/* Social Proof Avatars */}
           <motion.div 
             initial={{ opacity: 0, y: 20 }}
@@ -232,7 +232,7 @@ export default function Home() {
 
       {/* 4) O QUE VAI ACONTECER */}
       <section className="py-24 relative bg-[#070607]">
-        <div className="container mx-auto px-6">
+        <div className="container mx-auto max-w-6xl px-6">
           <div className="max-w-5xl mx-auto">
             <div className="mb-12">
               <span className="text-[#D8B366] text-xs font-bold tracking-widest uppercase mb-3 block">O que vai acontecer nesse evento</span>
@@ -325,7 +325,7 @@ export default function Home() {
 
       {/* 6) BENEFÍCIO EXCLUSIVO */}
       <section id="benefit" className="py-24 relative">
-        <div className="container mx-auto px-6 max-w-3xl text-center space-y-8">
+        <div className="container mx-auto max-w-6xl px-6 text-center space-y-8">
           
           <h2 className="text-3xl md:text-4xl font-display font-bold text-white">
             Vantagem exclusiva para <span className="text-[#D8B366]">participantes presenciais</span>
@@ -348,7 +348,7 @@ export default function Home() {
 
       {/* 7) PREÇO */}
       <section id="pricing" className="py-24 relative bg-[#0C0B0D]">
-        <div className="container mx-auto px-6 max-w-4xl">
+        <div className="container mx-auto max-w-6xl px-6">
           <div className="grid md:grid-cols-2 rounded-[24px] overflow-hidden border border-[#D8B366]/20 shadow-2xl">
             {/* Left Panel - Dark */}
             <div className="p-10 md:p-12 bg-[#131116] flex flex-col justify-center space-y-6">
@@ -381,7 +381,7 @@ export default function Home() {
 
       {/* 8) INFO FINAIS */}
       <section id="info" className="py-24 relative border-b border-[#D8B366]/10">
-        <div className="container mx-auto px-6 max-w-5xl">
+        <div className="container mx-auto max-w-6xl px-6">
           <div className="grid md:grid-cols-2 gap-8">
             {/* Location */}
             <div className="p-8 rounded-[18px] bg-[#131116] border border-white/5 flex gap-5 items-start">
@@ -419,7 +419,7 @@ export default function Home() {
 
       {/* 9) FAQ */}
       <section id="faq" className="py-24 relative bg-[#070607]">
-        <div className="container mx-auto px-6 max-w-3xl">
+        <div className="container mx-auto max-w-6xl px-6">
           <h2 className="text-3xl font-display font-bold text-white mb-10 text-center">Perguntas Frequentes</h2>
           
           <div className="space-y-3">
@@ -455,7 +455,7 @@ export default function Home() {
         {/* Cinematic Gradient Background */}
         <div className="absolute inset-0 bg-gradient-to-t from-[#D8B366]/20 via-[#070607] to-[#070607]" />
         
-        <div className="container mx-auto px-6 relative z-10 text-center max-w-4xl">
+        <div className="container mx-auto max-w-6xl px-6 relative z-10 text-center">
           <h2 className="text-4xl md:text-5xl font-display font-bold text-white mb-6 leading-tight">
             Garanta sua vaga e esteja no lançamento
           </h2>
