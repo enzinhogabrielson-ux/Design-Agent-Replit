@@ -36,6 +36,13 @@ export default function Home() {
     }
   };
 
+  const scrollToTop = () => {
+    window.scrollTo({
+      top: 0,
+      behavior: 'smooth'
+    });
+  };
+
   return (
     <div className="min-h-screen bg-[#070607] text-white overflow-hidden selection:bg-[#D8B366] selection:text-black font-sans relative">
       
@@ -50,20 +57,20 @@ export default function Home() {
       <nav className="fixed top-0 left-0 right-0 z-50 h-[72px] bg-[#070607]/55 backdrop-blur-md border-b border-[#D8B366]/20 flex items-center transition-all duration-300">
         <div className="container mx-auto max-w-6xl px-6 flex items-center justify-between">
           <div className="flex items-center gap-8">
-            <a href="#" className="group">
+            <button onClick={scrollToTop} className="group cursor-pointer hover:drop-shadow-lg transition-all duration-300 active:scale-95">
               <img 
                 src={logoEusou} 
                 alt="Eusou360" 
                 className="h-8 object-contain opacity-90 group-hover:opacity-100 transition-opacity duration-300"
               />
-            </a>
-            <a href="#" className="group">
+            </button>
+            <button onClick={scrollToTop} className="group cursor-pointer hover:drop-shadow-lg transition-all duration-300 active:scale-95">
               <img 
                 src={logoErika} 
                 alt="Erika Crivellari" 
                 className="h-4 object-contain opacity-90 group-hover:opacity-100 transition-opacity duration-300"
               />
-            </a>
+            </button>
           </div>
           
           <div className="absolute left-1/2 transform -translate-x-1/2">
