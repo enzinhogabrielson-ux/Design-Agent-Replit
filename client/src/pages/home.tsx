@@ -169,14 +169,20 @@ export default function Home() {
       </section>
 
       {/* TRANSITION SECTION */}
-      <section className="relative py-20 bg-gradient-to-b from-[#070607] to-[#0C0B0D] overflow-hidden">
-        <div className="container mx-auto max-w-6xl px-6 flex flex-col items-center justify-center space-y-8">
-          {/* Social Proof Avatars with Broker Images */}
+      <section className="relative py-24 bg-[#070607] overflow-hidden">
+        {/* Glassmorphism Background Elements */}
+        <div className="absolute inset-0 pointer-events-none">
+          <div className="absolute top-0 left-0 w-96 h-96 bg-gradient-to-br from-[#D8B366]/20 to-transparent blur-3xl rounded-full opacity-60" />
+          <div className="absolute bottom-0 right-0 w-96 h-96 bg-gradient-to-tl from-[#D8B366]/15 to-transparent blur-3xl rounded-full opacity-40" />
+        </div>
+
+        <div className="container mx-auto max-w-6xl px-6 relative z-10">
+          {/* Social Proof Avatars with Glassmorphism Card */}
           <motion.div 
             initial={{ opacity: 0, y: 20 }}
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
-            className="flex items-center gap-3"
+            className="flex items-center gap-4 p-8 md:p-10 rounded-2xl backdrop-blur-xl bg-white/5 border border-[#D8B366]/30 shadow-[0_20px_40px_rgba(216,179,102,0.1)] hover:bg-white/8 transition-all duration-500 group"
           >
             <div className="flex -space-x-4">
               {[
@@ -186,53 +192,24 @@ export default function Home() {
               ].map((item, i) => (
                 <div
                   key={i}
-                  className="w-12 h-12 rounded-full border-2 border-[#070607] shadow-lg overflow-hidden relative group"
+                  className="w-14 h-14 rounded-full border-2 border-[#070607] shadow-lg overflow-hidden relative group/avatar"
                 >
                   <img 
                     src={item.img} 
                     alt={item.alt}
-                    className="w-full h-full object-cover group-hover:scale-110 transition-transform duration-300"
+                    className="w-full h-full object-cover group-hover/avatar:scale-110 transition-transform duration-300"
                   />
-                  <div className="absolute inset-0 bg-gradient-to-br from-[#D8B366]/40 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300" />
+                  <div className="absolute inset-0 bg-gradient-to-br from-[#D8B366]/40 to-transparent opacity-0 group-hover/avatar:opacity-100 transition-opacity duration-300" />
                 </div>
               ))}
             </div>
-            <p className="text-sm md:text-base text-white/80 font-light">
+            <p className="text-sm md:text-base text-white/90 font-light leading-relaxed flex-1">
               Profissionais que <span className="font-bold text-white">dominaram seu processo</span> e transformaram resultados
             </p>
+            
+            {/* Decorative gold accent */}
+            <div className="hidden md:block w-1 h-12 bg-gradient-to-b from-[#D8B366]/40 via-[#D8B366] to-[#D8B366]/40 rounded-full opacity-60 group-hover:opacity-100 transition-opacity duration-500" />
           </motion.div>
-
-          {/* Divider Line */}
-          <div className="w-16 h-px bg-gradient-to-r from-transparent via-[#D8B366] to-transparent" />
-
-          {/* Call to Action Badge */}
-          <motion.div
-            initial={{ opacity: 0, scale: 0.95 }}
-            whileInView={{ opacity: 1, scale: 1 }}
-            viewport={{ once: true }}
-            className="text-center space-y-4"
-          >
-            <p className="text-xs md:text-sm font-bold tracking-[0.15em] uppercase text-[#D8B366]">
-              Um encontro estratégico e exclusivo
-            </p>
-            <h3 className="text-3xl md:text-4xl font-display font-bold text-white leading-tight max-w-2xl">
-              <span className="font-serif italic text-[#D8B366]">Processo & IA</span> para corretores que querem dominar vendas
-            </h3>
-          </motion.div>
-
-          {/* Decorative Curved Line */}
-          <div className="w-24 h-24 mt-8">
-            <svg viewBox="0 0 100 100" className="w-full h-full" xmlns="http://www.w3.org/2000/svg">
-              <path
-                d="M 50 20 Q 70 50 50 80"
-                stroke="rgba(216,179,102,0.3)"
-                strokeWidth="2"
-                fill="none"
-                strokeLinecap="round"
-              />
-              <circle cx="50" cy="80" r="3" fill="#D8B366" />
-            </svg>
-          </div>
         </div>
       </section>
 
