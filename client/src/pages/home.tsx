@@ -235,7 +235,7 @@ export default function Home() {
               variants={staggerContainer}
             >
               <motion.h2 variants={fadeInUp} className="text-3xl md:text-[42px] font-display font-bold text-white mb-8 relative leading-tight">
-                Você pode até vender bem.
+                Você pode até <span className="font-serif italic text-white">vender bem</span>.
                 {/* Decorative sparkle */}
                 <Sparkles className="absolute -top-6 -left-6 w-8 h-8 text-[#D8B366]/40" />
               </motion.h2>
@@ -286,7 +286,7 @@ export default function Home() {
             <div className="mb-12">
               <span className="text-[#D8B366] text-xs font-bold tracking-widest uppercase mb-3 block">O que vai acontecer nesse evento</span>
               <h2 className="text-3xl md:text-[38px] font-display font-bold text-white leading-tight max-w-2xl">
-                Este não é um evento motivacional. <br />
+                Este não é um <span className="font-serif italic text-white">evento motivacional</span>. <br />
                 <span className="text-white/60">É um encontro estratégico, onde você vai:</span>
               </h2>
             </div>
@@ -336,7 +336,7 @@ export default function Home() {
                 
                 <h2 className="text-4xl md:text-5xl font-display font-bold text-white leading-[1.1]">
                   O primeiro sistema de IA <br />
-                  <span className="text-[#D8B366]">criado para corretores</span>
+                  <span className="font-serif italic text-[#D8B366]">criado para corretores</span>
                 </h2>
                 
                 <p className="text-xl text-white/80 font-light leading-relaxed max-w-xl">
@@ -593,7 +593,7 @@ export default function Home() {
         
         <div className="container mx-auto max-w-6xl px-6 relative z-10 text-center">
           <h2 className="text-4xl md:text-5xl font-display font-bold text-white mb-6 leading-tight">
-            Garanta sua vaga e esteja no lançamento
+            Garanta sua vaga e <br /><span className="font-serif italic text-white">esteja no lançamento</span>
           </h2>
           <p className="text-xl md:text-2xl font-serif italic text-[#D8B366] mb-12">
             Quem governa o processo, governa o resultado.
@@ -612,7 +612,7 @@ export default function Home() {
         <div className="container mx-auto px-6 max-w-2xl">
           <div className="rounded-[24px] bg-[#131116] border border-[#D8B366]/20 p-8 md:p-10 shadow-2xl">
             <h3 className="text-xl font-bold text-white mb-6 border-b border-white/10 pb-4">
-              Você está a um passo de garantir sua vaga
+              Você está a um passo de <span className="font-serif italic text-white">garantir sua vaga</span>
             </h3>
             
             <div className="space-y-4 text-sm text-white/80 font-light mb-8">
