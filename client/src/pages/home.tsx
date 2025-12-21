@@ -130,6 +130,65 @@ export default function Home() {
         </div>
       </section>
 
+      {/* TRANSITION SECTION */}
+      <section className="relative py-20 bg-gradient-to-b from-[#070607] to-[#0C0B0D] overflow-hidden">
+        <div className="container mx-auto px-6 flex flex-col items-center justify-center space-y-8">
+          {/* Social Proof Avatars */}
+          <motion.div 
+            initial={{ opacity: 0, y: 20 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true }}
+            className="flex items-center gap-3"
+          >
+            <div className="flex -space-x-4">
+              {[1, 2, 3].map((i) => (
+                <div
+                  key={i}
+                  className="w-12 h-12 rounded-full bg-gradient-to-br from-[#D8B366] to-[#B98A3B] border-2 border-[#070607] shadow-lg flex items-center justify-center text-white/80 font-bold"
+                >
+                  {i}
+                </div>
+              ))}
+            </div>
+            <p className="text-sm md:text-base text-white/80 font-light">
+              Mais de <span className="font-bold text-white">50 mil corretores</span> já fazem parte dessa transformação
+            </p>
+          </motion.div>
+
+          {/* Divider Line */}
+          <div className="w-16 h-px bg-gradient-to-r from-transparent via-[#D8B366] to-transparent" />
+
+          {/* Call to Action Badge */}
+          <motion.div
+            initial={{ opacity: 0, scale: 0.95 }}
+            whileInView={{ opacity: 1, scale: 1 }}
+            viewport={{ once: true }}
+            className="text-center space-y-4"
+          >
+            <p className="text-xs md:text-sm font-bold tracking-[0.15em] uppercase text-[#D8B366]">
+              Inscrições abertas por tempo limitado
+            </p>
+            <h3 className="text-3xl md:text-4xl font-display font-bold text-white leading-tight max-w-2xl">
+              O que é a <span className="text-[#D8B366]">Sessão Processo & IA</span>?
+            </h3>
+          </motion.div>
+
+          {/* Decorative Curved Line */}
+          <div className="w-24 h-24 mt-8">
+            <svg viewBox="0 0 100 100" className="w-full h-full" xmlns="http://www.w3.org/2000/svg">
+              <path
+                d="M 50 20 Q 70 50 50 80"
+                stroke="rgba(216,179,102,0.3)"
+                strokeWidth="2"
+                fill="none"
+                strokeLinecap="round"
+              />
+              <circle cx="50" cy="80" r="3" fill="#D8B366" />
+            </svg>
+          </div>
+        </div>
+      </section>
+
       {/* 3) DOR / CONTEXTO */}
       <section id="context" className="py-24 relative border-t border-[#D8B366]/10 bg-[#0C0B0D]">
         <div className="container mx-auto px-6 max-w-4xl">
