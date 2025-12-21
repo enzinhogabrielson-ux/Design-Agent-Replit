@@ -8,6 +8,9 @@ import abstractImg from "@assets/generated_images/abstract_visualization_of_sale
 import keyImg from "@assets/generated_images/golden_key_or_vip_card_floating.png";
 import ticketImg from "@assets/generated_images/luxurious_golden_event_ticket_floating.png";
 import libraryImg from "@assets/generated_images/orlando_public_library_stylized_architecture.png";
+import brokerMale1 from "@assets/generated_images/professional_male_insurance_broker_portrait.png";
+import brokerFemale from "@assets/generated_images/professional_female_insurance_broker_portrait.png";
+import brokerMale2 from "@assets/generated_images/professional_latin_male_broker_portrait.png";
 import { useState } from "react";
 
 export default function Home() {
@@ -165,50 +168,66 @@ export default function Home() {
       </section>
 
       {/* TRANSITION SECTION */}
-      <section className="relative py-20 bg-gradient-to-b from-[#070607] to-[#0C0B0D] overflow-hidden">
-        <div className="container mx-auto max-w-6xl px-6 flex flex-col items-center justify-center space-y-8">
-          {/* Social Proof Avatars */}
+      <section className="relative py-24 bg-gradient-to-b from-[#070607] to-[#0C0B0D] overflow-hidden">
+        <div className="container mx-auto max-w-6xl px-6 flex flex-col items-center justify-center space-y-12">
+          {/* Social Proof with Real Broker Images */}
           <motion.div 
             initial={{ opacity: 0, y: 20 }}
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
-            className="flex items-center gap-3"
+            className="flex flex-col items-center gap-6 w-full"
           >
-            <div className="flex -space-x-4">
-              {[1, 2, 3].map((i) => (
-                <div
+            <div className="flex items-center justify-center gap-6 flex-wrap">
+              {[
+                { img: brokerMale1, name: "Corretores de Seguro de Vida" },
+                { img: brokerFemale, name: "Distribuidoras de Produtos Financeiros" },
+                { img: brokerMale2, name: "Gestores de Carteira" }
+              ].map((item, i) => (
+                <motion.div
                   key={i}
-                  className="w-12 h-12 rounded-full bg-gradient-to-br from-[#D8B366] to-[#B98A3B] border-2 border-[#070607] shadow-lg flex items-center justify-center text-white/80 font-bold"
+                  initial={{ opacity: 0, scale: 0.8 }}
+                  whileInView={{ opacity: 1, scale: 1 }}
+                  viewport={{ once: true }}
+                  transition={{ delay: i * 0.1 }}
+                  className="relative group"
                 >
-                  {i}
-                </div>
+                  <div className="absolute inset-0 bg-gradient-to-br from-[#D8B366] to-[#B98A3B] rounded-full opacity-0 group-hover:opacity-20 blur-xl transition-opacity duration-500" />
+                  <img 
+                    src={item.img} 
+                    alt={item.name}
+                    className="w-16 h-16 rounded-full border-2 border-[#D8B366]/40 object-cover shadow-lg group-hover:border-[#D8B366] transition-all duration-300"
+                  />
+                </motion.div>
               ))}
             </div>
-            <p className="text-sm md:text-base text-white/80 font-light">
-              Mais de <span className="font-bold text-white">50 mil corretores</span> já fazem parte dessa transformação
+            <p className="text-sm md:text-base text-white/80 font-light text-center max-w-2xl">
+              Profissionais como você já <span className="font-bold text-white">dominaram seu processo</span> e transformaram seus resultados com inteligência e organização
             </p>
           </motion.div>
 
           {/* Divider Line */}
           <div className="w-16 h-px bg-gradient-to-r from-transparent via-[#D8B366] to-transparent" />
 
-          {/* Call to Action Badge */}
+          {/* Main Value Proposition */}
           <motion.div
             initial={{ opacity: 0, scale: 0.95 }}
             whileInView={{ opacity: 1, scale: 1 }}
             viewport={{ once: true }}
-            className="text-center space-y-4"
+            className="text-center space-y-6 max-w-3xl"
           >
             <p className="text-xs md:text-sm font-bold tracking-[0.15em] uppercase text-[#D8B366]">
-              Inscrições abertas por tempo limitado
+              Um encontro estratégico e exclusivo
             </p>
-            <h3 className="text-3xl md:text-4xl font-display font-bold text-white leading-tight max-w-2xl">
-              O que é a <span className="text-[#D8B366]">Sessão Processo & IA</span>?
-            </h3>
+            <h2 className="text-4xl md:text-5xl font-display font-bold text-white leading-tight">
+              <span className="font-serif italic text-[#D8B366]">Processo & IA</span> para corretores que querem dominar vendas
+            </h2>
+            <p className="text-lg text-white/70 font-light max-w-2xl mx-auto">
+              Não é motivação que falta. É a metodologia certa, a organização necessária e a tecnologia que transforma dados em contratos fechados.
+            </p>
           </motion.div>
 
           {/* Decorative Curved Line */}
-          <div className="w-24 h-24 mt-8">
+          <div className="w-24 h-24">
             <svg viewBox="0 0 100 100" className="w-full h-full" xmlns="http://www.w3.org/2000/svg">
               <path
                 d="M 50 20 Q 70 50 50 80"
