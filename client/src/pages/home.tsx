@@ -55,7 +55,7 @@ export default function Home() {
               initial="hidden"
               animate="visible"
               variants={staggerContainer}
-              className="space-y-12"
+              className="space-y-6"
             >
               {/* Badge with left border */}
               <motion.div variants={fadeInUp}>
@@ -73,9 +73,9 @@ export default function Home() {
 
               {/* Subheading with gold accent */}
               <motion.div variants={fadeInUp}>
-                <h2 className="text-2xl md:text-3xl font-sans font-normal text-white/90 leading-relaxed">
-                  <span className="text-[#D8B366]">Agora, com inteligência</span><br />
-                  <span className="text-[#D8B366]">artificial a seu favor.</span>
+                <h2 className="text-xl md:text-2xl font-serif italic font-normal text-[#D8B366] leading-relaxed">
+                  Agora, com inteligência<br />
+                  artificial a seu favor.
                 </h2>
               </motion.div>
 
