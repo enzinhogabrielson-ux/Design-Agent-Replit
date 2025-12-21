@@ -4,6 +4,9 @@ import heroBg from "@assets/bg_lp_1766335180336.png";
 import dashboardImg from "@assets/generated_images/futuristic_ai_dashboard_for_insurance_brokers_with_gold_accents.png";
 import logoEusou from "@assets/logo_erika_1766334069365.png";
 import logoErika from "@assets/LOGO_Erika_1766334075618.png";
+import abstractImg from "@assets/generated_images/abstract_visualization_of_sales_chaos_vs_order_gold.png";
+import keyImg from "@assets/generated_images/golden_key_or_vip_card_floating.png";
+import libraryImg from "@assets/generated_images/orlando_public_library_stylized_architecture.png";
 import { useState } from "react";
 
 export default function Home() {
@@ -213,50 +216,62 @@ export default function Home() {
       </section>
 
       {/* 3) DOR / CONTEXTO */}
-      <section id="context" className="py-24 relative border-t border-[#D8B366]/10 bg-[#0C0B0D] overflow-hidden">
+      <section id="context" className="py-32 relative border-t border-[#D8B366]/10 bg-[#0C0B0D] overflow-hidden">
         {/* Background Elements */}
         <div className="absolute top-0 right-0 w-[600px] h-[600px] bg-[#D8B366]/5 blur-[120px] rounded-full mix-blend-screen pointer-events-none translate-x-1/3 -translate-y-1/4" />
         <div className="absolute bottom-0 left-0 w-[400px] h-[400px] bg-[#D8B366]/5 blur-[100px] rounded-full mix-blend-screen pointer-events-none -translate-x-1/3 translate-y-1/4" />
+        
+        {/* Subtle Background Image */}
+        <div className="absolute inset-0 z-0 opacity-20 mix-blend-overlay">
+            <img src={abstractImg} alt="" className="w-full h-full object-cover object-center" />
+        </div>
 
-        <div className="container mx-auto px-6 max-w-4xl relative z-10">
-          <motion.div
-            initial="hidden"
-            whileInView="visible"
-            viewport={{ once: true, margin: "-100px" }}
-            variants={staggerContainer}
-          >
-            <motion.h2 variants={fadeInUp} className="text-3xl md:text-[38px] font-display font-bold text-white mb-8 relative">
-              Você pode até vender bem.
-              {/* Decorative sparkle */}
-              <Sparkles className="absolute -top-6 -left-6 w-8 h-8 text-[#D8B366]/40" />
-            </motion.h2>
+        <div className="container mx-auto px-6 max-w-6xl relative z-10">
+          <div className="grid md:grid-cols-2 gap-12 items-center">
+            <motion.div
+              initial="hidden"
+              whileInView="visible"
+              viewport={{ once: true, margin: "-100px" }}
+              variants={staggerContainer}
+            >
+              <motion.h2 variants={fadeInUp} className="text-3xl md:text-[42px] font-display font-bold text-white mb-8 relative leading-tight">
+                Você pode até vender bem.
+                {/* Decorative sparkle */}
+                <Sparkles className="absolute -top-6 -left-6 w-8 h-8 text-[#D8B366]/40" />
+              </motion.h2>
 
-            <motion.div variants={fadeInUp} className="p-8 md:p-10 rounded-[18px] bg-[#131116]/80 backdrop-blur-md border border-[#D8B366]/20 shadow-[0_10px_30px_rgba(0,0,0,0.35)] relative overflow-hidden group hover:border-[#D8B366]/40 hover:shadow-[0_20px_50px_rgba(216,179,102,0.1)] transition-all duration-500">
-              <div className="absolute top-0 left-0 w-1 h-full bg-[#D8B366]" />
-              <div className="absolute inset-0 bg-gradient-to-br from-[#D8B366]/5 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500" />
-              
-              <p className="text-xl md:text-2xl text-white/90 font-light mb-8 leading-relaxed relative z-10">
-                Mas se não tiver <span className="text-[#D8B366] font-semibold">processo, organização e inteligência</span>, você sempre vai depender do improviso.
-              </p>
+              <motion.div variants={fadeInUp} className="p-8 md:p-10 rounded-[24px] bg-[#131116]/80 backdrop-blur-md border border-[#D8B366]/20 shadow-[0_10px_30px_rgba(0,0,0,0.35)] relative overflow-hidden group hover:border-[#D8B366]/40 hover:shadow-[0_20px_50px_rgba(216,179,102,0.1)] transition-all duration-500">
+                <div className="absolute top-0 left-0 w-1 h-full bg-[#D8B366]" />
+                <div className="absolute inset-0 bg-gradient-to-br from-[#D8B366]/5 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500" />
+                
+                <p className="text-xl md:text-2xl text-white/90 font-light mb-8 leading-relaxed relative z-10">
+                  Mas se não tiver <span className="text-[#D8B366] font-semibold font-serif italic">processo, organização e inteligência</span>, você sempre vai depender do improviso.
+                </p>
 
-              <div className="space-y-4 mb-8">
-                {[
-                  "E improviso não escala.",
-                  "Improviso cansa.",
-                  "Improviso custa dinheiro."
-                ].map((item, i) => (
-                  <div key={i} className="flex items-center gap-3">
-                    <div className="w-1.5 h-1.5 rounded-full bg-[#E45B5B]" />
-                    <span className="text-white/80 text-lg font-light">{item}</span>
-                  </div>
-                ))}
-              </div>
+                <div className="space-y-4 mb-8">
+                  {[
+                    "E improviso não escala.",
+                    "Improviso cansa.",
+                    "Improviso custa dinheiro."
+                  ].map((item, i) => (
+                    <div key={i} className="flex items-center gap-3">
+                      <div className="w-1.5 h-1.5 rounded-full bg-[#E45B5B]" />
+                      <span className="text-white/80 text-lg font-light">{item}</span>
+                    </div>
+                  ))}
+                </div>
 
-              <p className="text-lg text-white font-medium border-t border-[#D8B366]/10 pt-6">
-                Este evento foi criado para quem quer <span className="font-serif italic text-[#D8B366]">governar seus resultados</span>, não torcer por eles.
-              </p>
+                <p className="text-lg text-white font-medium border-t border-[#D8B366]/10 pt-6">
+                  Este evento foi criado para quem quer <span className="font-serif italic text-[#D8B366]">governar seus resultados</span>, não torcer por eles.
+                </p>
+              </motion.div>
             </motion.div>
-          </motion.div>
+            
+            {/* Right Side Visual (Optional, or leave empty for cleaner look if image is background) */}
+             <div className="hidden md:block relative h-full min-h-[400px]">
+                {/* Could place a stylized graphic here if needed, but background image covers it */}
+             </div>
+          </div>
         </div>
       </section>
 
@@ -368,27 +383,47 @@ export default function Home() {
       </section>
 
       {/* 6) BENEFÍCIO EXCLUSIVO */}
-      <section id="benefit" className="py-24 relative overflow-hidden">
+      <section id="benefit" className="py-32 relative overflow-hidden bg-[#070607]">
         <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[600px] h-[600px] bg-[#D8B366]/5 blur-[120px] rounded-full pointer-events-none" />
         
-        <div className="container mx-auto max-w-6xl px-6 text-center space-y-8 relative z-10">
-          
-          <h2 className="text-3xl md:text-4xl font-display font-bold text-white">
-            Vantagem exclusiva para <span className="text-[#D8B366]">participantes presenciais</span>
-          </h2>
+        {/* Background Image Accent */}
+        <div className="absolute right-0 top-1/2 -translate-y-1/2 w-1/3 h-full opacity-20 mix-blend-screen pointer-events-none mask-image-linear-to-l">
+             <img src={keyImg} alt="" className="w-full h-full object-cover" />
+        </div>
 
-          <div className="space-y-6 text-lg text-white/80 font-light leading-relaxed">
-            <p>
-              Os participantes presenciais do evento terão <strong className="text-white font-semibold">acesso antecipado ao sistema de IA</strong>, além de um benefício especial de lançamento, reservado apenas para quem estiver no encontro em Orlando.
-            </p>
-            <p>
-              Essa condição <span className="underline decoration-[#E45B5B] decoration-2 underline-offset-4">não será disponibilizada online</span> nem após o evento.
-            </p>
+        <div className="container mx-auto max-w-6xl px-6 relative z-10">
+          <div className="flex flex-col md:flex-row items-center gap-16">
+             <div className="md:w-1/2 space-y-8 text-left">
+                <span className="text-[#D8B366] text-xs font-bold tracking-widest uppercase mb-2 block">Vantagem Presencial</span>
+                <h2 className="text-3xl md:text-5xl font-display font-bold text-white leading-tight">
+                    Vantagem exclusiva para <span className="text-[#D8B366] font-serif italic">participantes presenciais</span>
+                </h2>
+
+                <div className="space-y-6 text-lg text-white/80 font-light leading-relaxed">
+                    <p>
+                    Os participantes presenciais do evento terão <strong className="text-white font-semibold">acesso antecipado ao sistema de IA</strong>, além de um benefício especial de lançamento, reservado apenas para quem estiver no encontro em Orlando.
+                    </p>
+                    <p>
+                    Essa condição <span className="text-[#E45B5B] font-medium border-b border-[#E45B5B]/30 pb-0.5">não será disponibilizada online</span> nem após o evento.
+                    </p>
+                </div>
+
+                <p className="text-2xl font-serif italic text-[#D8B366] font-semibold pt-4 border-l-2 border-[#D8B366] pl-6">
+                    Quem entende o jogo, garante a vantagem antes dos outros.
+                </p>
+             </div>
+             
+             <div className="md:w-1/2 relative">
+                <div className="relative rounded-[24px] overflow-hidden border border-[#D8B366]/20 shadow-[0_0_100px_rgba(216,179,102,0.1)] group">
+                    <div className="absolute inset-0 bg-gradient-to-t from-[#070607] via-transparent to-transparent z-10" />
+                    <img src={keyImg} alt="Benefício Exclusivo" className="w-full aspect-[4/3] object-cover transform group-hover:scale-105 transition-transform duration-700" />
+                    
+                    <div className="absolute bottom-6 left-6 z-20 bg-[#131116]/90 backdrop-blur-md px-6 py-3 rounded-full border border-[#D8B366]/30">
+                        <span className="text-[#D8B366] font-bold text-sm tracking-wider uppercase">Acesso VIP</span>
+                    </div>
+                </div>
+             </div>
           </div>
-
-          <p className="text-2xl font-serif italic text-[#D8B366] font-semibold pt-4">
-            Quem entende o jogo, garante a vantagem antes dos outros.
-          </p>
         </div>
       </section>
 
@@ -431,36 +466,41 @@ export default function Home() {
       </section>
 
       {/* 8) INFO FINAIS */}
-      <section id="info" className="py-24 relative border-b border-[#D8B366]/10">
-        <div className="container mx-auto max-w-6xl px-6">
+      <section id="info" className="py-32 relative border-b border-[#D8B366]/10 overflow-hidden">
+        <div className="absolute inset-0 opacity-10">
+            <img src={libraryImg} alt="" className="w-full h-full object-cover" />
+            <div className="absolute inset-0 bg-[#070607]/90" />
+        </div>
+
+        <div className="container mx-auto max-w-6xl px-6 relative z-10">
           <div className="grid md:grid-cols-2 gap-8">
             {/* Location */}
-            <div className="p-8 rounded-[18px] bg-[#131116] border border-white/5 flex gap-5 items-start">
-              <div className="w-12 h-12 rounded-full bg-[#D8B366]/10 flex items-center justify-center flex-shrink-0 text-[#D8B366]">
-                <MapPin className="w-6 h-6" />
+            <div className="p-10 rounded-[24px] bg-[#131116]/80 backdrop-blur-md border border-[#D8B366]/10 flex gap-6 items-start hover:border-[#D8B366]/30 transition-colors group">
+              <div className="w-14 h-14 rounded-2xl bg-[#D8B366]/10 flex items-center justify-center flex-shrink-0 text-[#D8B366] group-hover:scale-110 transition-transform duration-300 border border-[#D8B366]/20">
+                <MapPin className="w-7 h-7" />
               </div>
-              <div className="space-y-2">
-                <h3 className="text-lg font-bold text-white">Local do Evento</h3>
-                <div className="text-white/70 text-sm space-y-1 font-light">
-                  <p className="font-medium text-white">Orlando Public Library</p>
+              <div className="space-y-3">
+                <h3 className="text-xl font-bold text-white font-display">Local do Evento</h3>
+                <div className="text-white/70 text-base space-y-1.5 font-light">
+                  <p className="font-medium text-white text-lg">Orlando Public Library</p>
                   <p>101 E. Central Blvd.</p>
                   <p>Orlando, FL 32801</p>
-                  <p>Albertson Room</p>
+                  <p className="text-[#D8B366]">Albertson Room</p>
                 </div>
               </div>
             </div>
 
             {/* Date/Time */}
-            <div className="p-8 rounded-[18px] bg-[#131116] border border-white/5 flex gap-5 items-start">
-              <div className="w-12 h-12 rounded-full bg-[#D8B366]/10 flex items-center justify-center flex-shrink-0 text-[#D8B366]">
-                <Calendar className="w-6 h-6" />
+            <div className="p-10 rounded-[24px] bg-[#131116]/80 backdrop-blur-md border border-[#D8B366]/10 flex gap-6 items-start hover:border-[#D8B366]/30 transition-colors group">
+              <div className="w-14 h-14 rounded-2xl bg-[#D8B366]/10 flex items-center justify-center flex-shrink-0 text-[#D8B366] group-hover:scale-110 transition-transform duration-300 border border-[#D8B366]/20">
+                <Calendar className="w-7 h-7" />
               </div>
-              <div className="space-y-2">
-                <h3 className="text-lg font-bold text-white">Data e Horário</h3>
-                <div className="text-white/70 text-sm space-y-1 font-light">
-                  <p className="font-medium text-white">13 de janeiro</p>
-                  <p>12:30 PM a 5:30 PM</p>
-                  <p className="text-white/50 text-xs pt-2">(Chegada recomendada a partir das 12:00 PM para credenciamento)</p>
+              <div className="space-y-3">
+                <h3 className="text-xl font-bold text-white font-display">Data e Horário</h3>
+                <div className="text-white/70 text-base space-y-1.5 font-light">
+                  <p className="font-medium text-white text-lg">13 de janeiro</p>
+                  <p className="text-lg">12:30 PM a 5:30 PM</p>
+                  <p className="text-white/40 text-sm pt-2 border-t border-white/5 mt-2">(Chegada recomendada a partir das 12:00 PM para credenciamento)</p>
                 </div>
               </div>
             </div>
