@@ -92,9 +92,9 @@ export default function Home() {
       </nav>
 
       {/* 2) HERO (Cinematic) */}
-      <section id="hero" className="relative min-h-screen flex items-center pt-20 pb-20 overflow-hidden bg-cover bg-center" style={{ backgroundImage: `url(${heroBg})` }}>
+      <section id="hero" className="relative min-h-[110vh] flex items-center pt-40 pb-20 overflow-hidden bg-cover bg-center" style={{ backgroundImage: `url(${heroBg})` }}>
         {/* Gradient for text contrast - left to right */}
-        <div className="absolute inset-y-0 left-0 w-1/2 bg-gradient-to-r from-[#0a0809] via-[#0a0809]/60 to-transparent z-0" />
+        <div className="absolute inset-y-0 left-0 w-[75%] bg-gradient-to-r from-[#0a0809] via-[#0a0809]/85 to-transparent z-0" />
         
         <div className="container mx-auto max-w-6xl px-6 relative z-10">
           <div className="max-w-2xl">
