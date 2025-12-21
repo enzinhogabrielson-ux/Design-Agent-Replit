@@ -26,8 +26,8 @@
   --color-input: var(--input);
   --color-ring: var(--ring);
 
-  --font-sans: 'Inter', sans-serif;
-  --font-display: 'Sora', sans-serif;
+  --font-sans: 'Sora', sans-serif;
+  --font-serif: 'Source Serif 4', serif;
 
   --radius-sm: calc(var(--radius) - 4px);
   --radius-md: calc(var(--radius) - 2px);
@@ -80,6 +80,10 @@
 }
 
 @layer utilities {
+  .font-serif-accent {
+    @apply font-serif italic font-semibold;
+  }
+
   .text-gold-gradient {
     @apply bg-clip-text text-transparent;
     background-image: linear-gradient(90deg, #F6E6C6 0%, #D8B366 50%, #B98A3B 100%);
@@ -128,40 +132,13 @@
     background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 200 200' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='noiseFilter'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.65' numOctaves='3' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23noiseFilter)'/%3E%3C/svg%3E");
   }
 
-  .gold-shine {
-    position: relative;
-    overflow: hidden;
-  }
-
-  .gold-shine::after {
-    content: '';
-    position: absolute;
-    top: 0;
-    left: -100%;
-    width: 100%;
-    height: 100%;
-    background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.2), transparent);
-    animation: shine 3s infinite;
-  }
-
-  @keyframes shine {
-    0% { left: -100%; }
-    100% { left: 100%; }
-  }
-
-  /* Badge Styles */
   .badge-gold {
-    @apply inline-flex items-center gap-2 px-3 py-1 rounded-full border;
+    @apply inline-flex items-center gap-2 px-3 py-1 rounded-full border text-xs font-semibold tracking-wider uppercase;
     background: rgba(216, 179, 102, 0.12);
     border-color: rgba(216, 179, 102, 0.25);
     color: rgba(246, 230, 198, 0.95);
-    font-size: 0.75rem;
-    font-weight: 600;
-    letter-spacing: 0.08em;
-    text-transform: uppercase;
   }
 
-  /* CTA Button */
   .btn-primary {
     @apply relative inline-flex items-center justify-center h-12 px-8 rounded-full font-bold transition-all duration-300;
     background-image: linear-gradient(180deg, rgba(246,230,198,1) 0%, rgba(216,179,102,1) 100%);
