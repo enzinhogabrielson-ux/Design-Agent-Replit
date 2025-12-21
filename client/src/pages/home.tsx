@@ -60,7 +60,7 @@ export default function Home() {
             </h1>
           </div>
 
-          <button className="flex items-center gap-2 btn-primary h-10 px-6 text-sm font-bold group">
+          <button className="flex items-center gap-2 bg-[#D8B366] hover:bg-[#C5A04A] text-black text-sm font-bold px-6 h-10 rounded-lg transition-all group">
             <span>Garantir minha vaga</span>
             <ArrowRight className="w-4 h-4 group-hover:translate-x-1 transition-transform" />
           </button>
@@ -114,11 +114,13 @@ export default function Home() {
 
               <motion.div variants={fadeInUp} className="space-y-4 pt-2">
                 <div className="flex flex-col sm:flex-row gap-4">
-                  <button className="btn-primary text-base font-bold px-8">
-                    Garanta sua vaga
+                  <button className="flex items-center gap-2 bg-[#D8B366] hover:bg-[#C5A04A] text-black text-base font-bold px-8 h-12 rounded-lg transition-all group">
+                    <span>Garanta sua vaga</span>
+                    <ArrowRight className="w-4 h-4 group-hover:translate-x-1 transition-transform" />
                   </button>
-                  <button className="btn-secondary text-base font-bold px-8">
-                    Ver o que vai acontecer
+                  <button className="flex items-center gap-2 bg-white/10 hover:bg-white/20 text-white text-base font-bold px-8 h-12 rounded-lg transition-all group border border-white/20">
+                    <span>Ver o que vai acontecer</span>
+                    <ArrowRight className="w-4 h-4 group-hover:translate-x-1 transition-transform" />
                   </button>
                 </div>
                 <p className="text-xs text-white/50 uppercase tracking-wider font-medium">
@@ -371,8 +373,9 @@ export default function Home() {
                 <p>Presencial • Vagas limitadas</p>
               </div>
 
-              <button className="btn-primary w-full max-w-[200px] text-sm font-bold">
-                Garantir minha vaga
+              <button className="flex items-center justify-center gap-2 bg-[#D8B366] hover:bg-[#C5A04A] text-black w-full max-w-[200px] text-sm font-bold px-6 h-10 rounded-lg transition-all group">
+                <span>Garantir minha vaga</span>
+                <ArrowRight className="w-4 h-4 group-hover:translate-x-1 transition-transform" />
               </button>
             </div>
           </div>
@@ -463,8 +466,9 @@ export default function Home() {
             Quem governa o processo, governa o resultado.
           </p>
           
-          <button className="btn-primary h-14 px-10 text-lg shadow-[0_0_50px_rgba(216,179,102,0.3)]">
-            Garantir minha vaga agora
+          <button className="flex items-center justify-center gap-2 bg-[#D8B366] hover:bg-[#C5A04A] text-black h-14 px-10 text-lg font-bold rounded-lg transition-all shadow-[0_0_50px_rgba(216,179,102,0.3)] group">
+            <span>Garantir minha vaga agora</span>
+            <ArrowRight className="w-5 h-5 group-hover:translate-x-1 transition-transform" />
           </button>
         </div>
       </section>
