@@ -67,9 +67,6 @@ export default function Home() {
 
       {/* 2) HERO (Cinematic) */}
       <section id="hero" className="relative min-h-screen flex items-center pt-24 pb-20 overflow-hidden bg-cover bg-center" style={{ backgroundImage: `url(${heroBg})` }}>
-        {/* Overlay for text contrast */}
-        <div className="absolute inset-0 bg-gradient-to-r from-[#0a0809]/90 via-[#0a0809]/60 to-[#0a0809]/40 z-0" />
-
         <div className="container mx-auto px-6 relative z-10">
           <div className="max-w-2xl">
             {/* Content */}
