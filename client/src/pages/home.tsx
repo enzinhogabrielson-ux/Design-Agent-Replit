@@ -37,7 +37,7 @@ export default function Home() {
       {/* 1) NAVBAR (Sticky) */}
       <nav className="fixed top-0 left-0 right-0 z-50 h-[72px] bg-[#070607]/55 backdrop-blur-md border-b border-[#D8B366]/20 flex items-center transition-all duration-300">
         <div className="container mx-auto px-6 flex items-center justify-between">
-          <div className="flex items-center gap-4">
+          <div className="flex items-center gap-8">
             <a href="#" className="group">
               <img 
                 src={logoEusou} 
@@ -49,7 +49,7 @@ export default function Home() {
               <img 
                 src={logoErika} 
                 alt="Erika Crivellari" 
-                className="h-6 object-contain opacity-90 group-hover:opacity-100 transition-opacity duration-300"
+                className="h-4 object-contain opacity-90 group-hover:opacity-100 transition-opacity duration-300"
               />
             </a>
           </div>
