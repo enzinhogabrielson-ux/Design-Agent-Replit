@@ -554,7 +554,7 @@ export default function Home() {
             Quem governa o processo, governa o resultado.
           </p>
           
-          <button className="relative flex items-center justify-center gap-2 bg-[#D8B366] text-black h-14 px-10 text-lg font-bold rounded-lg transition-all duration-300 group overflow-hidden shadow-[0_0_50px_rgba(216,179,102,0.3)] hover:shadow-[0_0_80px_rgba(216,179,102,0.5)] hover:scale-105 active:scale-95">
+          <button className="relative mx-auto flex items-center justify-center gap-2 bg-[#D8B366] text-black h-14 px-10 text-lg font-bold rounded-lg transition-all duration-300 group overflow-hidden shadow-[0_0_50px_rgba(216,179,102,0.3)] hover:shadow-[0_0_80px_rgba(216,179,102,0.5)] hover:scale-105 active:scale-95">
             <span className="absolute inset-0 bg-gradient-to-r from-transparent via-white/50 to-transparent translate-x-[-100%] group-hover:translate-x-[100%] transition-transform duration-700 ease-in-out" />
             <span className="relative z-10">Garantir minha vaga agora</span>
             <ArrowRight className="relative z-10 w-5 h-5 group-hover:translate-x-1 transition-transform" />
