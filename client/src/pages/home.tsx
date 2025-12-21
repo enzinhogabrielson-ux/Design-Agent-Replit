@@ -1,6 +1,7 @@
 import { motion } from "framer-motion";
 import { ArrowRight, Sparkles, Check, ChevronDown, MapPin, Calendar, Clock, AlertTriangle } from "lucide-react";
 import heroBg from "@assets/bg_lp_1766335180336.png";
+import dashboardImg from "@assets/generated_images/futuristic_ai_dashboard_for_insurance_brokers_with_gold_accents.png";
 import logoEusou from "@assets/logo_erika_1766334069365.png";
 import logoErika from "@assets/LOGO_Erika_1766334075618.png";
 import { useState } from "react";
@@ -36,7 +37,7 @@ export default function Home() {
       
       {/* GLOBAL BACKGROUND ELEMENTS - "Light Points" & "Noise" */}
       <div className="fixed inset-0 pointer-events-none z-0">
-        <div className="absolute top-[-10%] left-[-10%] w-[500px] h-[500px] bg-[#D8B366]/10 blur-[120px] rounded-full mix-blend-screen animate-pulse" />
+        <div className="absolute top-[-10%] left-[-10%] w-[500px] h-[500px] bg-[#D8B366]/10 blur-[120px] rounded-full mix-blend-screen" />
         <div className="absolute top-[20%] right-[-5%] w-[400px] h-[400px] bg-[#D8B366]/5 blur-[100px] rounded-full mix-blend-screen opacity-50" />
         <div className="absolute bottom-[-10%] left-[20%] w-[600px] h-[600px] bg-[#D8B366]/5 blur-[150px] rounded-full mix-blend-screen opacity-30" />
       </div>
@@ -227,7 +228,7 @@ export default function Home() {
             <motion.h2 variants={fadeInUp} className="text-3xl md:text-[38px] font-display font-bold text-white mb-8 relative">
               Você pode até vender bem.
               {/* Decorative sparkle */}
-              <Sparkles className="absolute -top-6 -left-6 w-8 h-8 text-[#D8B366]/40 animate-pulse" />
+              <Sparkles className="absolute -top-6 -left-6 w-8 h-8 text-[#D8B366]/40" />
             </motion.h2>
 
             <motion.div variants={fadeInUp} className="p-8 md:p-10 rounded-[18px] bg-[#131116]/80 backdrop-blur-md border border-[#D8B366]/20 shadow-[0_10px_30px_rgba(0,0,0,0.35)] relative overflow-hidden group hover:border-[#D8B366]/40 hover:shadow-[0_20px_50px_rgba(216,179,102,0.1)] transition-all duration-500">
@@ -320,7 +321,7 @@ export default function Home() {
                 </h2>
                 
                 <p className="text-white/80 font-light leading-relaxed">
-                  Durante o evento, será apresentado em primeira mão um sistema de inteligência artificial desenvolvido exclusivamente para corretores de seguro de vida e distribuidores de produtos financeiros.
+                  Durante o evento, será apresentado em primeira mão um <span className="font-serif italic text-white">sistema de inteligência artificial</span> desenvolvido exclusivamente para corretores de seguro de vida e distribuidores de produtos financeiros.
                 </p>
 
                 <p className="text-[#D8B366] font-medium pt-2">Um sistema criado para:</p>
@@ -347,9 +348,19 @@ export default function Home() {
                 </div>
               </div>
 
-              <div className="w-full md:w-1/3 aspect-square rounded-2xl bg-[#070607] border border-[#D8B366]/20 flex items-center justify-center relative overflow-hidden group">
-                <div className="absolute inset-0 bg-[radial-gradient(circle_at_center,_var(--tw-gradient-stops))] from-[#D8B366]/20 to-transparent opacity-50 group-hover:opacity-100 transition-opacity duration-500" />
-                <Sparkles className="w-16 h-16 text-[#D8B366] relative z-10" />
+              <div className="w-full md:w-1/2 rounded-2xl border border-[#D8B366]/20 relative overflow-hidden group shadow-2xl">
+                <div className="absolute inset-0 bg-gradient-to-t from-[#070607] via-transparent to-transparent opacity-60 z-10" />
+                <img 
+                  src={dashboardImg} 
+                  alt="Sistema de IA para Corretores" 
+                  className="w-full h-full object-cover transform group-hover:scale-105 transition-transform duration-700"
+                />
+                <div className="absolute bottom-0 left-0 right-0 p-6 z-20">
+                  <div className="flex items-center gap-2 text-[#D8B366] mb-2">
+                    <Sparkles className="w-5 h-5" />
+                    <span className="text-xs font-bold uppercase tracking-wider">Tecnologia Exclusiva</span>
+                  </div>
+                </div>
               </div>
             </div>
           </div>
@@ -393,7 +404,7 @@ export default function Home() {
               <h3 className="text-2xl font-display font-bold text-white">Investimento</h3>
               <div className="space-y-4 text-white/70 font-light text-sm leading-relaxed">
                 <p>O valor real deste evento não é US$ 49,90.</p>
-                <p>Pelo conteúdo, pela exclusividade e pelo lançamento do sistema de IA, ele poderia facilmente custar algumas centenas de dólares.</p>
+                <p className="font-serif italic text-white/80">Pelo conteúdo, pela exclusividade e pelo lançamento do sistema de IA, ele poderia facilmente custar algumas centenas de dólares.</p>
                 <p>Mas optamos por um valor simbólico, porque queremos os corretores certos na sala.</p>
               </div>
             </div>
@@ -555,40 +566,33 @@ export default function Home() {
       </section>
 
       {/* 12) FOOTER */}
-      <footer className="py-16 border-t border-white/5 bg-[#070607]">
-        <div className="container mx-auto px-6">
-          {/* Logos Section */}
-          <div className="flex flex-col md:flex-row items-center justify-center gap-12 mb-12 pb-12 border-b border-white/10">
-            <a href="#" className="group">
+      <footer className="py-12 border-t border-white/5 bg-[#050405] relative z-10">
+        <div className="container mx-auto max-w-6xl px-6">
+          <div className="flex flex-col md:flex-row items-center justify-between gap-8">
+            {/* Left: Logos */}
+            <div className="flex items-center gap-6 opacity-60 hover:opacity-100 transition-opacity duration-300">
               <img 
                 src={logoEusou} 
                 alt="Eusou360" 
-                className="h-16 object-contain opacity-80 group-hover:opacity-100 transition-opacity duration-300"
+                className="h-6 object-contain grayscale hover:grayscale-0 transition-all duration-300"
               />
-            </a>
-            <a href="#" className="group">
+              <div className="h-4 w-px bg-white/20" />
               <img 
                 src={logoErika} 
                 alt="Erika Crivellari" 
-                className="h-16 object-contain opacity-80 group-hover:opacity-100 transition-opacity duration-300"
+                className="h-3 object-contain grayscale hover:grayscale-0 transition-all duration-300"
               />
-            </a>
-          </div>
-
-          {/* Content */}
-          <div className="text-center space-y-6">
-            <div className="text-[#D8B366] font-display font-bold text-lg">Processo & IA</div>
-            <p className="text-white/40 text-sm font-light">Venda não é sorte. É processo.</p>
-            
-            <div className="flex justify-center gap-8 text-xs text-white/50">
-              <a href="#" className="hover:text-white transition-colors">Política de Privacidade</a>
-              <a href="#" className="hover:text-white transition-colors">Termos de Uso</a>
-              <a href="#" className="hover:text-white transition-colors">Contato</a>
             </div>
-            
-            <p className="text-white/30 text-[10px] uppercase tracking-widest">
-              Evento presencial • Informações sujeitas a alterações • Vagas limitadas
-            </p>
+
+            {/* Right: Copyright & Links */}
+            <div className="flex flex-col md:flex-row items-center gap-6 text-xs text-white/40 font-light">
+              <span className="font-serif italic text-white/60">Governe seus resultados.</span>
+              <div className="flex gap-4">
+                <a href="#" className="hover:text-[#D8B366] transition-colors">Política de Privacidade</a>
+                <a href="#" className="hover:text-[#D8B366] transition-colors">Termos de Uso</a>
+              </div>
+              <span>© 2025 Todos os direitos reservados.</span>
+            </div>
           </div>
         </div>
       </footer>
