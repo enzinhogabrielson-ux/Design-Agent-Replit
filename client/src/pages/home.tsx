@@ -37,8 +37,22 @@ export default function Home() {
       {/* 1) NAVBAR (Sticky) */}
       <nav className="fixed top-0 left-0 right-0 z-50 h-[72px] bg-[#070607]/55 backdrop-blur-md border-b border-[#D8B366]/20 flex items-center transition-all duration-300">
         <div className="container mx-auto px-6 flex items-center justify-between">
-          <div className="text-[#D8B366] font-display font-bold text-xl tracking-tight">
-            Processo & IA
+          <div className="flex items-center gap-4">
+            <a href="#" className="group">
+              <img 
+                src={logoEusou} 
+                alt="Eusou360" 
+                className="h-8 object-contain opacity-90 group-hover:opacity-100 transition-opacity duration-300"
+              />
+            </a>
+            <div className="w-px h-6 bg-[#D8B366]/30" />
+            <a href="#" className="group">
+              <img 
+                src={logoErika} 
+                alt="Erika Crivellari" 
+                className="h-8 object-contain opacity-90 group-hover:opacity-100 transition-opacity duration-300"
+              />
+            </a>
           </div>
           
           <div className="hidden md:flex items-center gap-8">
@@ -290,6 +304,8 @@ export default function Home() {
                   Durante o evento, será apresentado em primeira mão um sistema de inteligência artificial desenvolvido exclusivamente para corretores de seguro de vida e distribuidores de produtos financeiros.
                 </p>
 
+                <p className="text-[#D8B366] font-medium pt-2">Um sistema criado para:</p>
+
                 <ul className="space-y-3 text-left">
                   {[
                     "Organizar o processo de vendas",
@@ -324,10 +340,9 @@ export default function Home() {
       {/* 6) BENEFÍCIO EXCLUSIVO */}
       <section id="benefit" className="py-24 relative">
         <div className="container mx-auto px-6 max-w-3xl text-center space-y-8">
-          <span className="text-[#D8B366] text-xs font-bold tracking-widest uppercase">Vantagem Presencial</span>
           
           <h2 className="text-3xl md:text-4xl font-display font-bold text-white">
-            Quem participa presencialmente ganha tudo.
+            Vantagem exclusiva para <span className="text-[#D8B366]">participantes presenciais</span>
           </h2>
 
           <div className="space-y-6 text-lg text-white/80 font-light leading-relaxed">
