@@ -50,100 +50,72 @@ export default function Home() {
         </div>
 
         <div className="container mx-auto px-6 relative z-10">
-          <div className="grid md:grid-cols-2 gap-20 items-center">
-            {/* LEFT COLUMN - Content */}
+          <div className="max-w-3xl">
             <motion.div 
               initial="hidden"
               animate="visible"
               variants={staggerContainer}
-              className="space-y-8 max-w-xl"
+              className="space-y-12"
             >
-              {/* Premium Badge */}
+              {/* Badge with left border */}
               <motion.div variants={fadeInUp}>
-                <div className="flex items-center gap-2 inline-flex px-4 py-2 rounded-full backdrop-blur-sm border border-[#D8B366]/40 bg-[#D8B366]/12 hover:bg-[#D8B366]/18 transition-all duration-300 cursor-default group">
-                  <Sparkles className="w-4 h-4 text-[#D8B366] group-hover:animate-spin transition-transform" />
-                  <span className="text-xs font-bold tracking-widest uppercase text-[#F6E6C6]">AS PORTAS ESTÃO ABERTAS</span>
+                <div className="flex items-center gap-3 inline-flex px-0 py-2 border-l-4 border-[#D8B366] pl-4">
+                  <span className="text-xs font-bold tracking-widest uppercase text-[#D8B366]">ENCONTRO PRESENCIAL E EXCLUSIVO</span>
                 </div>
               </motion.div>
 
-              {/* Main Headline - Dynamic Typography */}
-              <motion.div variants={fadeInUp} className="space-y-4">
-                <div className="heading-hero text-white leading-[1.05]">
-                  <div>Venda não é</div>
-                  <div className="relative inline-block">
-                    sorte.
-                    <div className="absolute -bottom-2 left-0 right-0 h-1 bg-gradient-to-r from-[#D8B366] via-[#F6E6C6] to-[#D8B366] rounded-full blur-sm" />
-                  </div>
-                </div>
+              {/* Main Headline */}
+              <motion.div variants={fadeInUp}>
+                <h1 className="text-6xl md:text-7xl font-sans font-black text-white leading-[1.1] mb-6">
+                  Venda não é sorte.<br />É processo.
+                </h1>
               </motion.div>
 
-              {/* Accent Line Headline */}
+              {/* Subheading with gold accent */}
               <motion.div variants={fadeInUp}>
-                <h2 className="text-5xl md:text-6xl font-serif italic font-bold text-white/95 leading-tight">
-                  É <span className="text-gold-gradient">processo.</span>
+                <h2 className="text-2xl md:text-3xl font-sans font-normal text-white/90 leading-relaxed">
+                  <span className="text-[#D8B366]">Agora, com inteligência</span><br />
+                  <span className="text-[#D8B366]">artificial a seu favor.</span>
                 </h2>
               </motion.div>
 
-              {/* Subheading */}
-              <motion.p variants={fadeInUp} className="text-lg md:text-xl font-light text-white/80 leading-relaxed tracking-wide">
-                Agora, com <span className="text-[#D8B366] font-semibold">inteligência artificial</span> a seu favor.
-              </motion.p>
-
               {/* Description */}
-              <motion.p variants={fadeInUp} className="text-base text-white/70 leading-relaxed font-light">
-                Um encontro presencial e exclusivo para Corretores de Seguro de Vida e Distribuidores de Produtos Financeiros que querem <span className="text-white font-semibold">controle, previsibilidade e resultado</span> real em vendas.
+              <motion.p variants={fadeInUp} className="text-base text-white/75 leading-relaxed font-light max-w-2xl">
+                Um encontro presencial e exclusivo para Corretores de Seguro de Vida e Distribuidores de Produtos Financeiros que querem controle, previsibilidade e resultado real em vendas.
               </motion.p>
 
-              {/* CTA Button Group */}
-              <motion.div variants={fadeInUp} className="flex flex-col sm:flex-row gap-4 pt-6">
-                <button className="btn-primary text-base font-bold">
-                  Garanta sua vaga <ArrowRight className="w-5 h-5 ml-2" />
+              {/* Event Info Pill */}
+              <motion.div variants={fadeInUp} className="inline-flex items-center gap-8 px-6 py-4 rounded-full border border-white/20 backdrop-blur-sm">
+                <div className="flex items-center gap-2">
+                  <span className="text-lg">📍</span>
+                  <span className="text-white/90 font-light">Orlando</span>
+                </div>
+                <div className="w-px h-5 bg-white/10" />
+                <div className="flex items-center gap-2">
+                  <span className="text-lg">📅</span>
+                  <span className="text-white/90 font-light">13 de Janeiro</span>
+                </div>
+                <div className="w-px h-5 bg-white/10" />
+                <div className="flex items-center gap-2">
+                  <span className="text-lg">🕐</span>
+                  <span className="text-white/90 font-light">12:30 PM às 5:30 PM</span>
+                </div>
+              </motion.div>
+
+              {/* CTA Buttons */}
+              <motion.div variants={fadeInUp} className="flex flex-wrap gap-4 pt-4">
+                <button className="btn-primary text-base font-bold px-8 py-3">
+                  Garanta sua vaga <ArrowRight className="w-4 h-4 ml-2" />
+                </button>
+                <button className="px-8 py-3 rounded-full border-2 border-white/30 text-white font-semibold hover:border-white/60 hover:bg-white/5 transition-all duration-300">
+                  Ver o que vai acontecer
                 </button>
               </motion.div>
 
-              {/* Social Proof */}
-              <motion.div variants={fadeInUp} className="pt-8 border-t border-white/10">
-                <div className="flex items-center gap-4">
-                  <div className="flex -space-x-3">
-                    {[1, 2, 3].map((i) => (
-                      <div
-                        key={i}
-                        className="w-10 h-10 rounded-full bg-gradient-to-br from-[#D8B366] to-[#B98A3B] border-2 border-[#0a0809] shadow-lg transition-transform duration-300"
-                      />
-                    ))}
-                  </div>
-                  <p className="text-sm text-white/75 font-light">
-                    <span className="font-semibold text-white">+50 mil</span> mulheres já transformaram sua jornada
-                  </p>
-                </div>
-              </motion.div>
-            </motion.div>
-
-            {/* RIGHT COLUMN - Hero Image with Interactive Effects */}
-            <motion.div
-              initial="hidden"
-              animate="visible"
-              variants={fadeInRight}
-              className="hidden md:flex items-center justify-end relative"
-            >
-              <div className="relative w-80 h-auto">
-                {/* Glow background */}
-                <div className="absolute -inset-8 bg-gradient-to-br from-[#D8B366]/25 via-[#D8B366]/10 to-transparent rounded-3xl blur-3xl transition-all duration-500 -z-10" />
-                
-                {/* Image container with interactive border */}
-                <div className="relative z-10 overflow-hidden rounded-2xl border border-[#D8B366]/30 transition-all duration-500 shadow-2xl">
-                  <img 
-                    src={heroImg} 
-                    alt="Expert" 
-                    className="w-full h-auto object-cover transition-transform duration-700"
-                  />
-                  <div className="absolute inset-0 bg-gradient-to-t from-[#0a0809]/40 via-transparent to-transparent transition-all duration-500" />
-                </div>
-
-                {/* Floating accent particles */}
-                <div className="absolute top-10 -right-10 w-20 h-20 bg-[#D8B366]/20 rounded-full blur-2xl" />
-                <div className="absolute bottom-20 left-0 w-32 h-32 bg-[#D8B366]/10 rounded-full blur-3xl" />
-              </div>
+              {/* Bottom info text */}
+              <motion.p variants={fadeInUp} className="text-sm text-white/60 font-light">
+                Vagas limitadas • Presencial • Condição especial de lançamento
+              </motion.p>
             </motion.div>
           </div>
         </div>
