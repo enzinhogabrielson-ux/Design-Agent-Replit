@@ -1,7 +1,6 @@
 import { motion } from "framer-motion";
 import { ArrowRight, Sparkles, Check, ChevronDown, MapPin, Calendar, Clock, AlertTriangle } from "lucide-react";
-import luxuryBg from "@assets/generated_images/luxury_warm-lit_interior_environment_background.png";
-import heroImg from "@assets/generated_images/professional_woman_portrait_cropped_for_hero_section.png";
+import heroBg from "@assets/bg_lp_1766333835302.png";
 import { useState } from "react";
 
 export default function Home() {
@@ -66,22 +65,19 @@ export default function Home() {
         </div>
       </nav>
 
-      {/* 2) HERO (Cinematic, 2 Columns) */}
-      <section id="hero" className="relative min-h-screen flex items-center pt-24 pb-20 overflow-hidden">
-        {/* Background */}
-        <div className="absolute inset-0 z-0">
-          <div className="absolute inset-0 bg-[#070607]" />
-          <div className="absolute inset-0 bg-[radial-gradient(ellipse_at_top,_var(--tw-gradient-stops))] from-[#D8B366]/10 via-[#070607] to-[#070607]" />
-        </div>
+      {/* 2) HERO (Cinematic) */}
+      <section id="hero" className="relative min-h-screen flex items-center pt-24 pb-20 overflow-hidden bg-cover bg-center" style={{ backgroundImage: `url(${heroBg})` }}>
+        {/* Overlay for text contrast */}
+        <div className="absolute inset-0 bg-gradient-to-r from-[#0a0809]/90 via-[#0a0809]/60 to-[#0a0809]/40 z-0" />
 
         <div className="container mx-auto px-6 relative z-10">
-          <div className="grid md:grid-cols-2 gap-16 items-center">
-            {/* Left Column */}
+          <div className="max-w-2xl">
+            {/* Content */}
             <motion.div 
               initial="hidden"
               animate="visible"
               variants={staggerContainer}
-              className="space-y-8 max-w-xl"
+              className="space-y-8"
             >
               <motion.div variants={fadeInUp}>
                 <span className="inline-flex px-3 py-1.5 rounded-full border border-[#D8B366]/25 bg-[#D8B366]/10 text-[#F6E6C6] text-[11px] font-bold tracking-[0.08em] uppercase">
@@ -127,41 +123,6 @@ export default function Home() {
                   Vagas limitadas • Presencial • Condição especial de lançamento
                 </p>
               </motion.div>
-            </motion.div>
-
-            {/* Right Column - Premium Hero Visual */}
-            <motion.div
-              initial={{ opacity: 0, x: 20 }}
-              animate={{ opacity: 1, x: 0 }}
-              transition={{ duration: 1, delay: 0.2 }}
-              className="relative hidden md:flex justify-end"
-            >
-              <div className="relative w-full max-w-md aspect-[3/4] rounded-[24px] overflow-hidden border border-[#D8B366]/30 shadow-[0_10px_30px_rgba(0,0,0,0.5)] bg-[#0C0B0D] group">
-                <img 
-                  src={heroImg} 
-                  alt="Evento Processo & IA" 
-                  className="w-full h-full object-cover opacity-80 group-hover:scale-105 transition-transform duration-700"
-                />
-                <div className="absolute inset-0 bg-gradient-to-t from-[#0a0809] via-transparent to-transparent" />
-                
-                {/* Floating Info Card */}
-                <div className="absolute bottom-6 left-6 right-6 p-5 rounded-xl bg-[#0a0809]/80 backdrop-blur-md border border-[#D8B366]/20 shadow-lg">
-                  <div className="flex justify-between items-end">
-                    <div>
-                      <p className="text-xs text-[#D8B366] uppercase tracking-wider mb-1">Investimento</p>
-                      <p className="text-2xl font-display font-bold text-white">US$ 49,90</p>
-                    </div>
-                    <div className="text-right">
-                      <p className="text-xs text-white/60 mb-1">Local</p>
-                      <p className="text-sm font-medium text-white">Orlando Public Library</p>
-                    </div>
-                  </div>
-                </div>
-              </div>
-              
-              {/* Decorative Elements */}
-              <div className="absolute -z-10 top-10 right-10 w-64 h-64 bg-[#D8B366]/10 rounded-full blur-[80px]" />
-              <div className="absolute -z-10 bottom-10 left-10 w-40 h-40 bg-[#D8B366]/5 rounded-full blur-[60px]" />
             </motion.div>
           </div>
         </div>
