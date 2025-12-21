@@ -6,6 +6,7 @@ import logoEusou from "@assets/logo_erika_1766334069365.png";
 import logoErika from "@assets/LOGO_Erika_1766334075618.png";
 import abstractImg from "@assets/generated_images/abstract_visualization_of_sales_chaos_vs_order_gold.png";
 import keyImg from "@assets/generated_images/golden_key_or_vip_card_floating.png";
+import ticketImg from "@assets/generated_images/luxurious_golden_event_ticket_floating.png";
 import libraryImg from "@assets/generated_images/orlando_public_library_stylized_architecture.png";
 import { useState } from "react";
 
@@ -478,34 +479,86 @@ export default function Home() {
          <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[800px] h-[500px] bg-gradient-to-r from-[#D8B366]/5 to-[#B98A3B]/5 blur-[100px] rounded-full pointer-events-none" />
 
         <div className="container mx-auto max-w-6xl px-6 relative z-10">
-          <div className="grid md:grid-cols-2 rounded-[24px] overflow-hidden border border-[#D8B366]/20 shadow-2xl">
-            {/* Left Panel - Dark */}
-            <div className="p-10 md:p-12 bg-[#131116] flex flex-col justify-center space-y-6">
-              <h3 className="text-2xl font-display font-bold text-white">Investimento</h3>
-              <div className="space-y-4 text-white/70 font-light text-sm leading-relaxed">
-                <p>O valor real deste evento não é US$ 49,90.</p>
-                <p className="font-serif italic text-white/80">Pelo conteúdo, pela exclusividade e pelo lançamento do sistema de IA, ele poderia facilmente custar algumas centenas de dólares.</p>
-                <p>Mas optamos por um valor simbólico, porque queremos os corretores certos na sala.</p>
-              </div>
+          <div className="flex flex-col lg:flex-row items-center gap-16">
+            
+            {/* Left Side: Value Proposition */}
+            <div className="lg:w-1/2 space-y-8 relative">
+                <div>
+                    <h2 className="text-4xl md:text-5xl font-display font-bold text-white mb-6 leading-tight">
+                        Um investimento que <br />
+                        <span className="font-serif italic text-[#D8B366]">se paga na primeira venda</span>.
+                    </h2>
+                    <p className="text-lg text-white/70 font-light leading-relaxed mb-8">
+                        Chega de eventos que entregam apenas motivação. O caminho para <strong className="text-white">dominar seu processo</strong> e escalar seus resultados está a um clique de distância.
+                    </p>
+                    <p className="text-sm text-white/50 border-l-2 border-[#D8B366]/30 pl-4 italic">
+                        "Pelo conteúdo, pela exclusividade e pelo lançamento do sistema de IA, ele poderia facilmente custar algumas centenas de dólares."
+                    </p>
+                </div>
+
+                {/* Visual Element floating */}
+                <div className="relative w-full aspect-[16/9] rounded-2xl overflow-hidden border border-[#D8B366]/20 shadow-[0_20px_60px_-10px_rgba(216,179,102,0.1)] group">
+                    <div className="absolute inset-0 bg-gradient-to-tr from-[#D8B366]/10 to-transparent z-10" />
+                    <img 
+                        src={ticketImg} 
+                        alt="Golden Ticket" 
+                        className="w-full h-full object-cover transform group-hover:scale-105 transition-transform duration-700"
+                    />
+                </div>
             </div>
 
-            {/* Right Panel - Gold Highlight */}
-            <div className="p-10 md:p-12 bg-gradient-to-b from-[#D8B366]/20 to-[#D8B366]/5 flex flex-col justify-center items-center text-center space-y-6 relative">
-              <div className="space-y-2">
-                <p className="text-4xl md:text-5xl font-display font-bold text-[#F6E6C6]">US$ 49,90</p>
-                <p className="text-sm font-medium text-[#D8B366] uppercase tracking-wider">Valor especial de lançamento</p>
-              </div>
-              
-              <div className="space-y-2 text-sm text-white/80">
-                <p>Presencial • Vagas limitadas</p>
-              </div>
+            {/* Right Side: Pricing Card */}
+            <div className="lg:w-1/2 w-full">
+                <div className="relative rounded-[32px] bg-[#131116] border border-[#D8B366]/30 overflow-hidden shadow-[0_0_80px_-20px_rgba(216,179,102,0.15)]">
+                    <div className="absolute top-0 inset-x-0 h-1 bg-gradient-to-r from-transparent via-[#D8B366] to-transparent opacity-50" />
+                    
+                    <div className="p-10 md:p-12 space-y-8">
+                        <div className="text-center pb-8 border-b border-white/5">
+                            <h3 className="text-xl font-medium text-white/90 mb-2">Ao se inscrever, você terá acesso a:</h3>
+                        </div>
 
-              <button className="relative flex items-center justify-center gap-2 bg-[#D8B366] text-black w-full max-w-[200px] text-sm font-bold px-6 h-10 rounded-lg transition-all duration-300 group overflow-hidden hover:shadow-[0_0_20px_rgba(216,179,102,0.4)] hover:scale-105 active:scale-95">
-                <span className="absolute inset-0 bg-gradient-to-r from-transparent via-white/40 to-transparent translate-x-[-100%] group-hover:translate-x-[100%] transition-transform duration-700 ease-in-out" />
-                <span className="relative z-10">Garantir minha vaga</span>
-                <ArrowRight className="relative z-10 w-4 h-4 group-hover:translate-x-1 transition-transform" />
-              </button>
+                        <ul className="space-y-4">
+                            {[
+                                "Acesso completo ao evento presencial",
+                                "Lançamento exclusivo do Sistema de IA",
+                                "Networking com a elite do mercado",
+                                "Coffee break e experiência premium"
+                            ].map((item, i) => (
+                                <li key={i} className="flex items-center gap-3 text-white/80 font-light">
+                                    <Check className="w-5 h-5 text-[#D8B366] flex-shrink-0" />
+                                    <span>{item}</span>
+                                </li>
+                            ))}
+                        </ul>
+
+                        <div className="p-4 rounded-xl bg-[#D8B366]/5 border border-[#D8B366]/10">
+                            <div className="flex items-center gap-2 mb-1">
+                                <Sparkles className="w-4 h-4 text-[#D8B366]" />
+                                <span className="text-[#D8B366] font-bold text-sm uppercase tracking-wide">Bônus Exclusivo</span>
+                            </div>
+                            <p className="text-white/70 text-sm">
+                                Acesso antecipado à tecnologia de IA para corretores.
+                            </p>
+                        </div>
+
+                        <div className="text-center space-y-2 pt-4">
+                            <p className="text-white/40 text-sm line-through decoration-white/30">de US$ 297,00</p>
+                            <div className="flex items-baseline justify-center gap-1">
+                                <span className="text-xl text-[#D8B366]">por</span>
+                                <span className="text-5xl md:text-6xl font-display font-bold text-white">US$ 49,90</span>
+                            </div>
+                            <p className="text-[#D8B366]/80 text-sm font-medium">pagamento único</p>
+                        </div>
+
+                        <button className="w-full relative flex items-center justify-center gap-2 bg-[#D8B366] text-black h-14 text-lg font-bold rounded-xl transition-all duration-300 group overflow-hidden hover:shadow-[0_0_30px_rgba(216,179,102,0.4)] hover:scale-[1.02] active:scale-95">
+                            <span className="absolute inset-0 bg-gradient-to-r from-transparent via-white/40 to-transparent translate-x-[-100%] group-hover:translate-x-[100%] transition-transform duration-700 ease-in-out" />
+                            <span className="relative z-10">Quero me inscrever agora</span>
+                            <ArrowRight className="relative z-10 w-5 h-5 group-hover:translate-x-1 transition-transform" />
+                        </button>
+                    </div>
+                </div>
             </div>
+
           </div>
         </div>
       </section>
