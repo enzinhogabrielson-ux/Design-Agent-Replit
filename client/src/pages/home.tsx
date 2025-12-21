@@ -1,5 +1,5 @@
 import { motion } from "framer-motion";
-import { ArrowRight, Sparkles, Check, ChevronDown, MapPin, Calendar, Clock, AlertTriangle } from "lucide-react";
+import { ArrowRight, Sparkles, Check, ChevronDown, MapPin, Calendar, Clock, AlertTriangle, Zap, Funnel, TrendingUp, Users } from "lucide-react";
 import heroBgMobile from "@assets/bg_lpmobil_1766338661759.png";
 import heroBg from "@assets/bg_lp_1766335180336.png";
 import dashboardImg from "@assets/generated_images/futuristic_ai_dashboard_for_insurance_brokers_with_gold_accents.png";
@@ -358,31 +358,33 @@ export default function Home() {
               <div className="grid sm:grid-cols-2 gap-6">
                 {[
                   {
-                    icon: <div className="w-10 h-10 rounded-lg bg-[#D8B366]/10 border border-[#D8B366]/20 flex items-center justify-center text-[#D8B366]"><Check className="w-5 h-5" /></div>,
+                    icon: <Zap className="w-6 h-6" />,
                     title: "Organização Total",
                     desc: "Centralize seu processo de vendas e elimine o caos operacional."
                   },
                   {
-                    icon: <div className="w-10 h-10 rounded-lg bg-[#D8B366]/10 border border-[#D8B366]/20 flex items-center justify-center text-[#D8B366]"><ChevronDown className="w-5 h-5" /></div>, // Using ChevronDown as a placeholder or other icon
+                    icon: <Funnel className="w-6 h-6" />,
                     title: "Visão de Funil",
                     desc: "Clareza absoluta sobre oportunidades e próximos passos."
                   },
                   {
-                    icon: <div className="w-10 h-10 rounded-lg bg-[#D8B366]/10 border border-[#D8B366]/20 flex items-center justify-center text-[#D8B366]"><AlertTriangle className="w-5 h-5" /></div>,
+                    icon: <TrendingUp className="w-6 h-6" />,
                     title: "Decisões com Dados",
                     desc: "Pare de agir por intuição e comece a agir por inteligência."
                   },
                   {
-                    icon: <div className="w-10 h-10 rounded-lg bg-[#D8B366]/10 border border-[#D8B366]/20 flex items-center justify-center text-[#D8B366]"><Sparkles className="w-5 h-5" /></div>,
+                    icon: <Users className="w-6 h-6" />,
                     title: "Foco no Cliente",
                     desc: "A IA cuida da burocracia para você cuidar do relacionamento."
                   }
                 ].map((item, i) => (
-                  <div key={i} className="flex gap-4 items-start group hover:bg-white/5 p-3 rounded-xl transition-colors duration-300">
-                    {item.icon}
+                  <div key={i} className="flex gap-4 items-start group hover:bg-white/5 p-4 rounded-xl transition-all duration-300 border border-transparent hover:border-[#D8B366]/20">
+                    <div className="w-12 h-12 rounded-xl bg-gradient-to-br from-[#D8B366]/20 to-[#D8B366]/5 border border-[#D8B366]/30 flex items-center justify-center flex-shrink-0 text-[#D8B366] group-hover:scale-110 transition-transform duration-300 group-hover:shadow-[0_0_20px_rgba(216,179,102,0.3)]">
+                      {item.icon}
+                    </div>
                     <div>
-                      <h4 className="text-white font-bold text-base mb-1 group-hover:text-[#D8B366] transition-colors">{item.title}</h4>
-                      <p className="text-white/60 text-sm leading-snug">{item.desc}</p>
+                      <h4 className="text-white font-bold text-base mb-2 group-hover:text-[#D8B366] transition-colors">{item.title}</h4>
+                      <p className="text-white/60 text-sm leading-relaxed">{item.desc}</p>
                     </div>
                   </div>
                 ))}
