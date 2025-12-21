@@ -96,8 +96,8 @@ export default function Home() {
         {/* Gradient for text contrast - left to right */}
         <div className="absolute inset-y-0 left-0 w-1/2 bg-gradient-to-r from-[#0a0809] via-[#0a0809]/60 to-transparent z-0" />
         
-        <div className="container mx-auto max-w-6xl px-6 relative z-10 flex justify-center">
-          <div className="max-w-2xl text-center">
+        <div className="container mx-auto max-w-6xl px-6 relative z-10">
+          <div className="max-w-2xl">
             {/* Content */}
             <motion.div 
               initial="hidden"
@@ -148,7 +148,7 @@ export default function Home() {
                     <ArrowRight className="relative z-10 w-4 h-4 group-hover:translate-x-1 transition-transform" />
                   </button>
                 </div>
-                <div className="flex flex-wrap gap-3 justify-center pt-2">
+                <div className="flex flex-wrap gap-3 justify-start pt-2">
                   <div className="inline-flex items-center gap-2 px-3 py-1.5 rounded-full bg-[#D8B366]/15 border border-[#D8B366]/30 backdrop-blur-sm">
                     <AlertTriangle className="w-3 h-3 text-[#D8B366]" />
                     <span className="text-xs text-white/80 font-semibold">Vagas limitadas</span>
@@ -166,7 +166,7 @@ export default function Home() {
                 {/* Social Proof - Broker Images */}
                 <motion.div 
                   variants={fadeInUp}
-                  className="flex items-center justify-center gap-3 pt-6"
+                  className="flex items-center gap-3 pt-6"
                 >
                   <div className="flex -space-x-3">
                     {[
