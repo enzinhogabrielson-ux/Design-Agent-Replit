@@ -1,0 +1,88 @@
+{
+  "colorScheme": "light",
+  "fonts": [
+    {
+      "family": "CameraPlainVariable",
+      "count": 12
+    },
+    {
+      "family": "CameraPlainVariable Fallback",
+      "count": 12
+    }
+  ],
+  "colors": {
+    "primary": "#9CA3AF",
+    "accent": "#CDEEE0",
+    "background": "#FCFBF8",
+    "textPrimary": "#1C1C1C",
+    "link": "#CDEEE0"
+  },
+  "typography": {
+    "fontFamilies": {
+      "primary": "CameraPlainVariable",
+      "heading": "CameraPlainVariable"
+    },
+    "fontStacks": {
+      "body": [
+        "CameraPlainVariable",
+        "CameraPlainVariable Fallback"
+      ],
+      "heading": [
+        "CameraPlainVariable",
+        "CameraPlainVariable Fallback"
+      ],
+      "paragraph": [
+        "CameraPlainVariable",
+        "CameraPlainVariable Fallback"
+      ]
+    },
+    "fontSizes": {
+      "h1": "30px",
+      "h2": "30px",
+      "body": "14px"
+    }
+  },
+  "spacing": {
+    "baseUnit": 4,
+    "borderRadius": "6px"
+  },
+  "components": {
+    "input": {
+      "background": "transparent",
+      "textColor": "#1C1C1C",
+      "borderColor": "#ECEAE4",
+      "borderRadius": "6px",
+      "borderRadiusCorners": {
+        "topLeft": "6px",
+        "topRight": "6px",
+        "bottomRight": "6px",
+        "bottomLeft": "6px"
+      },
+      "shadow": "none"
+    }
+  },
+  "images": {
+    "logo": null,
+    "favicon": "https://lovable.dev/favicon.ico",
+    "ogImage": "https://lovable.dev/opengraph-image-p98pqg.png?e7ae4aa2faea9aea"
+  },
+  "__framework_hints": [],
+  "__llm_button_reasoning": {
+    "primary": {
+      "index": -1,
+      "text": "N/A",
+      "reasoning": "LLM failed"
+    },
+    "secondary": {
+      "index": -1,
+      "text": "N/A",
+      "reasoning": "LLM failed"
+    },
+    "confidence": 0
+  },
+  "confidence": {
+    "buttons": 0,
+    "colors": 0,
+    "overall": 0
+  }
+}
