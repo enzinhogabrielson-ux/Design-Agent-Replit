@@ -1,6 +1,6 @@
 import { motion } from "framer-motion";
 import { ArrowRight, Sparkles, Check, ChevronDown, MapPin, Calendar, Clock, AlertTriangle } from "lucide-react";
-import heroBg from "@assets/bg_lp_1766333835302.png";
+import heroBg from "@assets/bg_lp_1766335180336.png";
 import logoEusou from "@assets/logo_erika_1766334069365.png";
 import logoErika from "@assets/LOGO_Erika_1766334075618.png";
 import { useState } from "react";
