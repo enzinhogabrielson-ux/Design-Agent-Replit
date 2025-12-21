@@ -1,7 +1,7 @@
 import { motion } from "framer-motion";
 import { ArrowRight } from "lucide-react";
 import luxuryBg from "@assets/generated_images/luxury_warm-lit_interior_environment_background.png";
-import heroImg from "@assets/generated_images/modern_professional_woman_in_elegant_white_blazer.png";
+import heroImg from "@assets/generated_images/professional_woman_portrait_cropped_for_hero_section.png";
 
 export default function Home() {
   const fadeInUp = {
@@ -104,20 +104,20 @@ export default function Home() {
               initial="hidden"
               animate="visible"
               variants={fadeInRight}
-              className="hidden md:flex items-center justify-center"
+              className="hidden md:flex items-center justify-end relative"
             >
-              <div className="relative w-full">
+              <div className="relative w-80 h-auto">
                 {/* Image with subtle glow */}
-                <div className="relative z-10 overflow-hidden">
+                <div className="relative z-10 overflow-hidden rounded-2xl">
                   <img 
                     src={heroImg} 
                     alt="Expert" 
-                    className="w-full h-auto object-contain drop-shadow-2xl"
+                    className="w-full h-auto object-cover drop-shadow-2xl"
                   />
                 </div>
                 
                 {/* Glow effect behind image */}
-                <div className="absolute -inset-8 bg-gradient-to-br from-[#D8B366]/15 via-[#D8B366]/5 to-transparent rounded-3xl blur-3xl -z-10" />
+                <div className="absolute -inset-6 bg-gradient-to-br from-[#D8B366]/20 via-[#D8B366]/5 to-transparent rounded-3xl blur-3xl -z-10" />
               </div>
             </motion.div>
           </div>
