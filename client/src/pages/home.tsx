@@ -1,5 +1,6 @@
 import { motion } from "framer-motion";
 import { ArrowRight, Sparkles, Check, ChevronDown, MapPin, Calendar, Clock, AlertTriangle } from "lucide-react";
+import heroBgMobile from "@assets/bg_lpmobil_1766338208173.png";
 import heroBg from "@assets/bg_lp_1766335180336.png";
 import dashboardImg from "@assets/generated_images/futuristic_ai_dashboard_for_insurance_brokers_with_gold_accents.png";
 import logoEusou from "@assets/logo_erika_1766334069365.png";
@@ -92,83 +93,94 @@ export default function Home() {
       </nav>
 
       {/* 2) HERO (Cinematic) */}
-      <section id="hero" className="relative min-h-[110vh] flex items-center pt-40 pb-20 overflow-hidden bg-cover bg-center" style={{ backgroundImage: `url(${heroBg})` }}>
-        {/* Gradient for text contrast - left to right */}
-        <div className="absolute inset-y-0 left-0 w-[75%] bg-gradient-to-r from-[#0a0809] via-[#0a0809]/85 to-transparent z-0" />
+      <section id="hero" className="relative min-h-[100vh] md:min-h-[110vh] flex items-start md:items-center pt-32 md:pt-40 pb-20 overflow-hidden bg-cover bg-center bg-no-repeat" style={{ backgroundImage: `var(--hero-bg)` }}>
+        <style>{`
+          #hero {
+            --hero-bg: url(${heroBgMobile});
+          }
+          @media (min-width: 768px) {
+            #hero {
+              --hero-bg: url(${heroBg});
+            }
+          }
+        `}</style>
+        
+        {/* Gradient for text contrast - left to right (Desktop) / Top to bottom (Mobile) */}
+        <div className="absolute inset-y-0 left-0 w-full md:w-[75%] bg-gradient-to-b md:bg-gradient-to-r from-[#0a0809] via-[#0a0809]/60 md:via-[#0a0809]/85 to-transparent z-0 h-[70%] md:h-full" />
         
         <div className="container mx-auto max-w-6xl px-6 relative z-10">
-          <div className="max-w-2xl">
+          <div className="max-w-2xl w-full">
             {/* Content */}
             <motion.div 
               initial="hidden"
               animate="visible"
               variants={staggerContainer}
-              className="space-y-8"
+              className="space-y-6 md:space-y-8"
             >
               <motion.div variants={fadeInUp}>
-                <span className="inline-flex px-3 py-1.5 rounded-full border border-[#D8B366]/25 bg-[#D8B366]/10 text-[#F6E6C6] text-[11px] font-bold tracking-[0.08em] uppercase">
+                <span className="inline-flex px-3 py-1.5 rounded-full border border-[#D8B366]/25 bg-[#D8B366]/10 text-[#F6E6C6] text-[10px] md:text-[11px] font-bold tracking-[0.08em] uppercase">
                   ENCONTRO PRESENCIAL E EXCLUSIVO
                 </span>
               </motion.div>
 
               <motion.div variants={fadeInUp} className="space-y-2">
-                <h1 className="text-5xl md:text-[56px] font-display font-bold text-white leading-[1.05] tracking-tight">
+                <h1 className="text-4xl md:text-[56px] font-display font-bold text-white leading-[1.05] tracking-tight">
                   Venda não é sorte.<br />É processo.
                 </h1>
-                <p className="text-2xl md:text-[32px] font-serif italic font-normal text-[#D8B366] leading-[1.15]">
+                <p className="text-xl md:text-[32px] font-serif italic font-normal text-[#D8B366] leading-[1.15]">
                   Agora, com inteligência artificial a seu favor.
                 </p>
               </motion.div>
 
-              <motion.p variants={fadeInUp} className="text-base md:text-lg text-white/80 leading-relaxed font-light max-w-lg">
+              <motion.p variants={fadeInUp} className="text-sm md:text-lg text-white/80 leading-relaxed font-light max-w-lg">
                 Um encontro presencial e exclusivo para Corretores de Seguro de Vida e Distribuidores de Produtos Financeiros que querem controle, previsibilidade e resultado real em vendas.
               </motion.p>
 
-              <motion.div variants={fadeInUp} className="flex flex-wrap gap-4 text-sm text-white/90 font-light">
+              <motion.div variants={fadeInUp} className="flex flex-wrap gap-3 md:gap-4 text-xs md:text-sm text-white/90 font-light">
                 <div className="flex items-center gap-2 bg-white/5 px-3 py-1.5 rounded-md border border-white/10">
-                  <MapPin className="w-4 h-4 text-[#D8B366]" /> Orlando
+                  <MapPin className="w-3.5 h-3.5 md:w-4 md:h-4 text-[#D8B366]" /> Orlando
                 </div>
                 <div className="flex items-center gap-2 bg-white/5 px-3 py-1.5 rounded-md border border-white/10">
-                  <Calendar className="w-4 h-4 text-[#D8B366]" /> 13 de janeiro
+                  <Calendar className="w-3.5 h-3.5 md:w-4 md:h-4 text-[#D8B366]" /> 13 de janeiro
                 </div>
                 <div className="flex items-center gap-2 bg-white/5 px-3 py-1.5 rounded-md border border-white/10">
-                  <Clock className="w-4 h-4 text-[#D8B366]" /> 12:30 PM às 5:30 PM
+                  <Clock className="w-3.5 h-3.5 md:w-4 md:h-4 text-[#D8B366]" /> 12:30 PM às 5:30 PM
                 </div>
               </motion.div>
 
               <motion.div variants={fadeInUp} className="space-y-4 pt-2">
-                <div className="flex flex-col sm:flex-row gap-4">
-                  <button className="relative flex items-center gap-2 bg-[#D8B366] text-black text-base font-bold px-8 h-12 rounded-lg transition-all duration-300 group overflow-hidden hover:shadow-[0_0_30px_rgba(216,179,102,0.5)] hover:scale-105 active:scale-95">
+                <div className="flex flex-col sm:flex-row gap-3 md:gap-4">
+                  <button className="w-full sm:w-auto relative flex items-center justify-center gap-2 bg-[#D8B366] text-black text-base font-bold px-8 h-12 rounded-lg transition-all duration-300 group overflow-hidden hover:shadow-[0_0_30px_rgba(216,179,102,0.5)] hover:scale-105 active:scale-95">
                     <span className="absolute inset-0 bg-gradient-to-r from-transparent via-white/50 to-transparent translate-x-[-100%] group-hover:translate-x-[100%] transition-transform duration-700 ease-in-out" />
                     <span className="relative z-10">Garanta sua vaga</span>
                     <ArrowRight className="relative z-10 w-4 h-4 group-hover:translate-x-1 transition-transform" />
                   </button>
-                  <button className="relative flex items-center gap-2 bg-white/5 text-white text-base font-bold px-8 h-12 rounded-lg transition-all duration-300 group border border-white/10 overflow-hidden hover:bg-white/10 hover:border-[#D8B366]/50 hover:shadow-[0_0_20px_rgba(216,179,102,0.1)]">
+                  <button className="w-full sm:w-auto relative flex items-center justify-center gap-2 bg-white/5 text-white text-base font-bold px-8 h-12 rounded-lg transition-all duration-300 group border border-white/10 overflow-hidden hover:bg-white/10 hover:border-[#D8B366]/50 hover:shadow-[0_0_20px_rgba(216,179,102,0.1)]">
                     <span className="relative z-10">Ver o que vai acontecer</span>
                     <ArrowRight className="relative z-10 w-4 h-4 group-hover:translate-x-1 transition-transform" />
                   </button>
                 </div>
-                <div className="flex flex-wrap gap-3 justify-start pt-2">
+                <div className="flex flex-wrap gap-2 md:gap-3 justify-start pt-2">
                   <div className="inline-flex items-center gap-2 px-3 py-1.5 rounded-full bg-[#D8B366]/15 border border-[#D8B366]/30 backdrop-blur-sm">
                     <AlertTriangle className="w-3 h-3 text-[#D8B366]" />
-                    <span className="text-xs text-white/80 font-semibold">Vagas limitadas</span>
+                    <span className="text-[10px] md:text-xs text-white/80 font-semibold">Vagas limitadas</span>
                   </div>
                   <div className="inline-flex items-center gap-2 px-3 py-1.5 rounded-full bg-[#D8B366]/15 border border-[#D8B366]/30 backdrop-blur-sm">
                     <MapPin className="w-3 h-3 text-[#D8B366]" />
-                    <span className="text-xs text-white/80 font-semibold">Presencial</span>
+                    <span className="text-[10px] md:text-xs text-white/80 font-semibold">Presencial</span>
                   </div>
                   <div className="inline-flex items-center gap-2 px-3 py-1.5 rounded-full bg-[#D8B366]/15 border border-[#D8B366]/30 backdrop-blur-sm">
                     <Sparkles className="w-3 h-3 text-[#D8B366]" />
-                    <span className="text-xs text-white/80 font-semibold">Condição especial</span>
+                    <span className="text-[10px] md:text-xs text-white/80 font-semibold">Condição especial</span>
                   </div>
                 </div>
 
                 {/* Social Proof - Broker Images */}
                 <motion.div 
                   variants={fadeInUp}
-                  className="flex items-center gap-3 pt-6"
+                  className="flex flex-row items-center gap-4 pt-6"
                 >
-                  <div className="flex -space-x-3">
+                  <div className="flex -space-x-3 shrink-0">
                     {[
                       { img: brokerMale1, alt: "Corretor 1" },
                       { img: brokerFemale, alt: "Corretor 2" },
@@ -187,7 +199,7 @@ export default function Home() {
                       </div>
                     ))}
                   </div>
-                  <p className="text-xs md:text-sm text-white/80 font-light">
+                  <p className="text-xs md:text-sm text-white/80 font-light max-w-[200px] md:max-w-none leading-tight">
                     Vários profissionais já <span className="font-bold text-white">dominaram seu processo</span> e transformaram seus resultados
                   </p>
                 </motion.div>
@@ -198,7 +210,7 @@ export default function Home() {
       </section>
 
       {/* 3) DOR / CONTEXTO */}
-      <section id="context" className="py-32 relative border-t border-[#D8B366]/10 bg-[#0C0B0D] overflow-hidden">
+      <section id="context" className="py-16 md:py-32 relative border-t border-[#D8B366]/10 bg-[#0C0B0D] overflow-hidden">
         {/* Background Elements */}
         <div className="absolute top-0 right-0 w-[600px] h-[600px] bg-[#D8B366]/5 blur-[120px] rounded-full mix-blend-screen pointer-events-none translate-x-1/3 -translate-y-1/4" />
         <div className="absolute bottom-0 left-0 w-[400px] h-[400px] bg-[#D8B366]/5 blur-[100px] rounded-full mix-blend-screen pointer-events-none -translate-x-1/3 translate-y-1/4" />
@@ -273,7 +285,7 @@ export default function Home() {
       </section>
 
       {/* 4) O QUE VAI ACONTECER */}
-      <section className="py-24 relative bg-[#070607] overflow-hidden">
+      <section className="py-16 md:py-24 relative bg-[#070607] overflow-hidden">
         {/* Background Grid/Noise */}
         <div className="absolute inset-0 opacity-20 mix-blend-overlay pointer-events-none" style={{ backgroundImage: `url("data:image/svg+xml,%3Csvg viewBox='0 0 200 200' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='noiseFilter'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.65' numOctaves='3' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23noiseFilter)'/%3E%3C/svg%3E")` }}></div>
         <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[800px] h-[800px] bg-[#D8B366]/5 blur-[150px] rounded-full pointer-events-none" />
@@ -317,7 +329,7 @@ export default function Home() {
       </section>
 
       {/* 5) BLOCO ESPECIAL - LANÇAMENTO */}
-      <section id="launch" className="py-32 relative border-y border-[#D8B366]/10 bg-[#0C0B0D]">
+      <section id="launch" className="py-16 md:py-32 relative border-y border-[#D8B366]/10 bg-[#0C0B0D]">
         <div className="absolute inset-0 bg-[radial-gradient(circle_at_center,_var(--tw-gradient-stops))] from-[#D8B366]/5 via-transparent to-transparent" />
         
         <div className="container mx-auto px-6 max-w-6xl relative z-10">
@@ -425,7 +437,7 @@ export default function Home() {
       </section>
 
       {/* 6) BENEFÍCIO EXCLUSIVO */}
-      <section id="benefit" className="py-32 relative overflow-hidden bg-[#070607]">
+      <section id="benefit" className="py-16 md:py-32 relative overflow-hidden bg-[#070607]">
         <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[600px] h-[600px] bg-[#D8B366]/5 blur-[120px] rounded-full pointer-events-none" />
         
         {/* Background Image Accent */}
@@ -470,7 +482,7 @@ export default function Home() {
       </section>
 
       {/* 7) PREÇO */}
-      <section id="pricing" className="py-24 relative bg-[#0C0B0D] overflow-hidden">
+      <section id="pricing" className="py-16 md:py-24 relative bg-[#0C0B0D] overflow-hidden">
          {/* Background Glow for Pricing */}
          <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[800px] h-[500px] bg-gradient-to-r from-[#D8B366]/5 to-[#B98A3B]/5 blur-[100px] rounded-full pointer-events-none" />
 
@@ -560,7 +572,7 @@ export default function Home() {
       </section>
 
       {/* 8) INFO FINAIS */}
-      <section id="info" className="py-32 relative border-b border-[#D8B366]/10 overflow-hidden">
+      <section id="info" className="py-16 md:py-32 relative border-b border-[#D8B366]/10 overflow-hidden">
         <div className="absolute inset-0 opacity-10">
             <img src={libraryImg} alt="" className="w-full h-full object-cover" />
             <div className="absolute inset-0 bg-[#070607]/90" />
@@ -603,7 +615,7 @@ export default function Home() {
       </section>
 
       {/* 9) FAQ */}
-      <section id="faq" className="py-24 relative bg-[#070607]">
+      <section id="faq" className="py-16 md:py-24 relative bg-[#070607]">
         <div className="container mx-auto max-w-6xl px-6">
           <h2 className="text-3xl font-display font-bold text-white mb-10 text-center">Perguntas Frequentes</h2>
           
@@ -636,7 +648,7 @@ export default function Home() {
       </section>
 
       {/* 10) CTA FINAL */}
-      <section className="py-32 relative overflow-hidden">
+      <section className="py-16 md:py-32 relative overflow-hidden">
         {/* Cinematic Gradient Background */}
         <div className="absolute inset-0 bg-gradient-to-t from-[#D8B366]/20 via-[#070607] to-[#070607]" />
         
