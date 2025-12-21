@@ -61,46 +61,48 @@ export default function Home() {
       {/* 1) NAVBAR (Sticky) */}
       <nav className="fixed top-0 left-0 right-0 z-50 h-[72px] bg-[#070607]/55 backdrop-blur-md border-b border-[#D8B366]/20 flex items-center transition-all duration-300">
         <div className="container mx-auto max-w-6xl px-6 flex items-center justify-between">
-          <div className="flex items-center gap-8">
+          <div className="flex items-center gap-4 md:gap-8">
             <button onClick={scrollToTop} className="group cursor-pointer hover:drop-shadow-lg transition-all duration-300 active:scale-95">
               <img 
                 src={logoEusou} 
                 alt="Eusou360" 
-                className="h-8 object-contain opacity-90 group-hover:opacity-100 transition-opacity duration-300"
+                className="h-6 md:h-8 object-contain opacity-90 group-hover:opacity-100 transition-opacity duration-300"
               />
             </button>
             <button onClick={scrollToTop} className="group cursor-pointer hover:drop-shadow-lg transition-all duration-300 active:scale-95">
               <img 
                 src={logoErika} 
                 alt="Erika Crivellari" 
-                className="h-4 object-contain opacity-90 group-hover:opacity-100 transition-opacity duration-300"
+                className="h-3 md:h-4 object-contain opacity-90 group-hover:opacity-100 transition-opacity duration-300"
               />
             </button>
           </div>
           
-          <div className="absolute left-1/2 transform -translate-x-1/2">
+          <div className="hidden md:block absolute left-1/2 transform -translate-x-1/2">
             <h1 className="text-[#D8B366] font-display font-bold text-lg tracking-widest uppercase">
               Governe seus resultados
             </h1>
           </div>
 
-          <button className="relative flex items-center gap-2 bg-[#D8B366] text-black text-sm font-bold px-6 h-10 rounded-lg transition-all duration-300 group overflow-hidden hover:shadow-[0_0_20px_rgba(216,179,102,0.4)] hover:scale-105 active:scale-95">
+          <button className="relative flex items-center gap-2 bg-[#D8B366] text-black text-xs md:text-sm font-bold px-4 md:px-6 h-9 md:h-10 rounded-lg transition-all duration-300 group overflow-hidden hover:shadow-[0_0_20px_rgba(216,179,102,0.4)] hover:scale-105 active:scale-95">
             <span className="absolute inset-0 bg-gradient-to-r from-transparent via-white/40 to-transparent translate-x-[-100%] group-hover:translate-x-[100%] transition-transform duration-700 ease-in-out" />
             <span className="relative z-10">Garantir minha vaga</span>
-            <ArrowRight className="relative z-10 w-4 h-4 group-hover:translate-x-1 transition-transform" />
+            <ArrowRight className="relative z-10 w-3 h-3 md:w-4 md:h-4 group-hover:translate-x-1 transition-transform" />
           </button>
         </div>
       </nav>
 
       {/* 2) HERO (Cinematic) */}
-      <section id="hero" className="relative min-h-[100vh] md:min-h-[110vh] flex items-start md:items-center pt-32 md:pt-40 pb-20 overflow-hidden bg-cover bg-center bg-no-repeat" style={{ backgroundImage: `var(--hero-bg)` }}>
+      <section id="hero" className="relative min-h-[125vh] md:min-h-[110vh] flex items-start md:items-center pt-28 md:pt-40 pb-20 overflow-hidden bg-cover bg-center bg-no-repeat" style={{ backgroundImage: `var(--hero-bg)` }}>
         <style>{`
           #hero {
             --hero-bg: url(${heroBgMobile});
+            background-position: center top;
           }
           @media (min-width: 768px) {
             #hero {
               --hero-bg: url(${heroBg});
+              background-position: center center;
             }
           }
         `}</style>
