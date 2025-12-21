@@ -542,7 +542,7 @@ export default function Home() {
                         </div>
 
                         <div className="text-center space-y-2 pt-4">
-                            <p className="text-white/40 text-sm line-through decoration-white/30">de US$ 297,00</p>
+                            <p className="text-white/40 text-sm line-through decoration-[#E45B5B]">valor inestimável</p>
                             <div className="flex items-baseline justify-center gap-1">
                                 <span className="text-xl text-[#D8B366]">por</span>
                                 <span className="text-5xl md:text-6xl font-display font-bold text-white">US$ 49,90</span>
