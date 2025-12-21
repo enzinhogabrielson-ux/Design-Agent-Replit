@@ -320,64 +320,109 @@ export default function Home() {
       </section>
 
       {/* 5) BLOCO ESPECIAL - LANÇAMENTO */}
-      <section id="launch" className="py-24 relative border-y border-[#D8B366]/10 bg-[#0C0B0D]">
+      <section id="launch" className="py-32 relative border-y border-[#D8B366]/10 bg-[#0C0B0D]">
         <div className="absolute inset-0 bg-[radial-gradient(circle_at_center,_var(--tw-gradient-stops))] from-[#D8B366]/5 via-transparent to-transparent" />
         
-        <div className="container mx-auto px-6 max-w-4xl relative z-10">
-          <div className="p-10 md:p-14 rounded-[24px] border border-[#D8B366]/30 bg-gradient-to-b from-[#131116] to-[#070607] shadow-[0_0_60px_rgba(216,179,102,0.05)] text-center md:text-left">
-            <div className="flex flex-col md:flex-row gap-10 items-center">
-              <div className="flex-1 space-y-6">
-                <div className="inline-block px-3 py-1 rounded-full bg-[#D8B366] text-[#070607] text-xs font-bold uppercase tracking-wider">
-                  Exclusivo
+        <div className="container mx-auto px-6 max-w-6xl relative z-10">
+          <div className="flex flex-col lg:flex-row gap-16 items-center">
+            
+            {/* Content Left */}
+            <div className="flex-1 space-y-10">
+              <div className="space-y-6">
+                <div className="inline-flex items-center gap-2 px-4 py-1.5 rounded-full bg-[#D8B366]/10 border border-[#D8B366]/20 backdrop-blur-sm">
+                  <Sparkles className="w-3 h-3 text-[#D8B366]" />
+                  <span className="text-[#D8B366] text-xs font-bold uppercase tracking-widest">Lançamento Exclusivo</span>
                 </div>
                 
-                <h2 className="text-3xl md:text-4xl font-display font-bold text-white leading-tight">
-                  Lançamento exclusivo de um <span className="text-[#D8B366]">sistema de IA para corretores</span>
+                <h2 className="text-4xl md:text-5xl font-display font-bold text-white leading-[1.1]">
+                  O primeiro sistema de IA <br />
+                  <span className="text-[#D8B366]">criado para corretores</span>
                 </h2>
                 
-                <p className="text-white/80 font-light leading-relaxed">
-                  Durante o evento, será apresentado em primeira mão um <span className="font-serif italic text-white">sistema de inteligência artificial</span> desenvolvido exclusivamente para corretores de seguro de vida e distribuidores de produtos financeiros.
+                <p className="text-xl text-white/80 font-light leading-relaxed max-w-xl">
+                  Durante o evento, você terá acesso em primeira mão a uma tecnologia capaz de <span className="font-serif italic text-white">transformar dados em contratos fechados</span>.
                 </p>
-
-                <p className="text-[#D8B366] font-medium pt-2">Um sistema criado para:</p>
-
-                <ul className="space-y-3 text-left">
-                  {[
-                    "Organizar o processo de vendas",
-                    "Dar clareza sobre funil e oportunidades",
-                    "Apoiar decisões com dados",
-                    "Tirar o corretor do operacional caótico"
-                  ].map((item, i) => (
-                    <li key={i} className="flex items-center gap-3">
-                      <Check className="w-5 h-5 text-[#D8B366]" />
-                      <span className="text-white/70 text-sm">{item}</span>
-                    </li>
-                  ))}
-                </ul>
-
-                <div className="flex items-start gap-3 p-4 rounded-lg bg-[#E45B5B]/10 border border-[#E45B5B]/20 text-left">
-                  <AlertTriangle className="w-5 h-5 text-[#E45B5B] flex-shrink-0 mt-0.5" />
-                  <p className="text-sm text-[#E45B5B]/90 font-medium">
-                    Esse lançamento é exclusivo para corretores e distribuidores de produtos financeiros
-                  </p>
-                </div>
               </div>
 
-              <div className="w-full md:w-1/2 rounded-2xl border border-[#D8B366]/20 relative overflow-hidden group shadow-2xl">
-                <div className="absolute inset-0 bg-gradient-to-t from-[#070607] via-transparent to-transparent opacity-60 z-10" />
-                <img 
-                  src={dashboardImg} 
-                  alt="Sistema de IA para Corretores" 
-                  className="w-full h-full object-cover transform group-hover:scale-105 transition-transform duration-700"
-                />
-                <div className="absolute bottom-0 left-0 right-0 p-6 z-20">
-                  <div className="flex items-center gap-2 text-[#D8B366] mb-2">
-                    <Sparkles className="w-5 h-5" />
-                    <span className="text-xs font-bold uppercase tracking-wider">Tecnologia Exclusiva</span>
+              <div className="grid sm:grid-cols-2 gap-6">
+                {[
+                  {
+                    icon: <div className="w-10 h-10 rounded-lg bg-[#D8B366]/10 border border-[#D8B366]/20 flex items-center justify-center text-[#D8B366]"><Check className="w-5 h-5" /></div>,
+                    title: "Organização Total",
+                    desc: "Centralize seu processo de vendas e elimine o caos operacional."
+                  },
+                  {
+                    icon: <div className="w-10 h-10 rounded-lg bg-[#D8B366]/10 border border-[#D8B366]/20 flex items-center justify-center text-[#D8B366]"><ChevronDown className="w-5 h-5" /></div>, // Using ChevronDown as a placeholder or other icon
+                    title: "Visão de Funil",
+                    desc: "Clareza absoluta sobre oportunidades e próximos passos."
+                  },
+                  {
+                    icon: <div className="w-10 h-10 rounded-lg bg-[#D8B366]/10 border border-[#D8B366]/20 flex items-center justify-center text-[#D8B366]"><AlertTriangle className="w-5 h-5" /></div>,
+                    title: "Decisões com Dados",
+                    desc: "Pare de agir por intuição e comece a agir por inteligência."
+                  },
+                  {
+                    icon: <div className="w-10 h-10 rounded-lg bg-[#D8B366]/10 border border-[#D8B366]/20 flex items-center justify-center text-[#D8B366]"><Sparkles className="w-5 h-5" /></div>,
+                    title: "Foco no Cliente",
+                    desc: "A IA cuida da burocracia para você cuidar do relacionamento."
+                  }
+                ].map((item, i) => (
+                  <div key={i} className="flex gap-4 items-start group hover:bg-white/5 p-3 rounded-xl transition-colors duration-300">
+                    {item.icon}
+                    <div>
+                      <h4 className="text-white font-bold text-base mb-1 group-hover:text-[#D8B366] transition-colors">{item.title}</h4>
+                      <p className="text-white/60 text-sm leading-snug">{item.desc}</p>
+                    </div>
                   </div>
-                </div>
+                ))}
+              </div>
+
+              <div className="inline-flex items-center gap-3 px-5 py-3 rounded-xl bg-[#E45B5B]/10 border border-[#E45B5B]/20 max-w-md">
+                <AlertTriangle className="w-5 h-5 text-[#E45B5B] flex-shrink-0" />
+                <p className="text-sm text-[#E45B5B]/90 font-medium">
+                  Disponível apenas para participantes presenciais.
+                </p>
               </div>
             </div>
+
+            {/* Visual Right */}
+            <div className="w-full lg:w-[45%] relative">
+               <div className="relative rounded-[32px] overflow-hidden border border-[#D8B366]/30 shadow-[0_20px_80px_-20px_rgba(216,179,102,0.15)] group">
+                  <div className="absolute inset-0 bg-gradient-to-tr from-[#D8B366]/20 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-700 pointer-events-none z-10" />
+                  
+                  {/* Glassmorphism Overlay */}
+                  <div className="absolute inset-0 bg-gradient-to-b from-transparent via-transparent to-[#070607]/80 z-10" />
+
+                  <img 
+                    src={dashboardImg} 
+                    alt="Sistema de IA" 
+                    className="w-full aspect-[4/5] object-cover object-left-top transform group-hover:scale-105 transition-transform duration-1000"
+                  />
+                  
+                  {/* Floating UI Element */}
+                  <div className="absolute bottom-8 left-8 right-8 z-20">
+                    <div className="p-5 rounded-2xl bg-[#131116]/80 backdrop-blur-xl border border-[#D8B366]/20 shadow-lg">
+                      <div className="flex items-center justify-between mb-3">
+                        <span className="text-xs font-bold text-[#D8B366] uppercase tracking-wider">Performance de Vendas</span>
+                        <div className="flex gap-1">
+                          <div className="w-2 h-2 rounded-full bg-[#D8B366]" />
+                          <div className="w-2 h-2 rounded-full bg-[#D8B366]/30" />
+                          <div className="w-2 h-2 rounded-full bg-[#D8B366]/30" />
+                        </div>
+                      </div>
+                      <div className="flex items-end gap-3">
+                        <span className="text-3xl font-display font-bold text-white">+127%</span>
+                        <span className="text-sm text-white/60 mb-1">em conversão este mês</span>
+                      </div>
+                    </div>
+                  </div>
+               </div>
+               
+               {/* Decorative Elements behind image */}
+               <div className="absolute -top-10 -right-10 w-40 h-40 bg-[#D8B366]/10 blur-[60px] rounded-full pointer-events-none" />
+               <div className="absolute -bottom-10 -left-10 w-40 h-40 bg-[#D8B366]/10 blur-[60px] rounded-full pointer-events-none" />
+            </div>
+
           </div>
         </div>
       </section>
