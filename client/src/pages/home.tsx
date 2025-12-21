@@ -11,6 +11,7 @@ import libraryImg from "@assets/generated_images/orlando_public_library_stylized
 import brokerMale1 from "@assets/generated_images/professional_male_insurance_broker_portrait.png";
 import brokerFemale from "@assets/generated_images/professional_female_insurance_broker_portrait.png";
 import brokerMale2 from "@assets/generated_images/professional_latin_male_broker_portrait.png";
+import brokerNotebook from "@assets/generated_images/broker_working_on_ai_notebook.png";
 import { useState } from "react";
 
 export default function Home() {
@@ -256,8 +257,6 @@ export default function Home() {
             >
               <motion.h2 variants={fadeInUp} className="text-3xl md:text-[42px] font-display font-bold text-white mb-8 relative leading-tight">
                 Você pode até <span className="font-serif italic text-white">vender bem</span>.
-                {/* Decorative sparkle */}
-                <Sparkles className="absolute -top-6 -left-6 w-8 h-8 text-[#D8B366]/40" />
               </motion.h2>
 
               <motion.div variants={fadeInUp} className="p-8 md:p-10 rounded-[24px] bg-[#131116]/80 backdrop-blur-md border border-[#D8B366]/20 shadow-[0_10px_30px_rgba(0,0,0,0.35)] relative overflow-hidden group hover:border-[#D8B366]/40 hover:shadow-[0_20px_50px_rgba(216,179,102,0.1)] transition-all duration-500">
@@ -287,10 +286,27 @@ export default function Home() {
               </motion.div>
             </motion.div>
             
-            {/* Right Side Visual (Optional, or leave empty for cleaner look if image is background) */}
-             <div className="hidden md:block relative h-full min-h-[400px]">
-                {/* Could place a stylized graphic here if needed, but background image covers it */}
-             </div>
+            {/* Right Side Visual - Broker with AI Notebook */}
+             <motion.div 
+              initial="hidden"
+              whileInView="visible"
+              viewport={{ once: true, margin: "-100px" }}
+              variants={staggerContainer}
+              className="hidden md:block relative h-full min-h-[500px]"
+            >
+              <motion.div variants={fadeInUp} className="relative rounded-[32px] overflow-hidden border border-[#D8B366]/30 shadow-[0_20px_80px_-20px_rgba(216,179,102,0.15)] group h-full">
+                <div className="absolute inset-0 bg-gradient-to-tr from-[#D8B366]/20 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-700 pointer-events-none z-10" />
+                
+                {/* Glassmorphism Overlay */}
+                <div className="absolute inset-0 bg-gradient-to-b from-transparent via-transparent to-[#070607]/60 z-10" />
+
+                <img 
+                  src={brokerNotebook} 
+                  alt="Corretor usando IA" 
+                  className="w-full h-full object-cover transform group-hover:scale-105 transition-transform duration-1000"
+                />
+              </motion.div>
+             </motion.div>
           </div>
         </div>
       </section>
