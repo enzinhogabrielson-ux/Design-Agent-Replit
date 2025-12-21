@@ -37,46 +37,23 @@ export default function Home() {
       {/* 1) NAVBAR (Sticky) */}
       <nav className="fixed top-0 left-0 right-0 z-50 h-[72px] bg-[#070607]/55 backdrop-blur-md border-b border-[#D8B366]/20 flex items-center transition-all duration-300">
         <div className="container mx-auto px-6 flex items-center justify-between">
-          <div className="flex items-center gap-4">
-            <a href="#" className="group">
-              <img 
-                src={logoEusou} 
-                alt="Eusou360" 
-                className="h-8 object-contain opacity-90 group-hover:opacity-100 transition-opacity duration-300"
-              />
-            </a>
-            <div className="w-px h-6 bg-[#D8B366]/30" />
-            <a href="#" className="group">
-              <img 
-                src={logoErika} 
-                alt="Erika Crivellari" 
-                className="h-8 object-contain opacity-90 group-hover:opacity-100 transition-opacity duration-300"
-              />
-            </a>
-          </div>
+          <a href="#" className="group">
+            <img 
+              src={logoEusou} 
+              alt="Eusou360" 
+              className="h-9 object-contain opacity-90 group-hover:opacity-100 transition-opacity duration-300"
+            />
+          </a>
           
-          <div className="hidden md:flex items-center gap-8">
-            {[
-              { label: "Início", id: "hero" },
-              { label: "O Evento", id: "context" },
-              { label: "Lançamento", id: "launch" },
-              { label: "Benefício", id: "benefit" },
-              { label: "Investimento", id: "pricing" },
-              { label: "Local", id: "info" },
-              { label: "FAQ", id: "faq" }
-            ].map((link) => (
-              <button 
-                key={link.id}
-                onClick={() => scrollToSection(link.id)}
-                className="text-sm font-medium text-white/70 hover:text-white transition-colors"
-              >
-                {link.label}
-              </button>
-            ))}
+          <div className="absolute left-1/2 transform -translate-x-1/2">
+            <h1 className="text-[#D8B366] font-display font-bold text-lg tracking-widest uppercase">
+              Governe seus resultados
+            </h1>
           </div>
 
-          <button className="hidden md:flex btn-primary h-10 px-6 text-sm">
-            Garantir minha vaga
+          <button className="flex items-center gap-2 btn-primary h-10 px-6 text-sm font-bold group">
+            <span>Garantir minha vaga</span>
+            <ArrowRight className="w-4 h-4 group-hover:translate-x-1 transition-transform" />
           </button>
         </div>
       </nav>
