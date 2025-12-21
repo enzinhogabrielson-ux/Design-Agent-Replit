@@ -123,9 +123,20 @@ export default function Home() {
                     <ArrowRight className="w-4 h-4 group-hover:translate-x-1 transition-transform" />
                   </button>
                 </div>
-                <p className="text-xs text-white/50 uppercase tracking-wider font-medium">
-                  Vagas limitadas • Presencial • Condição especial de lançamento
-                </p>
+                <div className="flex flex-wrap gap-3 justify-center pt-2">
+                  <div className="inline-flex items-center gap-2 px-3 py-1.5 rounded-full bg-[#D8B366]/15 border border-[#D8B366]/30 backdrop-blur-sm">
+                    <AlertTriangle className="w-3 h-3 text-[#D8B366]" />
+                    <span className="text-xs text-white/80 font-semibold">Vagas limitadas</span>
+                  </div>
+                  <div className="inline-flex items-center gap-2 px-3 py-1.5 rounded-full bg-[#D8B366]/15 border border-[#D8B366]/30 backdrop-blur-sm">
+                    <MapPin className="w-3 h-3 text-[#D8B366]" />
+                    <span className="text-xs text-white/80 font-semibold">Presencial</span>
+                  </div>
+                  <div className="inline-flex items-center gap-2 px-3 py-1.5 rounded-full bg-[#D8B366]/15 border border-[#D8B366]/30 backdrop-blur-sm">
+                    <Sparkles className="w-3 h-3 text-[#D8B366]" />
+                    <span className="text-xs text-white/80 font-semibold">Condição especial</span>
+                  </div>
+                </div>
               </motion.div>
             </motion.div>
           </div>
