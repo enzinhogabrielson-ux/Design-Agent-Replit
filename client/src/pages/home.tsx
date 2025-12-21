@@ -1,6 +1,8 @@
 import { motion } from "framer-motion";
 import { ArrowRight, Sparkles, Check, ChevronDown, MapPin, Calendar, Clock, AlertTriangle } from "lucide-react";
 import heroBg from "@assets/bg_lp_1766333835302.png";
+import logoEusou from "@assets/logo_erika_1766334069365.png";
+import logoErika from "@assets/LOGO_Erika_1766334075618.png";
 import { useState } from "react";
 
 export default function Home() {
@@ -451,20 +453,41 @@ export default function Home() {
       </section>
 
       {/* 12) FOOTER */}
-      <footer className="py-12 border-t border-white/5 bg-[#070607]">
-        <div className="container mx-auto px-6 text-center space-y-6">
-          <div className="text-[#D8B366] font-display font-bold text-lg">Processo & IA</div>
-          <p className="text-white/40 text-sm font-light">Venda não é sorte. É processo.</p>
-          
-          <div className="flex justify-center gap-8 text-xs text-white/50">
-            <a href="#" className="hover:text-white transition-colors">Política de Privacidade</a>
-            <a href="#" className="hover:text-white transition-colors">Termos de Uso</a>
-            <a href="#" className="hover:text-white transition-colors">Contato</a>
+      <footer className="py-16 border-t border-white/5 bg-[#070607]">
+        <div className="container mx-auto px-6">
+          {/* Logos Section */}
+          <div className="flex flex-col md:flex-row items-center justify-center gap-12 mb-12 pb-12 border-b border-white/10">
+            <a href="#" className="group">
+              <img 
+                src={logoEusou} 
+                alt="Eusou360" 
+                className="h-16 object-contain opacity-80 group-hover:opacity-100 transition-opacity duration-300"
+              />
+            </a>
+            <a href="#" className="group">
+              <img 
+                src={logoErika} 
+                alt="Erika Crivellari" 
+                className="h-16 object-contain opacity-80 group-hover:opacity-100 transition-opacity duration-300"
+              />
+            </a>
           </div>
-          
-          <p className="text-white/30 text-[10px] uppercase tracking-widest">
-            Evento presencial • Informações sujeitas a alterações • Vagas limitadas
-          </p>
+
+          {/* Content */}
+          <div className="text-center space-y-6">
+            <div className="text-[#D8B366] font-display font-bold text-lg">Processo & IA</div>
+            <p className="text-white/40 text-sm font-light">Venda não é sorte. É processo.</p>
+            
+            <div className="flex justify-center gap-8 text-xs text-white/50">
+              <a href="#" className="hover:text-white transition-colors">Política de Privacidade</a>
+              <a href="#" className="hover:text-white transition-colors">Termos de Uso</a>
+              <a href="#" className="hover:text-white transition-colors">Contato</a>
+            </div>
+            
+            <p className="text-white/30 text-[10px] uppercase tracking-widest">
+              Evento presencial • Informações sujeitas a alterações • Vagas limitadas
+            </p>
+          </div>
         </div>
       </footer>
     </div>
