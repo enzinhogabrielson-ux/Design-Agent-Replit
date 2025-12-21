@@ -32,8 +32,15 @@ export default function Home() {
   };
 
   return (
-    <div className="min-h-screen bg-[#070607] text-white overflow-hidden selection:bg-[#D8B366] selection:text-black font-sans">
+    <div className="min-h-screen bg-[#070607] text-white overflow-hidden selection:bg-[#D8B366] selection:text-black font-sans relative">
       
+      {/* GLOBAL BACKGROUND ELEMENTS - "Light Points" & "Noise" */}
+      <div className="fixed inset-0 pointer-events-none z-0">
+        <div className="absolute top-[-10%] left-[-10%] w-[500px] h-[500px] bg-[#D8B366]/10 blur-[120px] rounded-full mix-blend-screen animate-pulse" />
+        <div className="absolute top-[20%] right-[-5%] w-[400px] h-[400px] bg-[#D8B366]/5 blur-[100px] rounded-full mix-blend-screen opacity-50" />
+        <div className="absolute bottom-[-10%] left-[20%] w-[600px] h-[600px] bg-[#D8B366]/5 blur-[150px] rounded-full mix-blend-screen opacity-30" />
+      </div>
+
       {/* 1) NAVBAR (Sticky) */}
       <nav className="fixed top-0 left-0 right-0 z-50 h-[72px] bg-[#070607]/55 backdrop-blur-md border-b border-[#D8B366]/20 flex items-center transition-all duration-300">
         <div className="container mx-auto max-w-6xl px-6 flex items-center justify-between">
@@ -60,9 +67,10 @@ export default function Home() {
             </h1>
           </div>
 
-          <button className="flex items-center gap-2 bg-[#D8B366] hover:bg-[#C5A04A] text-black text-sm font-bold px-6 h-10 rounded-lg transition-all group">
-            <span>Garantir minha vaga</span>
-            <ArrowRight className="w-4 h-4 group-hover:translate-x-1 transition-transform" />
+          <button className="relative flex items-center gap-2 bg-[#D8B366] text-black text-sm font-bold px-6 h-10 rounded-lg transition-all duration-300 group overflow-hidden hover:shadow-[0_0_20px_rgba(216,179,102,0.4)] hover:scale-105 active:scale-95">
+            <span className="absolute inset-0 bg-gradient-to-r from-transparent via-white/40 to-transparent translate-x-[-100%] group-hover:translate-x-[100%] transition-transform duration-700 ease-in-out" />
+            <span className="relative z-10">Garantir minha vaga</span>
+            <ArrowRight className="relative z-10 w-4 h-4 group-hover:translate-x-1 transition-transform" />
           </button>
         </div>
       </nav>
@@ -114,13 +122,14 @@ export default function Home() {
 
               <motion.div variants={fadeInUp} className="space-y-4 pt-2">
                 <div className="flex flex-col sm:flex-row gap-4">
-                  <button className="flex items-center gap-2 bg-[#D8B366] hover:bg-[#C5A04A] text-black text-base font-bold px-8 h-12 rounded-lg transition-all group">
-                    <span>Garanta sua vaga</span>
-                    <ArrowRight className="w-4 h-4 group-hover:translate-x-1 transition-transform" />
+                  <button className="relative flex items-center gap-2 bg-[#D8B366] text-black text-base font-bold px-8 h-12 rounded-lg transition-all duration-300 group overflow-hidden hover:shadow-[0_0_30px_rgba(216,179,102,0.5)] hover:scale-105 active:scale-95">
+                    <span className="absolute inset-0 bg-gradient-to-r from-transparent via-white/50 to-transparent translate-x-[-100%] group-hover:translate-x-[100%] transition-transform duration-700 ease-in-out" />
+                    <span className="relative z-10">Garanta sua vaga</span>
+                    <ArrowRight className="relative z-10 w-4 h-4 group-hover:translate-x-1 transition-transform" />
                   </button>
-                  <button className="flex items-center gap-2 bg-white/10 hover:bg-white/20 text-white text-base font-bold px-8 h-12 rounded-lg transition-all group border border-white/20">
-                    <span>Ver o que vai acontecer</span>
-                    <ArrowRight className="w-4 h-4 group-hover:translate-x-1 transition-transform" />
+                  <button className="relative flex items-center gap-2 bg-white/5 text-white text-base font-bold px-8 h-12 rounded-lg transition-all duration-300 group border border-white/10 overflow-hidden hover:bg-white/10 hover:border-[#D8B366]/50 hover:shadow-[0_0_20px_rgba(216,179,102,0.1)]">
+                    <span className="relative z-10">Ver o que vai acontecer</span>
+                    <ArrowRight className="relative z-10 w-4 h-4 group-hover:translate-x-1 transition-transform" />
                   </button>
                 </div>
                 <div className="flex flex-wrap gap-3 justify-start pt-2">
@@ -203,22 +212,29 @@ export default function Home() {
       </section>
 
       {/* 3) DOR / CONTEXTO */}
-      <section id="context" className="py-24 relative border-t border-[#D8B366]/10 bg-[#0C0B0D]">
-        <div className="container mx-auto px-6 max-w-4xl">
+      <section id="context" className="py-24 relative border-t border-[#D8B366]/10 bg-[#0C0B0D] overflow-hidden">
+        {/* Background Elements */}
+        <div className="absolute top-0 right-0 w-[600px] h-[600px] bg-[#D8B366]/5 blur-[120px] rounded-full mix-blend-screen pointer-events-none translate-x-1/3 -translate-y-1/4" />
+        <div className="absolute bottom-0 left-0 w-[400px] h-[400px] bg-[#D8B366]/5 blur-[100px] rounded-full mix-blend-screen pointer-events-none -translate-x-1/3 translate-y-1/4" />
+
+        <div className="container mx-auto px-6 max-w-4xl relative z-10">
           <motion.div
             initial="hidden"
             whileInView="visible"
             viewport={{ once: true, margin: "-100px" }}
             variants={staggerContainer}
           >
-            <motion.h2 variants={fadeInUp} className="text-3xl md:text-[38px] font-display font-bold text-white mb-8">
+            <motion.h2 variants={fadeInUp} className="text-3xl md:text-[38px] font-display font-bold text-white mb-8 relative">
               Você pode até vender bem.
+              {/* Decorative sparkle */}
+              <Sparkles className="absolute -top-6 -left-6 w-8 h-8 text-[#D8B366]/40 animate-pulse" />
             </motion.h2>
 
-            <motion.div variants={fadeInUp} className="p-8 md:p-10 rounded-[18px] bg-[#131116] border border-[#D8B366]/20 shadow-[0_10px_30px_rgba(0,0,0,0.35)] relative overflow-hidden group">
+            <motion.div variants={fadeInUp} className="p-8 md:p-10 rounded-[18px] bg-[#131116]/80 backdrop-blur-md border border-[#D8B366]/20 shadow-[0_10px_30px_rgba(0,0,0,0.35)] relative overflow-hidden group hover:border-[#D8B366]/40 hover:shadow-[0_20px_50px_rgba(216,179,102,0.1)] transition-all duration-500">
               <div className="absolute top-0 left-0 w-1 h-full bg-[#D8B366]" />
+              <div className="absolute inset-0 bg-gradient-to-br from-[#D8B366]/5 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500" />
               
-              <p className="text-xl md:text-2xl text-white/90 font-light mb-8 leading-relaxed">
+              <p className="text-xl md:text-2xl text-white/90 font-light mb-8 leading-relaxed relative z-10">
                 Mas se não tiver <span className="text-[#D8B366] font-semibold">processo, organização e inteligência</span>, você sempre vai depender do improviso.
               </p>
 
@@ -244,8 +260,12 @@ export default function Home() {
       </section>
 
       {/* 4) O QUE VAI ACONTECER */}
-      <section className="py-24 relative bg-[#070607]">
-        <div className="container mx-auto max-w-6xl px-6">
+      <section className="py-24 relative bg-[#070607] overflow-hidden">
+        {/* Background Grid/Noise */}
+        <div className="absolute inset-0 opacity-20 mix-blend-overlay pointer-events-none" style={{ backgroundImage: `url("data:image/svg+xml,%3Csvg viewBox='0 0 200 200' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='noiseFilter'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.65' numOctaves='3' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23noiseFilter)'/%3E%3C/svg%3E")` }}></div>
+        <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[800px] h-[800px] bg-[#D8B366]/5 blur-[150px] rounded-full pointer-events-none" />
+
+        <div className="container mx-auto max-w-6xl px-6 relative z-10">
           <div className="max-w-5xl mx-auto">
             <div className="mb-12">
               <span className="text-[#D8B366] text-xs font-bold tracking-widest uppercase mb-3 block">O que vai acontecer nesse evento</span>
@@ -269,13 +289,13 @@ export default function Home() {
                   whileInView={{ opacity: 1, y: 0 }}
                   viewport={{ once: true }}
                   transition={{ delay: i * 0.1 }}
-                  className={`p-6 rounded-[18px] bg-[#131116] border border-[#D8B366]/15 hover:border-[#D8B366]/30 hover:bg-[#131116]/80 transition-all duration-300 group ${item.full ? 'md:col-span-2 lg:col-span-1 bg-gradient-to-br from-[#131116] to-[#D8B366]/5' : ''}`}
+                  className={`p-6 rounded-[18px] bg-[#131116]/60 backdrop-blur-md border border-[#D8B366]/10 hover:border-[#D8B366]/40 hover:bg-[#131116]/90 hover:shadow-[0_10px_40px_rgba(216,179,102,0.1)] hover:-translate-y-1 transition-all duration-300 group ${item.full ? 'md:col-span-2 lg:col-span-1 bg-gradient-to-br from-[#131116] to-[#D8B366]/10' : ''}`}
                 >
-                  <div className="w-10 h-10 rounded-full bg-[#D8B366]/10 border border-[#D8B366]/20 flex items-center justify-center mb-4 group-hover:scale-110 transition-transform">
-                    <Sparkles className="w-5 h-5 text-[#D8B366]" />
+                  <div className="w-10 h-10 rounded-full bg-[#D8B366]/10 border border-[#D8B366]/20 flex items-center justify-center mb-4 group-hover:scale-110 group-hover:bg-[#D8B366] group-hover:text-black transition-all duration-300">
+                    <Sparkles className="w-5 h-5 text-[#D8B366] group-hover:text-black transition-colors" />
                   </div>
-                  <h3 className="text-lg font-bold text-white mb-2">{item.title}</h3>
-                  <p className="text-white/60 text-sm leading-relaxed">{item.desc}</p>
+                  <h3 className="text-lg font-bold text-white mb-2 group-hover:text-[#D8B366] transition-colors">{item.title}</h3>
+                  <p className="text-white/60 text-sm leading-relaxed group-hover:text-white/80 transition-colors">{item.desc}</p>
                 </motion.div>
               ))}
             </div>
@@ -337,8 +357,10 @@ export default function Home() {
       </section>
 
       {/* 6) BENEFÍCIO EXCLUSIVO */}
-      <section id="benefit" className="py-24 relative">
-        <div className="container mx-auto max-w-6xl px-6 text-center space-y-8">
+      <section id="benefit" className="py-24 relative overflow-hidden">
+        <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[600px] h-[600px] bg-[#D8B366]/5 blur-[120px] rounded-full pointer-events-none" />
+        
+        <div className="container mx-auto max-w-6xl px-6 text-center space-y-8 relative z-10">
           
           <h2 className="text-3xl md:text-4xl font-display font-bold text-white">
             Vantagem exclusiva para <span className="text-[#D8B366]">participantes presenciais</span>
@@ -360,8 +382,11 @@ export default function Home() {
       </section>
 
       {/* 7) PREÇO */}
-      <section id="pricing" className="py-24 relative bg-[#0C0B0D]">
-        <div className="container mx-auto max-w-6xl px-6">
+      <section id="pricing" className="py-24 relative bg-[#0C0B0D] overflow-hidden">
+         {/* Background Glow for Pricing */}
+         <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[800px] h-[500px] bg-gradient-to-r from-[#D8B366]/5 to-[#B98A3B]/5 blur-[100px] rounded-full pointer-events-none" />
+
+        <div className="container mx-auto max-w-6xl px-6 relative z-10">
           <div className="grid md:grid-cols-2 rounded-[24px] overflow-hidden border border-[#D8B366]/20 shadow-2xl">
             {/* Left Panel - Dark */}
             <div className="p-10 md:p-12 bg-[#131116] flex flex-col justify-center space-y-6">
@@ -384,9 +409,10 @@ export default function Home() {
                 <p>Presencial • Vagas limitadas</p>
               </div>
 
-              <button className="flex items-center justify-center gap-2 bg-[#D8B366] hover:bg-[#C5A04A] text-black w-full max-w-[200px] text-sm font-bold px-6 h-10 rounded-lg transition-all group">
-                <span>Garantir minha vaga</span>
-                <ArrowRight className="w-4 h-4 group-hover:translate-x-1 transition-transform" />
+              <button className="relative flex items-center justify-center gap-2 bg-[#D8B366] text-black w-full max-w-[200px] text-sm font-bold px-6 h-10 rounded-lg transition-all duration-300 group overflow-hidden hover:shadow-[0_0_20px_rgba(216,179,102,0.4)] hover:scale-105 active:scale-95">
+                <span className="absolute inset-0 bg-gradient-to-r from-transparent via-white/40 to-transparent translate-x-[-100%] group-hover:translate-x-[100%] transition-transform duration-700 ease-in-out" />
+                <span className="relative z-10">Garantir minha vaga</span>
+                <ArrowRight className="relative z-10 w-4 h-4 group-hover:translate-x-1 transition-transform" />
               </button>
             </div>
           </div>
@@ -477,9 +503,10 @@ export default function Home() {
             Quem governa o processo, governa o resultado.
           </p>
           
-          <button className="flex items-center justify-center gap-2 bg-[#D8B366] hover:bg-[#C5A04A] text-black h-14 px-10 text-lg font-bold rounded-lg transition-all shadow-[0_0_50px_rgba(216,179,102,0.3)] group">
-            <span>Garantir minha vaga agora</span>
-            <ArrowRight className="w-5 h-5 group-hover:translate-x-1 transition-transform" />
+          <button className="relative flex items-center justify-center gap-2 bg-[#D8B366] text-black h-14 px-10 text-lg font-bold rounded-lg transition-all duration-300 group overflow-hidden shadow-[0_0_50px_rgba(216,179,102,0.3)] hover:shadow-[0_0_80px_rgba(216,179,102,0.5)] hover:scale-105 active:scale-95">
+            <span className="absolute inset-0 bg-gradient-to-r from-transparent via-white/50 to-transparent translate-x-[-100%] group-hover:translate-x-[100%] transition-transform duration-700 ease-in-out" />
+            <span className="relative z-10">Garantir minha vaga agora</span>
+            <ArrowRight className="relative z-10 w-5 h-5 group-hover:translate-x-1 transition-transform" />
           </button>
         </div>
       </section>
