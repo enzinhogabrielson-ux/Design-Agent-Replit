@@ -1,8 +1,7 @@
 import { motion } from "framer-motion";
-import { ArrowRight, MapPin, Clock, CheckCircle2, Zap } from "lucide-react";
-import heroBg from "@assets/generated_images/luxurious_black_and_gold_background_texture.png";
+import { ArrowRight } from "lucide-react";
+import luxuryBg from "@assets/generated_images/luxury_warm-lit_interior_environment_background.png";
 import heroImg from "@assets/generated_images/modern_professional_woman_in_elegant_white_blazer.png";
-import accentImg from "@assets/generated_images/abstract_gold_light_rays_and_particles.png";
 
 export default function Home() {
   const fadeInUp = {
@@ -11,7 +10,7 @@ export default function Home() {
   };
 
   const fadeInRight = {
-    hidden: { opacity: 0, x: 50 },
+    hidden: { opacity: 0, x: 60 },
     visible: { opacity: 1, x: 0, transition: { duration: 0.8 } }
   };
 
@@ -28,78 +27,75 @@ export default function Home() {
 
   return (
     <div className="min-h-screen bg-background text-foreground overflow-x-hidden selection:bg-[#D8B366] selection:text-black">
-      {/* ===== HERO SECTION - 2 COLUMNS ===== */}
+      {/* ===== HERO SECTION - CLEAN & MODERN ===== */}
       <section className="relative min-h-screen flex items-center pt-20 pb-20 overflow-hidden">
-        {/* Accent background image overlay */}
-        <div className="absolute inset-0 z-0 opacity-20">
+        {/* Background image with overlay */}
+        <div className="absolute inset-0 z-0">
           <img 
-            src={accentImg} 
-            alt="Accent" 
+            src={luxuryBg} 
+            alt="Luxury background" 
             className="w-full h-full object-cover"
           />
+          {/* Dark overlay for text readability */}
+          <div className="absolute inset-0 bg-gradient-to-r from-[#0a0809] via-[#0a0809]/70 to-transparent" />
         </div>
 
         <div className="container mx-auto px-6 relative z-10">
           <div className="grid md:grid-cols-2 gap-16 items-center">
-            {/* LEFT COLUMN - Text Content */}
+            {/* LEFT COLUMN - Minimal Text */}
             <motion.div 
               initial="hidden"
               animate="visible"
               variants={staggerContainer}
-              className="space-y-8"
+              className="space-y-8 max-w-xl"
             >
-              {/* Badge */}
+              {/* Badge - Small and minimal */}
               <motion.div variants={fadeInUp}>
-                <span className="badge-gold">
-                  <Zap className="w-3 h-3" />
-                  Encontro Presencial e Exclusivo
+                <span className="inline-flex items-center gap-2 px-3 py-1 rounded-full text-xs font-bold tracking-wider uppercase bg-[#D8B366]/20 border border-[#D8B366]/40 text-[#D8B366] backdrop-blur-md">
+                  AS PORTAS ESTÃO ABERTAS
                 </span>
               </motion.div>
 
-              {/* Main Headline */}
-              <motion.div variants={fadeInUp} className="space-y-3">
-                <h1 className="text-6xl md:text-7xl font-sans font-bold leading-[1.1] text-white">
+              {/* Main Headline - Bold and Simple */}
+              <motion.div variants={fadeInUp} className="space-y-4">
+                <h1 className="text-6xl md:text-7xl font-sans font-bold leading-[1.15] text-white">
                   Venda não é sorte.
                 </h1>
-                <div className="relative inline-block">
-                  <h1 className="text-6xl md:text-7xl font-serif-accent text-white">
-                    É processo.
-                  </h1>
-                  <div className="absolute -bottom-3 left-0 right-0 h-1 bg-gradient-to-r from-transparent via-[#D8B366] to-transparent" />
-                </div>
+                <p className="text-5xl md:text-6xl font-serif-accent text-white">
+                  É <span className="text-[#D8B366]">processo</span>.
+                </p>
               </motion.div>
 
-              {/* Accent Subheading */}
-              <motion.p variants={fadeInUp} className="text-2xl md:text-3xl font-serif-accent text-white/95 leading-tight">
-                Agora, com <span className="text-gold-gradient">inteligência artificial</span> a seu favor.
+              {/* Subheading - Elegant serif */}
+              <motion.p variants={fadeInUp} className="text-xl md:text-2xl font-serif italic text-white/95 leading-tight">
+                Agora, com inteligência artificial a seu favor.
               </motion.p>
 
-              {/* Subheadline */}
-              <motion.p variants={fadeInUp} className="text-white/75 text-lg leading-relaxed max-w-lg">
+              {/* Description - Light copy */}
+              <motion.p variants={fadeInUp} className="text-base md:text-lg text-white/75 leading-relaxed font-light">
                 Um encontro presencial e exclusivo para Corretores de Seguro de Vida e Distribuidores de Produtos Financeiros que querem controle, previsibilidade e resultado real em vendas.
               </motion.p>
 
-              {/* Event Details */}
-              <motion.div variants={fadeInUp} className="flex flex-col sm:flex-row gap-8 text-sm font-medium text-white/80 pt-6 border-t border-white/10">
-                <div className="flex items-center gap-3">
-                  <MapPin className="w-5 h-5 text-[#D8B366]" />
-                  <span className="font-semibold">Orlando</span>
-                </div>
-                <div className="flex items-center gap-3">
-                  <span className="text-2xl">📅</span>
-                  <span className="font-semibold">13 de janeiro</span>
-                </div>
-                <div className="flex items-center gap-3">
-                  <Clock className="w-5 h-5 text-[#D8B366]" />
-                  <span className="font-semibold">12:30 PM às 5:30 PM</span>
-                </div>
+              {/* CTA Button */}
+              <motion.div variants={fadeInUp} className="pt-4">
+                <button className="btn-primary text-base md:text-lg font-semibold flex items-center gap-2 px-8 py-4">
+                  Garanta sua vaga <ArrowRight className="w-5 h-5" />
+                </button>
               </motion.div>
 
-              {/* CTA Button */}
-              <motion.div variants={fadeInUp} className="pt-6">
-                <button className="btn-primary text-lg font-semibold">
-                  Garanta sua vaga <ArrowRight className="ml-3 w-5 h-5" />
-                </button>
+              {/* Social proof - Avatars and text */}
+              <motion.div variants={fadeInUp} className="pt-8 flex items-center gap-4">
+                <div className="flex -space-x-2">
+                  {[1, 2, 3].map((i) => (
+                    <div
+                      key={i}
+                      className="w-8 h-8 rounded-full bg-gradient-to-br from-[#D8B366] to-[#B98A3B] border-2 border-[#0a0809]"
+                    />
+                  ))}
+                </div>
+                <p className="text-xs md:text-sm text-white/70 font-light">
+                  Mais de 50 mil mulheres já fizeram parte dessa transformação.
+                </p>
               </motion.div>
             </motion.div>
 
@@ -108,32 +104,33 @@ export default function Home() {
               initial="hidden"
               animate="visible"
               variants={fadeInRight}
-              className="hidden md:flex items-center justify-center relative"
+              className="hidden md:flex items-center justify-center"
             >
-              <div className="relative w-full max-w-md aspect-[3/4] group">
-                {/* Glow background */}
-                <div className="absolute -inset-6 bg-gradient-to-br from-[#D8B366]/20 via-[#D8B366]/5 to-transparent rounded-3xl blur-2xl group-hover:blur-3xl transition-all duration-500" />
-                
-                {/* Image container */}
-                <div className="relative z-10 w-full h-full rounded-2xl overflow-hidden border border-[#D8B366]/30 group-hover:border-[#D8B366]/60 transition-all duration-500 shadow-2xl">
+              <div className="relative w-full">
+                {/* Image with subtle glow */}
+                <div className="relative z-10 overflow-hidden">
                   <img 
                     src={heroImg} 
                     alt="Expert" 
-                    className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500"
+                    className="w-full h-auto object-contain drop-shadow-2xl"
                   />
-                  <div className="absolute inset-0 bg-gradient-to-t from-[#0a0809] via-transparent to-transparent opacity-40 group-hover:opacity-20 transition-opacity duration-500" />
                 </div>
-
-                {/* Floating accent */}
-                <div className="absolute -bottom-4 -right-4 w-32 h-32 bg-gradient-to-br from-[#D8B366]/10 to-transparent rounded-full blur-3xl" />
+                
+                {/* Glow effect behind image */}
+                <div className="absolute -inset-8 bg-gradient-to-br from-[#D8B366]/15 via-[#D8B366]/5 to-transparent rounded-3xl blur-3xl -z-10" />
               </div>
             </motion.div>
           </div>
         </div>
+
+        {/* Bottom accent line */}
+        <div className="absolute bottom-0 left-0 right-0 h-px bg-gradient-to-r from-transparent via-[#D8B366]/30 to-transparent z-10" />
       </section>
 
-      {/* ===== CONTEXT SECTION - A DOR ===== */}
-      <section className="py-28 md:py-32 relative border-t border-white/5">
+      {/* ===== SECONDARY SECTIONS START HERE ===== */}
+      
+      {/* Context Section */}
+      <section className="py-28 md:py-32 relative border-t border-white/5 bg-black/30">
         <div className="container mx-auto px-6 max-w-4xl relative z-10">
           <motion.div
             initial="hidden"
@@ -154,14 +151,14 @@ export default function Home() {
                 <p className="text-white font-semibold text-lg">E improviso não escala.</p>
                 <div className="space-y-4 text-white/85">
                   <div className="flex items-start gap-4">
-                    <span className="text-[#D8B366] font-bold text-2xl">→</span>
+                    <span className="text-[#D8B366] font-bold text-2xl flex-shrink-0">→</span>
                     <div>
                       <p className="font-bold text-white">Improviso cansa.</p>
                       <p className="text-sm mt-1">Você gasta energia em operacional caótico.</p>
                     </div>
                   </div>
                   <div className="flex items-start gap-4">
-                    <span className="text-[#D8B366] font-bold text-2xl">→</span>
+                    <span className="text-[#D8B366] font-bold text-2xl flex-shrink-0">→</span>
                     <div>
                       <p className="font-bold text-white">Improviso custa dinheiro.</p>
                       <p className="text-sm mt-1">Oportunidades perdidas, ciclos longos, sem previsibilidade.</p>
@@ -178,8 +175,8 @@ export default function Home() {
         </div>
       </section>
 
-      {/* ===== WHAT HAPPENS SECTION ===== */}
-      <section className="py-28 md:py-32 relative border-y border-white/5 bg-black/30">
+      {/* What Happens Section */}
+      <section className="py-28 md:py-32 relative border-y border-white/5">
         <div className="container mx-auto px-6 relative z-10">
           <motion.div
             initial="hidden"
@@ -221,8 +218,8 @@ export default function Home() {
                   className="glass-card-gold p-8 rounded-xl group glass-card-hover"
                 >
                   <div className="flex gap-4 items-start">
-                    <div className="w-8 h-8 rounded-full bg-gradient-to-br from-[#D8B366] to-[#B98A3B] flex items-center justify-center flex-shrink-0 mt-1">
-                      <CheckCircle2 className="w-4 h-4 text-white" />
+                    <div className="w-8 h-8 rounded-full bg-gradient-to-br from-[#D8B366] to-[#B98A3B] flex items-center justify-center flex-shrink-0 mt-1 text-white font-bold">
+                      ✓
                     </div>
                     <div>
                       <h3 className="text-white font-bold text-lg mb-2">{item.title}</h3>
@@ -242,8 +239,8 @@ export default function Home() {
         </div>
       </section>
 
-      {/* ===== AI LAUNCH SECTION ===== */}
-      <section className="py-28 md:py-32 relative">
+      {/* AI Launch Section */}
+      <section className="py-28 md:py-32 relative bg-black/30">
         <div className="container mx-auto px-6 relative z-10">
           <motion.div
             initial="hidden"
@@ -290,8 +287,8 @@ export default function Home() {
         </div>
       </section>
 
-      {/* ===== EXCLUSIVE BENEFIT ===== */}
-      <section className="py-28 md:py-32 relative bg-black/30 border-y border-white/5">
+      {/* Exclusive Benefit */}
+      <section className="py-28 md:py-32 relative border-y border-white/5">
         <div className="container mx-auto px-6 relative z-10">
           <motion.div
             initial="hidden"
@@ -340,8 +337,8 @@ export default function Home() {
         </div>
       </section>
 
-      {/* ===== PRICING ===== */}
-      <section className="py-28 md:py-32 relative">
+      {/* Pricing */}
+      <section className="py-28 md:py-32 relative bg-black/30">
         <div className="container mx-auto px-6 relative z-10">
           <motion.div
             initial="hidden"
@@ -374,14 +371,6 @@ export default function Home() {
                 <p className="text-white/60 mt-4 text-lg">Valor especial de lançamento</p>
               </div>
 
-              <div className="flex flex-col gap-3 text-white/80 text-base justify-center">
-                <div className="flex items-center justify-center gap-3">
-                  <MapPin className="w-5 h-5 text-[#D8B366]" />
-                  <span className="font-semibold">Evento presencial em Orlando</span>
-                </div>
-                <p className="font-semibold">Vagas limitadas</p>
-              </div>
-
               <button className="btn-primary w-full md:w-auto text-lg font-semibold mx-auto block">
                 Garanta sua vaga agora <ArrowRight className="inline ml-3 w-5 h-5" />
               </button>
@@ -390,8 +379,8 @@ export default function Home() {
         </div>
       </section>
 
-      {/* ===== EVENT INFO ===== */}
-      <section className="py-28 md:py-32 relative bg-black/30 border-y border-white/5">
+      {/* Event Info */}
+      <section className="py-28 md:py-32 relative border-t border-white/5">
         <div className="container mx-auto px-6 relative z-10">
           <motion.div
             initial="hidden"
@@ -423,7 +412,7 @@ export default function Home() {
                     <span className="font-semibold text-white text-lg">13 de janeiro</span>
                   </p>
                   <p className="flex items-center gap-3">
-                    <Clock className="w-5 h-5 text-[#D8B366]" />
+                    <span className="text-xl">🕐</span>
                     <span className="text-base">12:30 PM a 5:30 PM</span>
                   </p>
                   <p className="text-sm text-white/50 pt-2">Chegada recomendada a partir das 12:00 PM para credenciamento</p>
@@ -434,8 +423,8 @@ export default function Home() {
         </div>
       </section>
 
-      {/* ===== FINAL CTA ===== */}
-      <section className="py-28 md:py-32 relative">
+      {/* Final CTA */}
+      <section className="py-28 md:py-32 relative bg-black/30 border-t border-white/5">
         <div className="container mx-auto px-6 relative z-10">
           <motion.div
             initial="hidden"
@@ -461,7 +450,7 @@ export default function Home() {
         </div>
       </section>
 
-      {/* ===== FOOTER ===== */}
+      {/* Footer */}
       <footer className="py-16 border-t border-white/5 bg-black/50">
         <div className="container mx-auto px-6 text-center">
           <p className="text-white/50 text-sm">
