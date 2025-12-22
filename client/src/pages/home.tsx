@@ -61,8 +61,8 @@ export default function Home() {
       </div>
 
       {/* 1) NAVBAR (Sticky) */}
-      <nav className="fixed top-0 left-0 right-0 z-50 h-[72px] bg-[#070607]/55 backdrop-blur-md border-b border-[#D8B366]/20 flex items-center transition-all duration-300">
-        <div className="container mx-auto max-w-6xl px-6 flex items-center justify-between">
+      <nav className="fixed top-0 left-0 right-0 z-50 min-h-[72px] md:h-[72px] bg-[#070607]/55 backdrop-blur-md border-b border-[#D8B366]/20 flex items-center transition-all duration-300">
+        <div className="container mx-auto max-w-6xl px-6 flex flex-col md:flex-row md:items-center md:justify-between w-full gap-3 md:gap-0 py-2 md:py-0">
           <div className="flex items-center gap-4 md:gap-8">
             <button onClick={scrollToTop} className="group cursor-pointer hover:drop-shadow-lg transition-all duration-300 active:scale-95">
               <img 
@@ -86,7 +86,7 @@ export default function Home() {
             </h1>
           </div>
 
-          <a href="https://sun.eduzz.com/E9OO22V59B" target="_blank" rel="noopener noreferrer" className="relative flex items-center gap-2 bg-[#D8B366] text-black text-xs md:text-sm font-bold px-4 md:px-6 h-9 md:h-10 rounded-lg transition-all duration-300 group overflow-hidden hover:shadow-[0_0_20px_rgba(216,179,102,0.4)] hover:scale-105 active:scale-95">
+          <a href="https://sun.eduzz.com/E9OO22V59B" target="_blank" rel="noopener noreferrer" className="relative flex items-center justify-center gap-2 bg-[#D8B366] text-black text-xs md:text-sm font-bold px-4 md:px-6 h-9 md:h-10 rounded-lg transition-all duration-300 group overflow-hidden hover:shadow-[0_0_20px_rgba(216,179,102,0.4)] hover:scale-105 active:scale-95 w-full md:w-auto">
             <span className="absolute inset-0 bg-gradient-to-r from-transparent via-white/40 to-transparent translate-x-[-100%] group-hover:translate-x-[100%] transition-transform duration-700 ease-in-out" />
             <span className="relative z-10">Garantir minha vaga</span>
             <ArrowRight className="relative z-10 w-3 h-3 md:w-4 md:h-4 group-hover:translate-x-1 transition-transform" />
