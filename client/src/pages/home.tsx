@@ -177,34 +177,6 @@ export default function Home() {
                   </div>
                 </div>
 
-                {/* Social Proof - Broker Images */}
-                <motion.div 
-                  variants={fadeInUp}
-                  className="flex flex-row items-center gap-4 pt-6"
-                >
-                  <div className="flex -space-x-3 shrink-0">
-                    {[
-                      { img: brokerMale1, alt: "Corretor 1" },
-                      { img: brokerFemale, alt: "Corretor 2" },
-                      { img: brokerMale2, alt: "Corretor 3" }
-                    ].map((item, i) => (
-                      <div
-                        key={i}
-                        className="w-10 h-10 rounded-full border-2 border-[#070607] shadow-md overflow-hidden relative group hover:z-10"
-                      >
-                        <img 
-                          src={item.img} 
-                          alt={item.alt}
-                          className="w-full h-full object-cover group-hover:scale-110 transition-transform duration-300"
-                        />
-                        <div className="absolute inset-0 bg-gradient-to-br from-[#D8B366]/40 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300" />
-                      </div>
-                    ))}
-                  </div>
-                  <p className="text-xs md:text-sm text-white/80 font-light max-w-[200px] md:max-w-none leading-tight">
-                    Vários profissionais já <span className="font-bold text-white">dominaram seu processo</span> e transformaram seus resultados
-                  </p>
-                </motion.div>
               </motion.div>
             </motion.div>
           </div>
