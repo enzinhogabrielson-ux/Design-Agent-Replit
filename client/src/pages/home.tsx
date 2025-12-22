@@ -558,12 +558,12 @@ export default function Home() {
               <div className="w-10 h-10 md:w-16 md:h-16 rounded-2xl bg-[#D8B366]/15 flex items-center justify-center flex-shrink-0 text-[#D8B366] group-hover:scale-110 transition-transform duration-300 border border-[#D8B366]/30">
                 <MapPin className="w-5 h-5 md:w-7 md:h-7" />
               </div>
-              <div className="space-y-2 md:space-y-4">
-                <h3 className="text-sm md:text-2xl font-bold text-white font-display">Local</h3>
-                <div className="text-white/80 text-xs md:text-base space-y-1 md:space-y-1.5 font-light">
-                  <p className="font-semibold text-white text-xs md:text-lg">Orlando Library</p>
-                  <p className="hidden md:block">101 E. Central Blvd.</p>
-                  <p className="hidden md:block">Orlando, FL 32801</p>
+              <div className="space-y-2 md:space-y-3">
+                <h3 className="text-sm md:text-2xl font-bold text-white font-display">Local do Evento</h3>
+                <div className="text-white/80 text-xs md:text-base space-y-0.5 md:space-y-1.5 font-light">
+                  <p className="font-semibold text-white text-xs md:text-lg">📍 Orlando Public Library</p>
+                  <p className="text-xs md:text-base">101 E. Central Blvd.</p>
+                  <p className="text-xs md:text-base">Orlando, FL 32801</p>
                   <p className="text-[#D8B366] font-medium text-xs md:text-base">Albertson Room</p>
                 </div>
               </div>
@@ -574,12 +574,12 @@ export default function Home() {
               <div className="w-10 h-10 md:w-16 md:h-16 rounded-2xl bg-[#D8B366]/15 flex items-center justify-center flex-shrink-0 text-[#D8B366] group-hover:scale-110 transition-transform duration-300 border border-[#D8B366]/30">
                 <Calendar className="w-5 h-5 md:w-7 md:h-7" />
               </div>
-              <div className="space-y-2 md:space-y-4">
-                <h3 className="text-sm md:text-2xl font-bold text-white font-display">Data e Hora</h3>
-                <div className="text-white/80 text-xs md:text-base space-y-1 md:space-y-1.5 font-light">
-                  <p className="font-semibold text-white text-xs md:text-lg">13 jan</p>
-                  <p className="text-xs md:text-lg">12:30 PM - 5:30 PM</p>
-                  <p className="text-white/50 text-[10px] md:text-sm pt-1 md:pt-2 border-t border-white/10 mt-1 md:mt-2 hidden md:block">(Chegada 12:00 PM)</p>
+              <div className="space-y-2 md:space-y-3">
+                <h3 className="text-sm md:text-2xl font-bold text-white font-display">Data e Horário</h3>
+                <div className="text-white/80 text-xs md:text-base space-y-0.5 md:space-y-1.5 font-light">
+                  <p className="font-semibold text-white text-xs md:text-lg">📅 13 de janeiro</p>
+                  <p className="text-xs md:text-lg">⏰ 12:30 PM a 5:30 PM</p>
+                  <p className="text-white/50 text-[10px] md:text-sm pt-1 md:pt-2 border-t border-white/10 mt-1 md:mt-2">(Chegada recomendada a partir das 12:00 PM para credenciamento)</p>
                 </div>
               </div>
             </div>
