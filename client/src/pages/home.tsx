@@ -552,8 +552,8 @@ export default function Home() {
       {/* 8) INFO FINAIS */}
       <section id="info" className="py-16 md:py-32 relative border-b border-[#D8B366]/10 overflow-hidden">
         <div className="absolute inset-0">
-            <img src={bgSessaoAbaixo} alt="Orlando Background" className="w-full h-full object-cover" />
-            <div className="absolute inset-0 bg-gradient-to-r from-[#070607]/95 via-[#070607]/85 to-[#070607]/70" />
+            <img src={bgSessaoAbaixo} alt="Orlando Background" className="w-full h-full object-contain object-center" />
+            <div className="absolute inset-0 bg-gradient-to-r from-[#070607]/80 via-[#070607]/70 to-[#070607]/50" />
         </div>
 
         <div className="container mx-auto max-w-6xl px-6 relative z-10">
