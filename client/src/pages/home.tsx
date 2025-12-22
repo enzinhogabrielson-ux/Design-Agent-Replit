@@ -552,9 +552,9 @@ export default function Home() {
         </div>
 
         <div className="container mx-auto max-w-6xl px-6 relative z-10">
-          <div className="grid grid-cols-2 md:grid-cols-2 gap-2 md:gap-8">
+          <div className="grid grid-cols-1 md:grid-cols-2 gap-4 md:gap-8">
             {/* Location */}
-            <div className="p-3 md:p-12 rounded-[24px] bg-[#131116]/85 md:bg-[#131116]/75 backdrop-blur-lg border border-[#D8B366]/15 flex flex-col md:flex-row md:gap-6 items-start hover:border-[#D8B366]/40 transition-colors group md:col-span-1">
+            <div className="p-6 md:p-12 rounded-[20px] md:rounded-[24px] bg-[#131116]/85 md:bg-[#131116]/75 backdrop-blur-lg border border-[#D8B366]/15 flex flex-col md:flex-row md:gap-6 items-start hover:border-[#D8B366]/40 transition-colors group md:col-span-1">
               <div className="w-10 h-10 md:w-16 md:h-16 rounded-2xl bg-[#D8B366]/15 flex items-center justify-center flex-shrink-0 text-[#D8B366] group-hover:scale-110 transition-transform duration-300 border border-[#D8B366]/30">
                 <MapPin className="w-5 h-5 md:w-7 md:h-7" />
               </div>
@@ -570,7 +570,7 @@ export default function Home() {
             </div>
 
             {/* Date/Time */}
-            <div className="p-3 md:p-12 rounded-[24px] bg-[#131116]/85 md:bg-[#131116]/75 backdrop-blur-lg border border-[#D8B366]/15 flex flex-col md:flex-row md:gap-6 items-start hover:border-[#D8B366]/40 transition-colors group md:col-span-1">
+            <div className="p-6 md:p-12 rounded-[20px] md:rounded-[24px] bg-[#131116]/85 md:bg-[#131116]/75 backdrop-blur-lg border border-[#D8B366]/15 flex flex-col md:flex-row md:gap-6 items-start hover:border-[#D8B366]/40 transition-colors group md:col-span-1">
               <div className="w-10 h-10 md:w-16 md:h-16 rounded-2xl bg-[#D8B366]/15 flex items-center justify-center flex-shrink-0 text-[#D8B366] group-hover:scale-110 transition-transform duration-300 border border-[#D8B366]/30">
                 <Calendar className="w-5 h-5 md:w-7 md:h-7" />
               </div>
