@@ -9,6 +9,7 @@ import abstractImg from "@assets/generated_images/abstract_visualization_of_sale
 import keyImg from "@assets/generated_images/golden_key_or_vip_card_floating.png";
 import ticketImg from "@assets/generated_images/luxurious_golden_event_ticket_floating.png";
 import libraryImg from "@assets/generated_images/orlando_public_library_stylized_architecture.png";
+import orlandoImg from "@assets/generated_images/premium_orlando_skyline_evening_luxury_background.png";
 import brokerMale1 from "@assets/generated_images/professional_male_insurance_broker_portrait.png";
 import brokerFemale from "@assets/generated_images/professional_female_insurance_broker_portrait.png";
 import brokerMale2 from "@assets/generated_images/professional_latin_male_broker_portrait.png";
@@ -549,9 +550,9 @@ export default function Home() {
 
       {/* 8) INFO FINAIS */}
       <section id="info" className="py-16 md:py-32 relative border-b border-[#D8B366]/10 overflow-hidden">
-        <div className="absolute inset-0 opacity-10">
-            <img src={libraryImg} alt="" className="w-full h-full object-cover" />
-            <div className="absolute inset-0 bg-[#070607]/90" />
+        <div className="absolute inset-0">
+            <img src={orlandoImg} alt="Orlando Skyline" className="w-full h-full object-cover" />
+            <div className="absolute inset-0 bg-gradient-to-r from-[#070607]/95 via-[#070607]/85 to-[#070607]/70" />
         </div>
 
         <div className="container mx-auto max-w-6xl px-6 relative z-10">
