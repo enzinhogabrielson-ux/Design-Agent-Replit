@@ -1,7 +1,7 @@
 import { motion } from "framer-motion";
 import { ArrowRight, Sparkles, Check, ChevronDown, MapPin, Calendar, Clock, AlertTriangle, Zap, Funnel, TrendingUp, Users } from "lucide-react";
-import heroBgMobile from "@assets/bg_lpmobil_1766338661759.png";
-import heroBg from "@assets/bg_lp_1766335180336.png";
+import heroBgMobile from "@assets/bg_lpmobil_1766376649299.png";
+import heroBg from "@assets/bg_lp_1766376649298.png";
 import dashboardImg from "@assets/generated_images/futuristic_ai_dashboard_for_insurance_brokers_with_gold_accents.png";
 import logoEusou from "@assets/logo_erika_1766334069365.png";
 import logoErika from "@assets/LOGO_Erika_1766334075618.png";
