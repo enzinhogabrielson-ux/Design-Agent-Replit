@@ -95,7 +95,7 @@ export default function Home() {
       </nav>
 
       {/* 2) HERO (Cinematic) */}
-      <section id="hero" className="relative min-h-[160vh] md:min-h-[110vh] flex items-start md:items-center pt-32 md:pt-40 pb-40 md:pb-20 overflow-hidden bg-cover bg-center bg-no-repeat" style={{ backgroundImage: `var(--hero-bg)` }}>
+      <section id="hero" className="relative min-h-[145vh] md:min-h-[110vh] flex items-start md:items-center pt-32 md:pt-40 pb-40 md:pb-20 overflow-hidden bg-cover bg-center bg-no-repeat" style={{ backgroundImage: `var(--hero-bg)` }}>
         <style>{`
           #hero {
             --hero-bg: url(${heroBgMobile});
