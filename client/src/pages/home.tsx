@@ -415,23 +415,18 @@ export default function Home() {
       </section>
 
       {/* 6) BENEFÍCIO EXCLUSIVO */}
-      <section id="benefit" className="py-16 md:py-32 relative overflow-hidden bg-[#070607]">
+      <section id="benefit" className="py-16 md:py-40 relative overflow-hidden bg-[#070607]">
         <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[600px] h-[600px] bg-[#D8B366]/5 blur-[120px] rounded-full pointer-events-none" />
-        
-        {/* Background Image Accent */}
-        <div className="absolute right-0 top-1/2 -translate-y-1/2 w-1/3 h-full opacity-20 mix-blend-screen pointer-events-none mask-image-linear-to-l">
-             <img src={keyImg} alt="" className="w-full h-full object-cover" />
-        </div>
 
         <div className="container mx-auto max-w-6xl px-6 relative z-10">
-          <div className="flex flex-col md:flex-row items-center gap-16">
-             <div className="md:w-1/2 space-y-8 text-left">
+          <div className="flex flex-col md:flex-row items-center gap-12 md:gap-20">
+             <div className="md:w-1/2 space-y-8 md:space-y-10 text-left">
                 <span className="text-[#D8B366] text-xs font-bold tracking-widest uppercase mb-2 block">Vantagem Presencial</span>
-                <h2 className="text-3xl md:text-5xl font-display font-bold text-white leading-tight">
+                <h2 className="text-3xl md:text-5xl lg:text-6xl font-display font-bold text-white leading-tight">
                     Vantagem exclusiva para <span className="text-[#D8B366] font-serif italic">participantes presenciais</span>
                 </h2>
 
-                <div className="space-y-6 text-lg text-white/80 font-light leading-relaxed">
+                <div className="space-y-6 text-base md:text-lg text-white/80 font-light leading-relaxed">
                     <p>
                     Os participantes presenciais do evento terão <strong className="text-white font-semibold">acesso antecipado ao sistema de IA</strong>, além de um benefício especial de lançamento, reservado apenas para quem estiver no encontro em Orlando.
                     </p>
@@ -440,17 +435,17 @@ export default function Home() {
                     </p>
                 </div>
 
-                <p className="text-2xl font-serif italic text-[#D8B366] font-semibold pt-4 border-l-2 border-[#D8B366] pl-6">
+                <p className="text-xl md:text-2xl font-serif italic text-[#D8B366] font-semibold pt-6 md:pt-8 border-l-2 border-[#D8B366] pl-6">
                     Quem entende o jogo, garante a vantagem antes dos outros.
                 </p>
              </div>
              
              <div className="md:w-1/2 relative">
                 <div className="relative rounded-[24px] overflow-hidden border border-[#D8B366]/20 shadow-[0_0_100px_rgba(216,179,102,0.1)] group">
-                    <div className="absolute inset-0 bg-gradient-to-t from-[#070607] via-transparent to-transparent z-10" />
+                    <div className="absolute inset-0 bg-gradient-to-t from-[#070607]/80 via-[#070607]/20 to-transparent z-10" />
                     <img src={keyImg} alt="Benefício Exclusivo" className="w-full aspect-[4/3] object-cover transform group-hover:scale-105 transition-transform duration-700" />
                     
-                    <div className="absolute bottom-6 left-6 z-20 bg-[#131116]/90 backdrop-blur-md px-6 py-3 rounded-full border border-[#D8B366]/30">
+                    <div className="absolute bottom-6 left-6 z-20 bg-[#131116]/95 backdrop-blur-md px-6 py-3 rounded-full border border-[#D8B366]/40">
                         <span className="text-[#D8B366] font-bold text-sm tracking-wider uppercase">Acesso VIP</span>
                     </div>
                 </div>
@@ -460,12 +455,12 @@ export default function Home() {
       </section>
 
       {/* 7) PREÇO */}
-      <section id="pricing" className="py-16 md:py-24 relative bg-[#0C0B0D] overflow-hidden">
+      <section id="pricing" className="py-16 md:py-40 relative bg-[#0C0B0D] overflow-hidden">
          {/* Background Glow for Pricing */}
          <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[800px] h-[500px] bg-gradient-to-r from-[#D8B366]/5 to-[#B98A3B]/5 blur-[100px] rounded-full pointer-events-none" />
 
         <div className="container mx-auto max-w-6xl px-6 relative z-10">
-          <div className="flex flex-col lg:flex-row items-center gap-16">
+          <div className="flex flex-col lg:flex-row items-center gap-16 md:gap-20">
             
             {/* Left Side: Value Proposition */}
             <div className="lg:w-1/2 space-y-8 relative">
@@ -495,10 +490,10 @@ export default function Home() {
 
             {/* Right Side: Pricing Card */}
             <div className="lg:w-1/2 w-full">
-                <div className="relative rounded-[32px] bg-[#131116] border border-[#D8B366]/30 overflow-hidden shadow-[0_0_80px_-20px_rgba(216,179,102,0.15)]">
+                <div className="relative rounded-[32px] bg-[#131116]/90 backdrop-blur-sm border border-[#D8B366]/30 overflow-hidden shadow-[0_0_80px_-20px_rgba(216,179,102,0.15)]">
                     <div className="absolute top-0 inset-x-0 h-1 bg-gradient-to-r from-transparent via-[#D8B366] to-transparent opacity-50" />
                     
-                    <div className="p-10 md:p-12 space-y-8">
+                    <div className="p-10 md:p-16 space-y-8 md:space-y-10">
                         <div className="text-center pb-8 border-b border-white/5">
                             <h3 className="text-xl font-medium text-white/90 mb-2">Ao se inscrever, você terá acesso a:</h3>
                         </div>
@@ -536,7 +531,7 @@ export default function Home() {
                             <p className="text-[#D8B366]/80 text-sm font-medium">pagamento único</p>
                         </div>
 
-                        <a href="https://sun.eduzz.com/E9OO22V59B" target="_blank" rel="noopener noreferrer" className="w-full relative flex items-center justify-center gap-2 bg-[#D8B366] text-black h-14 text-lg font-bold rounded-xl transition-all duration-300 group overflow-hidden hover:shadow-[0_0_30px_rgba(216,179,102,0.4)] hover:scale-[1.02] active:scale-95">
+                        <a href="https://sun.eduzz.com/E9OO22V59B" target="_blank" rel="noopener noreferrer" className="w-full relative flex items-center justify-center gap-2 bg-[#D8B366] text-black h-16 md:h-14 text-base md:text-lg font-bold rounded-xl transition-all duration-300 group overflow-hidden hover:shadow-[0_0_30px_rgba(216,179,102,0.4)] hover:scale-[1.02] active:scale-95">
                             <span className="absolute inset-0 bg-gradient-to-r from-transparent via-white/40 to-transparent translate-x-[-100%] group-hover:translate-x-[100%] transition-transform duration-700 ease-in-out" />
                             <span className="relative z-10">Quero me inscrever agora</span>
                             <ArrowRight className="relative z-10 w-5 h-5 group-hover:translate-x-1 transition-transform" />
@@ -550,41 +545,41 @@ export default function Home() {
       </section>
 
       {/* 8) INFO FINAIS */}
-      <section id="info" className="py-16 md:py-32 relative border-b border-[#D8B366]/10 overflow-hidden">
+      <section id="info" className="py-16 md:py-40 relative border-b border-[#D8B366]/10 overflow-hidden">
         <div className="absolute inset-0">
             <img src={bgSessaoAbaixo} alt="Orlando Background" className="w-full h-full object-cover" />
-            <div className="absolute inset-0 bg-gradient-to-r from-[#070607]/30 via-transparent to-[#070607]/30" />
+            <div className="absolute inset-0 bg-gradient-to-r from-[#070607]/40 md:from-[#070607]/50 via-[#070607]/20 md:via-[#070607]/30 to-[#070607]/40 md:to-[#070607]/50" />
         </div>
 
         <div className="container mx-auto max-w-6xl px-6 relative z-10">
-          <div className="grid md:grid-cols-2 gap-8">
+          <div className="grid md:grid-cols-2 gap-6 md:gap-8">
             {/* Location */}
-            <div className="p-10 rounded-[24px] bg-[#131116]/80 backdrop-blur-md border border-[#D8B366]/10 flex gap-6 items-start hover:border-[#D8B366]/30 transition-colors group">
-              <div className="w-14 h-14 rounded-2xl bg-[#D8B366]/10 flex items-center justify-center flex-shrink-0 text-[#D8B366] group-hover:scale-110 transition-transform duration-300 border border-[#D8B366]/20">
-                <MapPin className="w-7 h-7" />
+            <div className="p-6 md:p-12 rounded-[24px] bg-[#131116]/85 md:bg-[#131116]/75 backdrop-blur-lg border border-[#D8B366]/15 flex flex-col md:flex-row md:gap-6 items-start hover:border-[#D8B366]/40 transition-colors group">
+              <div className="w-12 h-12 md:w-16 md:h-16 rounded-2xl bg-[#D8B366]/15 flex items-center justify-center flex-shrink-0 text-[#D8B366] group-hover:scale-110 transition-transform duration-300 border border-[#D8B366]/30">
+                <MapPin className="w-6 h-6 md:w-7 md:h-7" />
               </div>
-              <div className="space-y-3">
-                <h3 className="text-xl font-bold text-white font-display">Local do Evento</h3>
-                <div className="text-white/70 text-base space-y-1.5 font-light">
-                  <p className="font-medium text-white text-lg">Orlando Public Library</p>
+              <div className="space-y-3 md:space-y-4">
+                <h3 className="text-lg md:text-2xl font-bold text-white font-display">Local do Evento</h3>
+                <div className="text-white/80 text-sm md:text-base space-y-1.5 font-light">
+                  <p className="font-semibold text-white text-base md:text-lg">Orlando Public Library</p>
                   <p>101 E. Central Blvd.</p>
                   <p>Orlando, FL 32801</p>
-                  <p className="text-[#D8B366]">Albertson Room</p>
+                  <p className="text-[#D8B366] font-medium">Albertson Room</p>
                 </div>
               </div>
             </div>
 
             {/* Date/Time */}
-            <div className="p-10 rounded-[24px] bg-[#131116]/80 backdrop-blur-md border border-[#D8B366]/10 flex gap-6 items-start hover:border-[#D8B366]/30 transition-colors group">
-              <div className="w-14 h-14 rounded-2xl bg-[#D8B366]/10 flex items-center justify-center flex-shrink-0 text-[#D8B366] group-hover:scale-110 transition-transform duration-300 border border-[#D8B366]/20">
-                <Calendar className="w-7 h-7" />
+            <div className="p-6 md:p-12 rounded-[24px] bg-[#131116]/85 md:bg-[#131116]/75 backdrop-blur-lg border border-[#D8B366]/15 flex flex-col md:flex-row md:gap-6 items-start hover:border-[#D8B366]/40 transition-colors group">
+              <div className="w-12 h-12 md:w-16 md:h-16 rounded-2xl bg-[#D8B366]/15 flex items-center justify-center flex-shrink-0 text-[#D8B366] group-hover:scale-110 transition-transform duration-300 border border-[#D8B366]/30">
+                <Calendar className="w-6 h-6 md:w-7 md:h-7" />
               </div>
-              <div className="space-y-3">
-                <h3 className="text-xl font-bold text-white font-display">Data e Horário</h3>
-                <div className="text-white/70 text-base space-y-1.5 font-light">
-                  <p className="font-medium text-white text-lg">13 de janeiro</p>
-                  <p className="text-lg">12:30 PM a 5:30 PM</p>
-                  <p className="text-white/40 text-sm pt-2 border-t border-white/5 mt-2">(Chegada recomendada a partir das 12:00 PM para credenciamento)</p>
+              <div className="space-y-3 md:space-y-4">
+                <h3 className="text-lg md:text-2xl font-bold text-white font-display">Data e Horário</h3>
+                <div className="text-white/80 text-sm md:text-base space-y-1.5 font-light">
+                  <p className="font-semibold text-white text-base md:text-lg">13 de janeiro</p>
+                  <p className="text-base md:text-lg">12:30 PM a 5:30 PM</p>
+                  <p className="text-white/50 text-xs md:text-sm pt-2 border-t border-white/10 mt-2">(Chegada recomendada a partir das 12:00 PM para credenciamento)</p>
                 </div>
               </div>
             </div>
@@ -626,19 +621,19 @@ export default function Home() {
       </section>
 
       {/* 10) CTA FINAL */}
-      <section className="py-16 md:py-32 relative overflow-hidden">
+      <section className="py-16 md:py-40 relative overflow-hidden">
         {/* Cinematic Gradient Background */}
         <div className="absolute inset-0 bg-gradient-to-t from-[#D8B366]/20 via-[#070607] to-[#070607]" />
         
         <div className="container mx-auto max-w-6xl px-6 relative z-10 text-center">
-          <h2 className="text-4xl md:text-5xl font-display font-bold text-white mb-6 leading-tight">
+          <h2 className="text-4xl md:text-5xl lg:text-6xl font-display font-bold text-white mb-6 md:mb-8 leading-tight">
             Garanta sua vaga e <br /><span className="font-serif italic text-white">esteja no lançamento</span>
           </h2>
-          <p className="text-xl md:text-2xl font-serif italic text-[#D8B366] mb-12">
+          <p className="text-lg md:text-2xl font-serif italic text-[#D8B366] mb-12 md:mb-16">
             Quem governa o processo, governa o resultado.
           </p>
           
-          <a href="https://sun.eduzz.com/E9OO22V59B" target="_blank" rel="noopener noreferrer" className="relative mx-auto flex items-center justify-center gap-2 bg-[#D8B366] text-black h-14 px-10 text-lg font-bold rounded-lg transition-all duration-300 group overflow-hidden shadow-[0_0_50px_rgba(216,179,102,0.3)] hover:shadow-[0_0_80px_rgba(216,179,102,0.5)] hover:scale-105 active:scale-95">
+          <a href="https://sun.eduzz.com/E9OO22V59B" target="_blank" rel="noopener noreferrer" className="relative mx-auto flex items-center justify-center gap-2 bg-[#D8B366] text-black h-16 md:h-14 px-8 md:px-10 text-base md:text-lg font-bold rounded-lg transition-all duration-300 group overflow-hidden shadow-[0_0_50px_rgba(216,179,102,0.3)] hover:shadow-[0_0_80px_rgba(216,179,102,0.5)] hover:scale-105 active:scale-95">
             <span className="absolute inset-0 bg-gradient-to-r from-transparent via-white/50 to-transparent translate-x-[-100%] group-hover:translate-x-[100%] transition-transform duration-700 ease-in-out" />
             <span className="relative z-10">Garantir minha vaga agora</span>
             <ArrowRight className="relative z-10 w-5 h-5 group-hover:translate-x-1 transition-transform" />
