@@ -112,6 +112,13 @@ export default function Home() {
         {/* Gradient for text contrast - left to right (Desktop) / Top to bottom (Mobile) */}
         <div className="absolute inset-y-0 left-0 w-full md:w-[75%] bg-gradient-to-b md:bg-gradient-to-r from-[#0a0809] via-[#0a0809]/60 md:via-[#0a0809]/85 to-transparent z-0 h-[70%] md:h-full" />
         
+        {/* Mobile Bottom Bar with Event Name */}
+        <div className="absolute bottom-0 left-0 right-0 md:hidden flex items-center justify-center z-20 bg-gradient-to-t from-[#070607]/95 via-[#070607]/70 to-transparent h-20">
+          <h2 className="text-[#D8B366] font-display font-bold text-base tracking-widest uppercase text-center">
+            Governe seus resultados
+          </h2>
+        </div>
+        
         <div className="container mx-auto max-w-6xl px-6 relative z-10">
           <div className="max-w-2xl w-full">
             {/* Content */}
