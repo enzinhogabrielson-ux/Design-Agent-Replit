@@ -86,7 +86,7 @@ export default function Home() {
             </h1>
           </div>
 
-          <a href="https://sun.eduzz.com/E9OO22V59B" target="_blank" rel="noopener noreferrer" className="relative flex items-center justify-center gap-2 bg-[#D8B366] text-black text-xs md:text-sm font-bold px-4 md:px-6 h-10 md:h-10 rounded-lg transition-all duration-300 group overflow-hidden hover:shadow-[0_0_20px_rgba(216,179,102,0.4)] hover:scale-105 active:scale-95 w-full md:w-auto">
+          <a href="https://buy.stripe.com/28E14nfwPbLi7060me6Ri00" target="_blank" rel="noopener noreferrer" className="relative flex items-center justify-center gap-2 bg-[#D8B366] text-black text-xs md:text-sm font-bold px-4 md:px-6 h-10 md:h-10 rounded-lg transition-all duration-300 group overflow-hidden hover:shadow-[0_0_20px_rgba(216,179,102,0.4)] hover:scale-105 active:scale-95 w-full md:w-auto">
             <span className="absolute inset-0 bg-gradient-to-r from-transparent via-white/40 to-transparent translate-x-[-100%] group-hover:translate-x-[100%] transition-transform duration-700 ease-in-out" />
             <span className="relative z-10">Garantir minha vaga</span>
             <ArrowRight className="relative z-10 w-3 h-3 md:w-4 md:h-4 group-hover:translate-x-1 transition-transform" />
@@ -161,7 +161,7 @@ export default function Home() {
 
               <motion.div variants={fadeInUp} className="space-y-4 pt-2">
                 <div className="flex flex-col sm:flex-row gap-3 md:gap-4">
-                  <a href="https://sun.eduzz.com/E9OO22V59B" target="_blank" rel="noopener noreferrer" className="w-full sm:w-auto relative flex items-center justify-center gap-2 bg-[#D8B366] text-black text-base font-bold px-8 h-12 rounded-lg transition-all duration-300 group overflow-hidden hover:shadow-[0_0_30px_rgba(216,179,102,0.5)] hover:scale-105 active:scale-95">
+                  <a href="https://buy.stripe.com/28E14nfwPbLi7060me6Ri00" target="_blank" rel="noopener noreferrer" className="w-full sm:w-auto relative flex items-center justify-center gap-2 bg-[#D8B366] text-black text-base font-bold px-8 h-12 rounded-lg transition-all duration-300 group overflow-hidden hover:shadow-[0_0_30px_rgba(216,179,102,0.5)] hover:scale-105 active:scale-95">
                     <span className="absolute inset-0 bg-gradient-to-r from-transparent via-white/50 to-transparent translate-x-[-100%] group-hover:translate-x-[100%] transition-transform duration-700 ease-in-out" />
                     <span className="relative z-10">Garanta sua vaga</span>
                     <ArrowRight className="relative z-10 w-4 h-4 group-hover:translate-x-1 transition-transform" />
@@ -538,7 +538,7 @@ export default function Home() {
                             <p className="text-[#D8B366]/80 text-sm font-medium">pagamento único</p>
                         </div>
 
-                        <a href="https://sun.eduzz.com/E9OO22V59B" target="_blank" rel="noopener noreferrer" className="w-full relative flex items-center justify-center gap-2 bg-[#D8B366] text-black h-16 md:h-14 text-base md:text-lg font-bold rounded-xl transition-all duration-300 group overflow-hidden hover:shadow-[0_0_30px_rgba(216,179,102,0.4)] hover:scale-[1.02] active:scale-95">
+                        <a href="https://buy.stripe.com/28E14nfwPbLi7060me6Ri00" target="_blank" rel="noopener noreferrer" className="w-full relative flex items-center justify-center gap-2 bg-[#D8B366] text-black h-16 md:h-14 text-base md:text-lg font-bold rounded-xl transition-all duration-300 group overflow-hidden hover:shadow-[0_0_30px_rgba(216,179,102,0.4)] hover:scale-[1.02] active:scale-95">
                             <span className="absolute inset-0 bg-gradient-to-r from-transparent via-white/40 to-transparent translate-x-[-100%] group-hover:translate-x-[100%] transition-transform duration-700 ease-in-out" />
                             <span className="relative z-10">Quero me inscrever agora</span>
                             <ArrowRight className="relative z-10 w-5 h-5 group-hover:translate-x-1 transition-transform" />
@@ -640,7 +640,7 @@ export default function Home() {
             Quem governa o processo, governa o resultado.
           </p>
           
-          <a href="https://sun.eduzz.com/E9OO22V59B" target="_blank" rel="noopener noreferrer" className="relative mx-auto flex items-center justify-center gap-2 bg-[#D8B366] text-black h-16 md:h-14 px-8 md:px-10 text-base md:text-lg font-bold rounded-lg transition-all duration-300 group overflow-hidden shadow-[0_0_50px_rgba(216,179,102,0.3)] hover:shadow-[0_0_80px_rgba(216,179,102,0.5)] hover:scale-105 active:scale-95">
+          <a href="https://buy.stripe.com/28E14nfwPbLi7060me6Ri00" target="_blank" rel="noopener noreferrer" className="relative mx-auto flex items-center justify-center gap-2 bg-[#D8B366] text-black h-16 md:h-14 px-8 md:px-10 text-base md:text-lg font-bold rounded-lg transition-all duration-300 group overflow-hidden shadow-[0_0_50px_rgba(216,179,102,0.3)] hover:shadow-[0_0_80px_rgba(216,179,102,0.5)] hover:scale-105 active:scale-95">
             <span className="absolute inset-0 bg-gradient-to-r from-transparent via-white/50 to-transparent translate-x-[-100%] group-hover:translate-x-[100%] transition-transform duration-700 ease-in-out" />
             <span className="relative z-10">Garantir minha vaga agora</span>
             <ArrowRight className="relative z-10 w-5 h-5 group-hover:translate-x-1 transition-transform" />
@@ -684,7 +684,7 @@ export default function Home() {
               </div>
             </div>
 
-            <a href="https://sun.eduzz.com/E9OO22V59B" target="_blank" rel="noopener noreferrer" className="w-full btn-primary h-12 text-sm font-bold flex items-center justify-center">
+            <a href="https://buy.stripe.com/28E14nfwPbLi7060me6Ri00" target="_blank" rel="noopener noreferrer" className="w-full btn-primary h-12 text-sm font-bold flex items-center justify-center">
               Continuar para o pagamento
             </a>
           </div>
