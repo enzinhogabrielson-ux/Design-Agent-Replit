@@ -20,14 +20,14 @@ function AppRouter() {
 
 function App() {
   return (
-    <Router hook={useHashLocation}>
-      <QueryClientProvider client={queryClient}>
-        <TooltipProvider>
+    <QueryClientProvider client={queryClient}>
+      <TooltipProvider>
+        <Router hook={useHashLocation}>
           <Toaster />
           <AppRouter />
-        </TooltipProvider>
-      </QueryClientProvider>
-    </Router>
+        </Router>
+      </TooltipProvider>
+    </QueryClientProvider>
   );
 }
 
