@@ -33,7 +33,7 @@ export default function PosCompra() {
 
       {/* CONTENT */}
       <motion.div 
-        className="relative z-10 container mx-auto max-w-2xl px-6 py-32 md:py-0 text-center flex flex-col justify-center items-center min-h-screen"
+        className="relative z-10 container mx-auto max-w-2xl px-6 py-40 md:py-20 text-center flex flex-col justify-center items-center min-h-screen"
         variants={staggerContainer}
         initial="hidden"
         animate="visible"
